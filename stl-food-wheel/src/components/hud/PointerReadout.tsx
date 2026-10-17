@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { countryById, useWheelStore } from "../../store/wheelStore";
 import { FlagIcon } from "../FlagIcon";
-import { READOUT_TOP_PX } from "./styles";
 
 /** Country currently under the pointer, falling back to the selected one. */
 export function useReadoutCountry() {
@@ -13,7 +12,7 @@ export function useReadoutCountry() {
 }
 
 /** Visible pill under the 12 o'clock pointer. Not a live region (it ticks during spins). */
-export function PointerReadout() {
+export function PointerReadout({ top }: { top: number }) {
   const country = useReadoutCountry();
   const spinning = useWheelStore((s) => s.phase === "spinning");
 
@@ -21,7 +20,7 @@ export function PointerReadout() {
     <div
       aria-hidden
       className="pointer-events-none absolute inset-x-0 z-10 flex justify-center px-4"
-      style={{ top: READOUT_TOP_PX }}
+      style={{ top }}
     >
       <div
         className={[

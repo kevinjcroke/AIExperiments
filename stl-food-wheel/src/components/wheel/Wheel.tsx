@@ -514,8 +514,8 @@ function LabelText({ text, layout, n }: { text: string; layout: TextLayout; n: n
     if (!b || b.length < 4) return;
     const s = fitMeasuredText((b[2]! - b[0]!), layout, n);
     console.warn("SYNC", text, b.join(","), s);
-    mesh.visible = s > 0;
-    if (s > 0) mesh.scale.setScalar(s);
+    // mesh.visible = s > 0;
+    // if (s > 0) mesh.scale.setScalar(s);
   };
   return (
     <Text
@@ -531,9 +531,9 @@ function LabelText({ text, layout, n }: { text: string; layout: TextLayout; n: n
       outlineWidth="10%"
       outlineColor="#0f172a"
       outlineOpacity={0.8}
-      outlineBlur="4%"
+      // outlineBlur="4%"
       raycast={noRaycast}
-      onSync={onSync}
+      // onSync={onSync}
     >
       {text}
     </Text>

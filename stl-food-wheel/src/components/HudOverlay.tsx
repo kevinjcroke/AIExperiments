@@ -17,7 +17,7 @@ import { BottomSheet, MOBILE_HEADER_PX, SHEET_PEEK_PX, type Snap } from "./hud/B
 import { useSpinShortcut } from "./hud/useSpinShortcut";
 import { useViewportHeight } from "./hud/useViewportHeight";
 import { isFocusable } from "./hud/focus";
-import { GLASS } from "./hud/styles";
+import { GLASS, READOUT_TOP_PX } from "./hud/styles";
 
 declare global {
   interface Window {
@@ -165,7 +165,7 @@ export function HudOverlay({ stage }: HudOverlayProps) {
   const stageLayer = (
     <>
       <div className="absolute inset-0">{stage}</div>
-      <PointerReadout />
+      <PointerReadout top={isDesktop ? READOUT_TOP_PX.desktop : READOUT_TOP_PX.mobile} />
       <StageEmptyState />
     </>
   );
