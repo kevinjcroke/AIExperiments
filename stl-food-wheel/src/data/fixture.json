@@ -1,0 +1,96 @@
+{
+  "countries": [
+    {
+      "id": "bosnia",
+      "countryName": "Bosnia & Herzegovina",
+      "shortName": "Bosnia",
+      "cuisineLabel": "Bosnian",
+      "isoCode": "ba",
+      "restaurants": [
+        {
+          "id": "fixture-bosnian-grill",
+          "name": "Fixture Bosnian Grill",
+          "address": "4800 Gravois Ave, St. Louis, MO 63116",
+          "neighborhood": "Bevo Mill",
+          "lat": 38.5826,
+          "lng": -90.2633,
+          "diningStyle": "Casual Sit-Down",
+          "priceRange": "$$",
+          "recommendedDish": "Ćevapi — FIXTURE DATA, not a real listing",
+          "sourceUrl": "https://example.com/fixture",
+          "lastVerified": "2026-01-01"
+        },
+        {
+          "id": "fixture-burek-counter",
+          "name": "Fixture Burek Counter",
+          "address": "5000 Gravois Ave, St. Louis, MO 63116",
+          "neighborhood": "Bevo Mill",
+          "lat": 38.5801,
+          "lng": -90.2672,
+          "diningStyle": "Takeout / Counter",
+          "priceRange": "$",
+          "recommendedDish": "Burek — FIXTURE DATA, not a real listing",
+          "sourceUrl": "https://example.com/fixture",
+          "lastVerified": "2026-01-01"
+        }
+      ]
+    },
+    {
+      "id": "ethiopia",
+      "countryName": "Ethiopia",
+      "shortName": "Ethiopia",
+      "cuisineLabel": "Ethiopian",
+      "isoCode": "et",
+      "restaurants": [
+        {
+          "id": "fixture-injera-house",
+          "name": "Fixture Injera House",
+          "address": "3100 S Grand Blvd, St. Louis, MO 63118",
+          "neighborhood": "Tower Grove South",
+          "lat": 38.6017,
+          "lng": -90.2432,
+          "diningStyle": "Casual Sit-Down",
+          "priceRange": "$$",
+          "recommendedDish": "Veggie combo — FIXTURE DATA, not a real listing",
+          "sourceUrl": "https://example.com/fixture",
+          "lastVerified": "2026-01-01"
+        }
+      ]
+    },
+    {
+      "id": "vietnam",
+      "countryName": "Vietnam",
+      "shortName": "Vietnam",
+      "cuisineLabel": "Vietnamese",
+      "isoCode": "vn",
+      "restaurants": [
+        {
+          "id": "fixture-pho-spot",
+          "name": "Fixture Pho Spot",
+          "address": "3200 S Grand Blvd, St. Louis, MO 63118",
+          "neighborhood": "Tower Grove South",
+          "lat": 38.6001,
+          "lng": -90.2430,
+          "diningStyle": "Fast Casual",
+          "priceRange": "$",
+          "recommendedDish": "Pho tai — FIXTURE DATA, not a real listing",
+          "sourceUrl": "https://example.com/fixture",
+          "lastVerified": "2026-01-01"
+        },
+        {
+          "id": "fixture-banh-mi-bistro",
+          "name": "Fixture Banh Mi Bistro",
+          "address": "8000 Olive Blvd, University City, MO 63130",
+          "neighborhood": "University City",
+          "lat": 38.6735,
+          "lng": -90.3420,
+          "diningStyle": "Upscale Sit-Down",
+          "priceRange": "$$$",
+          "recommendedDish": "Shaking beef — FIXTURE DATA, not a real listing",
+          "sourceUrl": "https://example.com/fixture",
+          "lastVerified": "2026-01-01"
+        }
+      ]
+    }
+  ]
+}
