@@ -2,11 +2,11 @@
 
 ## Summary
 
-- **Current dataset (after the merge of user research, see the last section): 24 countries, 72 restaurants.**
+- **Current dataset (after the second user research merge, see the last sections): 25 countries, 74 restaurants.** The first merge produced 24 countries and 72 restaurants. The second merge added Ireland (2 restaurants).
 - Every restaurant has `lastVerified: "2026-10-17"`.
-- **Dining styles:** 49 Casual Sit-Down, 12 Fast Casual, 7 Takeout / Counter, 4 Upscale Sit-Down.
-- **Prices:** 18 × `$`, 48 × `$$`, 5 × `$$$`, 1 × `$$$$`.
-- **Wheel order:** Bosnia, Thailand, Mexico, Ethiopia, France, Japan, Italy, Afghanistan, Peru, Philippines, Brazil, India, Germany, Jamaica, Vietnam, Greece, Cuba, Ghana, Korea, Nigeria, Lebanon, Nepal, Turkey, China.
+- **Dining styles:** 51 Casual Sit-Down, 12 Fast Casual, 7 Takeout / Counter, 4 Upscale Sit-Down.
+- **Prices:** 18 × `$`, 50 × `$$`, 5 × `$$$`, 1 × `$$$$`.
+- **Wheel order:** Bosnia, Thailand, Mexico, Ethiopia, France, Japan, Italy, Afghanistan, Peru, Philippines, Brazil, India, Germany, Jamaica, Vietnam, Greece, Cuba, Ghana, Korea, Ireland, Nigeria, Lebanon, Nepal, Turkey, China.
 - The original pass (before the merge) produced 18 countries and 44 restaurants. The sections below, up to "Merge of user research", describe that pass and are kept as they were.
 
 ## Method and tool limits (read this)
@@ -330,3 +330,267 @@ The user's list matched the existing dishes for Charlie Gitto's (toasted ravioli
 - **Restaurants in the earlier "verified open but dropped" list:**
   - Added with the user's dishes: El Bronco, Rasoi, Kimchi Guys, Aya Sofia, Sheesh, Brasas and Levels. None had coordinates recorded in the earlier report, so all were sourced fresh.
   - Tai Ke: verified again (Yelp Sep 2026), but Taiwan has only one restaurant, so it was not added.
+
+## Second user research merge (2026-10-17)
+
+The user supplied a second research file. It repeats the first list, which was already merged above, and adds new candidates: Venezuela, Colombia, El Salvador, Spain, Ireland, two more Jamaican listings, and single-restaurant entries for Honduras, Syria, Iran, Puerto Rico, the Dominican Republic and Scotland. The same rules applied: every added restaurant needed 2026 evidence that it is open and coordinates from a real listing.
+
+- **Method:** WebSearch only. WebFetch still fails DNS, and curl to geocoders still gets a proxy 403. Coordinates come from listing structured data shown in search results.
+- All 72 previously verified entries were kept unchanged.
+- **Repeated entries:** every restaurant in the file's existing countries is either already in the dataset or already listed above as a conflict or drop (Haveli, Al-Tarboush, Everest Cafe, El Molino del Sureste, Sultan Mediterranean, Chez Ali, JSK, Tai Ke, TANGO, Asador del Sur). Those were not redone. The only new candidates in existing countries were the two De Palm Tree listings under Jamaica.
+- `flagEmoji` fields were not carried over. A check confirmed there are no regional-indicator or tag characters in `restaurants.json` or in the JSON block below.
+
+### Result
+
+- **25 countries, 74 restaurants**, up from 24 countries and 72 restaurants.
+- **Added to `restaurants.json`:** Ireland (`ie`), with 2 restaurants. It sits between Korea and Nigeria, far from Germany and France.
+- **Verified single-restaurant countries (pending user decision):** Venezuela, El Salvador, Spain, Honduras, Syria, Iran and Scotland, 7 in all. They are not in `restaurants.json`. Complete CountryNode JSON for each is in the next section.
+- **No verified restaurant:** Colombia, Puerto Rico and the Dominican Republic (see conflicts and judgment calls).
+
+### Restaurants added (2)
+
+| Country | Restaurant | Status evidence (sourceUrl) | Coordinates from |
+| --- | --- | --- | --- |
+| Ireland | John D. McGurk's Irish Pub & Garden | Yelp "Updated September 2026", plus Tripadvisor reviews from Jul/Aug 2026 | Tripadvisor, MapQuest, joe.coffee and Venue Maps all agree (38.6076, -90.2100) |
+| Ireland | The Pat Connolly Tavern | Yelp "Updated July 2026", plus a comedy show listed for Feb 27, 2026 and Top of St. Louis (Jul 2026) | MapQuest address page (38.631482, -90.292608) and latlong.net (38.6313585, -90.2925825) agree |
+
+### Verified single-restaurant countries: evidence summary
+
+| Country | Restaurant | Status evidence | Coordinates from |
+| --- | --- | --- | --- |
+| Venezuela | Amaizing Arepa Bar | Yelp "Updated July 2026", categorized Venezuelan | Tripadvisor, Roadtrippers, DoorDash agree |
+| El Salvador | El Guanaco Taqueria & Pupuseria | Yelp "Updated September 2026", categorized Salvadoran; Tripadvisor review Apr 2026 | Atly, Sirved agree (Zmenu outlier discarded) |
+| Spain | Guido's Pizzeria & Tapas | OpenTable "Updated 2026"; Tripadvisor reviews Apr and Jun 2026 | Tripadvisor, Roadtrippers, OpenTable agree |
+| Honduras | Merendero Las Catrachitas | Yelp "Updated September 2026"; Wheree Jun 2026 | Tripadvisor, Snapchat, Restaurant Guru agree |
+| Syria | Majeed Mediterranean Restaurant | Yelp "Updated August 2026" at 4601 Gravois | Menufy (the restaurant's ordering site) and MapQuest's 4601 Gravois address page agree |
+| Iran | The Gin Room | Yelp "Updated July 2026"; Post-Dispatch review May 2026 of the Persian menu | Tripadvisor, Alotea, MapQuest agree |
+| Scotland | The Scottish Arms | Yelp "Updated September 2026" (also Mar 2026); STL Mag reports it reopened Dec 11, 2025 under new owners | MapQuest and Restaurant Guru agree |
+
+### Conflicts (left out; please show the user)
+
+| User-listed restaurant | Evidence | Date |
+| --- | --- | --- |
+| Maize & Wheat Colombian Cafe (Colombia) | St. Louis Magazine (Sep 21, 2026) and StLouisRestaurantReview (Sep 22): the café was slated to close Oct 17, 2026, today, when its lease expires, unless the landlord agreed new terms. An STL Mag closings roundup about a week ago still lists "October 17 (announced)". Yelp was last updated Aug 2026. No report of a new lease was found. Left out as at risk; re-check after today. | Closing announced for Oct 17, 2026 |
+| Cocina Latina (Colombia) | Already established above: closed July 2026 (Nicki's CWE Guide; MapQuest permanently closed). | Jul 2026 |
+| Los Chamos Restaurant (Venezuela) | No St. Louis listing found on Yelp, Tripadvisor, delivery apps or in the press. The only trace is an iExit directory line. Gayot lists a different business (Taft Street Restaurant & Bar, Bosnian) at 4457 Gravois. Unverifiable. | — |
+| La Guanaca (El Salvador) | No St. Louis listing found. The "La Guanaca" results are in Omaha. 4101 Federer Pl did not turn up as a business address. Unverifiable. | — |
+| Modesto Tapas Bar (Spain) | Foursquare labels it "(Now Closed)", and its newest reviews there are from 2016. No source shows it operating. Treated as closed. | — |
+| De Palm Tree, Overland (Jamaica) | The status is contradictory. The restaurant's own site and Facebook give 10086 Page Ave ("Now Open", undated). Yelp has an unclaimed 5-review listing at "10986 Page Ave" (Updated Aug 2026). MapQuest lists that location as Closed. The original University City location is Yelp CLOSED (Jul 2026). Left out. | — |
+| De Palm Tree, South City (Jamaica) | 2360 Hampton Ave is The Hill Food Co., a ghost kitchen: online ordering for delivery and pickup only, with no dining room. The reopening article's dates conflict (STL.News says "last updated July 10, 2025"). No 2026 evidence ties De Palm Tree to that kitchen today, and the user's "Casual Sit-Down" style is wrong for a ghost kitchen. Left out. | — |
+| Salsa Rosada (Dominican Republic) | Not a separate business. St. Louis Magazine reported that the owners retired the Salsa Rosada name when Mayo Ketchup moved into its 3135 Olive St space, and the food stayed the same. DoorDash's "salsa-rosada" store URL now shows Mayo Ketchup. Some stale listings (Apple Maps, Wheree May 2026) still show the old name. Salsa Rosada was also Venezuelan/Colombian, not Dominican. | Rebrand |
+
+### Address and name corrections
+
+- **Merendero Las Catrachitas:** Yelp and DoorDash spell it "Merendero **La** Catrachitas". STL Magazine, Tripadvisor and the user use "Las". The user's spelling is kept and the address is correct. Neighborhood is Princeton Heights (Hoodline); STL Mag says only "South City".
+- **Majeed Mediterranean:** older sources (2018 Feast, Hoodline, Tripadvisor, Nextdoor) give **4658 Gravois**. Yelp (Aug 2026), DoorDash, Uber Eats and the restaurant's own ordering site give **4601 Gravois**, the user's address. 4601 is used, with coordinates from the 4601 sources. The Tripadvisor/Nextdoor point (about 38.5826, -90.2651) sits at the old 4658 address and was not used.
+- **Natasha's Gin Room** is listed everywhere as **The Gin Room** (website natashasginroom.com). That name is used. Neighborhood: Tower Grove East, the even-numbered east side of Grand, matching 3210 Meskerem.
+- **John D. McGurk's:** the full name "John D. McGurk's Irish Pub & Garden" is used. Yelp lists it as "McGurk's".
+- **Pat Connolly Tavern:** listed as **The Pat Connolly Tavern**. A local-history source says it is technically in Clayton-Tamm. "Dogtown" is used, following the tavern's own site, Yelp and Feast.
+- **De Palm Tree:** the user's "10086 Page Ave" matches the restaurant's own site, but Yelp and MapQuest say "10986 Page Ave". This is unresolved (see conflicts).
+- **Dining-style corrections:**
+  - Amaizing Arepa Bar: the user had "Casual Sit-Down". It is set to **Fast Casual** because STL Mag and Feast describe it as fast-casual.
+  - Majeed: the user had `$$`. It is kept at `$$`. A 2018 RFT review said nothing cost more than $12, but that is stale.
+
+### Dish handling
+
+**Corroborated by other sources:**
+- McGurk's: corned beef and cabbage (Gayot, Giftly, Alive Magazine).
+- Pat Connolly: fish and chips (Gayot). The user's "Irish Stew" was not found on its menu, so the dish is fish and chips only. The note mentions the fried chicken because every source calls it the house signature, but it is not an Irish dish.
+- Amaizing Arepa Bar: pabellón (Feast lists it as the national dish, with a choice of protein).
+- El Guanaco: the pupusas. STL Mag praises the pork-chicharrón pupusa with heaps of curtido, which is the revuelta-style filling the user named.
+- Guido's: paella (OpenTable, guides) and patatas bravas. The user's gambas al ajillo was not confirmed, so it was dropped.
+- The Gin Room: ghormeh sabzi (Post-Dispatch, May 2026). The user's kashke bademjan and joojeh kabob were not confirmed on the current menu, so the dish was changed.
+- Majeed: mixed shawarma plate (STL Mag calls it a popular choice), plus hummus and falafel (RFT). The user's "Syrian-Style Mixed Grill & Stuffed Grape Leaves" was not confirmed, so the dish was changed.
+- The Scottish Arms: bangers and mash (Yelp reviewers, and the 2025 reopening menu coverage). Haggis fritters appear as a Yelp popular dish and on an older OpenTable menu. Post-reopening coverage does not name haggis, so it is mentioned only as a long-time starter rather than as the headline dish.
+
+**Not independently corroborated (from user research):**
+- **Merendero Las Catrachitas:** baleada sencilla. Reviews mention the tostada de camarón and pupusas. No source names its baleadas, though baleadas are the standard Honduran staple.
+
+### Judgment calls
+
+- **Guido's → Spain.** It is half Italian (pizza, lasagna) and half Spanish (tapas, paella), and it sits on The Hill. It is a certified "Restaurant from Spain" (Foods & Wines from Spain), and the dish chosen is Spanish. Recent Tripadvisor reviews (2026) are mixed. If Spain is added, keep it away from Italy and France on the wheel.
+- **The Gin Room → Iran.** The report above says Café Natasha's closed. That was the restaurant side of 3200 S Grand; Salve Osteria replaced it and then closed on Jan 3. The Gin Room is the gin bar that has operated in the same building since 2014. Hamishe Bahrami, Café Natasha's chef, returned in 2026 to run its kitchen with a Persian menu of "Café Natasha's greatest hits", confirmed by STL Mag, Ladue News and a May 2026 Post-Dispatch review. So it is a distinct, currently operating place that serves Persian food. Yelp files it as Cocktail Bars, and hours are evening-only (Wed–Sun). The user's "Upscale Sit-Down" is kept: it takes reservations through Tock and is a destination cocktail bar.
+- **El Guanaco → El Salvador.** STL Mag says it cooks Salvadoran, Honduran and Mexican food. Yelp's category is Salvadoran and pupusas are its signature, so it fits El Salvador. It was not used for Honduras.
+- **Puerto Rico not created.** The only candidate is Mayo Ketchup, which is already on the wheel under Cuba. Listing the same restaurant under a second country would duplicate it and break unique ids. If the user prefers, Mayo Ketchup could move from Cuba to Puerto Rico, but Cuba would then drop to one restaurant.
+- **Dominican Republic not created.** Salsa Rosada is a retired name for the current Mayo Ketchup location (see conflicts).
+- **Colombia not created.** Neither candidate could be verified as open past today.
+- **Scotland's `isoCode` is `gb-sct`,** the flag-icons subdivision code. The current `schema.ts` regex accepts it, and the Scotland node passes `countryNodeSchema` validation.
+- **Validation:** all 7 pending CountryNodes were parsed against `countryNodeSchema` and pass. Their restaurant ids do not collide with any id in `restaurants.json`.
+- **Suggested wheel slots if added**, chosen to keep similar regions apart:
+  - Venezuela: between Nepal and Turkey.
+  - El Salvador: between Ethiopia and France.
+  - Honduras: between Lebanon and Nepal.
+  - Spain: between Philippines and Brazil.
+  - Syria: between Japan and Italy, away from Lebanon and Turkey.
+  - Iran: between Jamaica and Vietnam, away from Afghanistan.
+  - Scotland: between Thailand and Mexico, away from Ireland.
+  - Re-check adjacency if several are added at once.
+
+## Verified single-restaurant countries (added 2026-10-17 at the user's request)
+
+The user chose to waive the 2-restaurant minimum for these seven, so all are now on the wheel at the suggested slots below. The JSON block is kept as the record of what was added.
+
+Each country below has exactly one verified restaurant. They are not in `restaurants.json`, because a country needs at least 2. Each object is a complete CountryNode that passes `countryNodeSchema`.
+
+```json
+[
+  {
+    "id": "venezuela",
+    "countryName": "Venezuela",
+    "shortName": "Venezuela",
+    "cuisineLabel": "Venezuelan",
+    "isoCode": "ve",
+    "restaurants": [
+      {
+        "id": "amaizing-arepa-bar",
+        "name": "Amaizing Arepa Bar",
+        "address": "500 N 14th St, St. Louis, MO 63103",
+        "neighborhood": "Downtown",
+        "lat": 38.63195,
+        "lng": -90.19947,
+        "diningStyle": "Fast Casual",
+        "priceRange": "$$",
+        "recommendedDish": "Pabellón criollo — Venezuela's national plate of rice, black beans, plantain and cheese with shredded beef (or grab a stuffed arepa)",
+        "website": "https://www.amaizingarepabar.com/",
+        "sourceUrl": "https://www.yelp.com/biz/amaizing-arepa-bar-saint-louis-2",
+        "lastVerified": "2026-10-17"
+      }
+    ]
+  },
+  {
+    "id": "el-salvador",
+    "countryName": "El Salvador",
+    "shortName": "El Salvador",
+    "cuisineLabel": "Salvadoran",
+    "isoCode": "sv",
+    "restaurants": [
+      {
+        "id": "el-guanaco",
+        "name": "El Guanaco Taqueria & Pupuseria",
+        "address": "10633 Page Ave, St. Louis, MO 63132",
+        "neighborhood": "Overland",
+        "lat": 38.692433,
+        "lng": -90.395297,
+        "diningStyle": "Casual Sit-Down",
+        "priceRange": "$",
+        "recommendedDish": "Pupusas revueltas — thick corn pupusas stuffed with pork chicharrón, beans and cheese, served with heaps of curtido",
+        "sourceUrl": "https://www.yelp.com/biz/el-guanaco-st-louis",
+        "lastVerified": "2026-10-17"
+      }
+    ]
+  },
+  {
+    "id": "spain",
+    "countryName": "Spain",
+    "shortName": "Spain",
+    "cuisineLabel": "Spanish",
+    "isoCode": "es",
+    "restaurants": [
+      {
+        "id": "guidos-pizzeria-tapas",
+        "name": "Guido's Pizzeria & Tapas",
+        "address": "5046 Shaw Ave, St. Louis, MO 63110",
+        "neighborhood": "The Hill",
+        "lat": 38.617577,
+        "lng": -90.270424,
+        "diningStyle": "Casual Sit-Down",
+        "priceRange": "$$",
+        "recommendedDish": "Paella — the house specialty, with tapas like patatas bravas and a pitcher of homemade sangria",
+        "sourceUrl": "https://www.opentable.com/guidos-pizza-and-tapas",
+        "lastVerified": "2026-10-17"
+      }
+    ]
+  },
+  {
+    "id": "honduras",
+    "countryName": "Honduras",
+    "shortName": "Honduras",
+    "cuisineLabel": "Honduran",
+    "isoCode": "hn",
+    "restaurants": [
+      {
+        "id": "merendero-las-catrachitas",
+        "name": "Merendero Las Catrachitas",
+        "address": "5639 S Kingshighway Blvd, St. Louis, MO 63109",
+        "neighborhood": "Princeton Heights",
+        "lat": 38.578724,
+        "lng": -90.28222,
+        "diningStyle": "Casual Sit-Down",
+        "priceRange": "$",
+        "recommendedDish": "Baleada sencilla — a thick flour tortilla folded over refried beans, crema and cheese (from user research)",
+        "sourceUrl": "https://www.yelp.com/biz/merendero-la-catrachitas-st-louis",
+        "lastVerified": "2026-10-17"
+      }
+    ]
+  },
+  {
+    "id": "syria",
+    "countryName": "Syria",
+    "shortName": "Syria",
+    "cuisineLabel": "Syrian",
+    "isoCode": "sy",
+    "restaurants": [
+      {
+        "id": "majeed-mediterranean",
+        "name": "Majeed Mediterranean Restaurant",
+        "address": "4601 Gravois Ave, St. Louis, MO 63116",
+        "neighborhood": "Bevo Mill",
+        "lat": 38.5838769,
+        "lng": -90.2643149,
+        "diningStyle": "Casual Sit-Down",
+        "priceRange": "$$",
+        "recommendedDish": "Mixed shawarma plate — halal Syrian family recipes from refugee brothers; the hummus and falafel are standouts too",
+        "website": "https://majeedmediterraneanrestaurant.com/",
+        "sourceUrl": "https://www.yelp.com/biz/majeed-mediterranean-st-louis",
+        "lastVerified": "2026-10-17"
+      }
+    ]
+  },
+  {
+    "id": "iran",
+    "countryName": "Iran",
+    "shortName": "Iran",
+    "cuisineLabel": "Persian",
+    "isoCode": "ir",
+    "restaurants": [
+      {
+        "id": "the-gin-room",
+        "name": "The Gin Room",
+        "address": "3200 S Grand Blvd, St. Louis, MO 63118",
+        "neighborhood": "Tower Grove East",
+        "lat": 38.59896,
+        "lng": -90.24266,
+        "diningStyle": "Upscale Sit-Down",
+        "priceRange": "$$",
+        "recommendedDish": "Ghormeh sabzi — Hamishe Bahrami's herb-and-kidney-bean stew, one of the Café Natasha classics now served at the gin bar",
+        "website": "https://www.natashasginroom.com/",
+        "sourceUrl": "https://www.yelp.com/biz/the-gin-room-saint-louis",
+        "lastVerified": "2026-10-17"
+      }
+    ]
+  },
+  {
+    "id": "scotland",
+    "countryName": "Scotland",
+    "shortName": "Scotland",
+    "cuisineLabel": "Scottish",
+    "isoCode": "gb-sct",
+    "restaurants": [
+      {
+        "id": "the-scottish-arms",
+        "name": "The Scottish Arms",
+        "address": "8 S Sarah St, St. Louis, MO 63108",
+        "neighborhood": "Central West End",
+        "lat": 38.636715,
+        "lng": -90.246637,
+        "diningStyle": "Casual Sit-Down",
+        "priceRange": "$$",
+        "recommendedDish": "Bangers and mash — a reviewer favorite carried through the 2025 reopening; haggis fritters have long been a popular starter",
+        "website": "http://www.thescottisharms.com/",
+        "sourceUrl": "https://www.yelp.com/biz/the-scottish-arms-saint-louis-2",
+        "lastVerified": "2026-10-17"
+      }
+    ]
+  }
+]
+```

@@ -19,7 +19,7 @@ npm run build
 | Path | What |
 | --- | --- |
 | `src/types/wheel.ts`, `src/data/schema.ts` | Data contract + matching zod schema |
-| `src/data/restaurants.json` | Verified dataset — 24 countries, 72 restaurants (verified 2026-10-17) |
+| `src/data/restaurants.json` | Verified dataset — 32 countries, 81 restaurants (verified 2026-10-17) |
 | `src/data/data-report.md` | Sources, every dropped candidate and why, judgment calls |
 | `src/store/wheelStore.ts` | zustand store (filters, eliminations, persistence, spin phase) |
 | `src/lib/wheelMath.ts` | Pure wheel math; the winner is chosen first, then animated to |

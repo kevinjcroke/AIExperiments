@@ -126,6 +126,29 @@
       ]
     },
     {
+      "id": "scotland",
+      "countryName": "Scotland",
+      "shortName": "Scotland",
+      "cuisineLabel": "Scottish",
+      "isoCode": "gb-sct",
+      "restaurants": [
+        {
+          "id": "the-scottish-arms",
+          "name": "The Scottish Arms",
+          "address": "8 S Sarah St, St. Louis, MO 63108",
+          "neighborhood": "Central West End",
+          "lat": 38.636715,
+          "lng": -90.246637,
+          "diningStyle": "Casual Sit-Down",
+          "priceRange": "$$",
+          "recommendedDish": "Bangers and mash — a reviewer favorite carried through the 2025 reopening; haggis fritters have long been a popular starter",
+          "website": "http://www.thescottisharms.com/",
+          "sourceUrl": "https://www.yelp.com/biz/the-scottish-arms-saint-louis-2",
+          "lastVerified": "2026-10-17"
+        }
+      ]
+    },
+    {
       "id": "mexico",
       "countryName": "Mexico",
       "shortName": "Mexico",
@@ -239,6 +262,28 @@
       ]
     },
     {
+      "id": "el-salvador",
+      "countryName": "El Salvador",
+      "shortName": "El Salvador",
+      "cuisineLabel": "Salvadoran",
+      "isoCode": "sv",
+      "restaurants": [
+        {
+          "id": "el-guanaco",
+          "name": "El Guanaco Taqueria & Pupuseria",
+          "address": "10633 Page Ave, St. Louis, MO 63132",
+          "neighborhood": "Overland",
+          "lat": 38.692433,
+          "lng": -90.395297,
+          "diningStyle": "Casual Sit-Down",
+          "priceRange": "$",
+          "recommendedDish": "Pupusas revueltas — thick corn pupusas stuffed with pork chicharrón, beans and cheese, served with heaps of curtido",
+          "sourceUrl": "https://www.yelp.com/biz/el-guanaco-st-louis",
+          "lastVerified": "2026-10-17"
+        }
+      ]
+    },
+    {
       "id": "france",
       "countryName": "France",
       "shortName": "France",
@@ -322,6 +367,29 @@
           "recommendedDish": "Isaan hamachi — chef Nick Bognar's signature yellowtail with coconut naam pla, Thai kosho and candied garlic",
           "website": "https://www.indo-stl.com",
           "sourceUrl": "https://www.yelp.com/biz/indo-st-louis",
+          "lastVerified": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "syria",
+      "countryName": "Syria",
+      "shortName": "Syria",
+      "cuisineLabel": "Syrian",
+      "isoCode": "sy",
+      "restaurants": [
+        {
+          "id": "majeed-mediterranean",
+          "name": "Majeed Mediterranean Restaurant",
+          "address": "4601 Gravois Ave, St. Louis, MO 63116",
+          "neighborhood": "Bevo Mill",
+          "lat": 38.5838769,
+          "lng": -90.2643149,
+          "diningStyle": "Casual Sit-Down",
+          "priceRange": "$$",
+          "recommendedDish": "Mixed shawarma plate — halal Syrian family recipes from refugee brothers; the hummus and falafel are standouts too",
+          "website": "https://majeedmediterraneanrestaurant.com/",
+          "sourceUrl": "https://www.yelp.com/biz/majeed-mediterranean-st-louis",
           "lastVerified": "2026-10-17"
         }
       ]
@@ -494,6 +562,28 @@
           "recommendedDish": "Piyanggang chicken — smoked chicken in burnt-coconut sauce; save room for the ube banana pudding",
           "website": "https://thefattenedcaf.com",
           "sourceUrl": "https://www.yelp.com/biz/the-fattened-caf-st-louis",
+          "lastVerified": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "spain",
+      "countryName": "Spain",
+      "shortName": "Spain",
+      "cuisineLabel": "Spanish",
+      "isoCode": "es",
+      "restaurants": [
+        {
+          "id": "guidos-pizzeria-tapas",
+          "name": "Guido's Pizzeria & Tapas",
+          "address": "5046 Shaw Ave, St. Louis, MO 63110",
+          "neighborhood": "The Hill",
+          "lat": 38.617577,
+          "lng": -90.270424,
+          "diningStyle": "Casual Sit-Down",
+          "priceRange": "$$",
+          "recommendedDish": "Paella — the house specialty, with tapas like patatas bravas and a pitcher of homemade sangria",
+          "sourceUrl": "https://www.opentable.com/guidos-pizza-and-tapas",
           "lastVerified": "2026-10-17"
         }
       ]
@@ -680,6 +770,29 @@
           "recommendedDish": "Jerk chicken and rib tips — the Jamaican-meets-BBQ customer favorites, served cafeteria-style",
           "website": "https://mihungryjamaicastl.com",
           "sourceUrl": "https://www.yelp.com/biz/mi-hungry-bbq-and-jamaican-cuisine-saint-louis",
+          "lastVerified": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "iran",
+      "countryName": "Iran",
+      "shortName": "Iran",
+      "cuisineLabel": "Persian",
+      "isoCode": "ir",
+      "restaurants": [
+        {
+          "id": "the-gin-room",
+          "name": "The Gin Room",
+          "address": "3200 S Grand Blvd, St. Louis, MO 63118",
+          "neighborhood": "Tower Grove East",
+          "lat": 38.59896,
+          "lng": -90.24266,
+          "diningStyle": "Upscale Sit-Down",
+          "priceRange": "$$",
+          "recommendedDish": "Ghormeh sabzi — Hamishe Bahrami's herb-and-kidney-bean stew, one of the Café Natasha classics now served at the gin bar",
+          "website": "https://www.natashasginroom.com/",
+          "sourceUrl": "https://www.yelp.com/biz/the-gin-room-saint-louis",
           "lastVerified": "2026-10-17"
         }
       ]
@@ -976,6 +1089,43 @@
       ]
     },
     {
+      "id": "ireland",
+      "countryName": "Ireland",
+      "shortName": "Ireland",
+      "cuisineLabel": "Irish",
+      "isoCode": "ie",
+      "restaurants": [
+        {
+          "id": "john-d-mcgurks",
+          "name": "John D. McGurk's Irish Pub & Garden",
+          "address": "1200 Russell Blvd, St. Louis, MO 63104",
+          "neighborhood": "Soulard",
+          "lat": 38.607635,
+          "lng": -90.20995,
+          "diningStyle": "Casual Sit-Down",
+          "priceRange": "$$",
+          "recommendedDish": "Corned beef and cabbage — the hearty pub classic, best with live Irish music in the garden",
+          "website": "https://mcgurks.com/",
+          "sourceUrl": "https://www.yelp.com/biz/mcgurks-saint-louis",
+          "lastVerified": "2026-10-17"
+        },
+        {
+          "id": "pat-connolly-tavern",
+          "name": "The Pat Connolly Tavern",
+          "address": "6400 Oakland Ave, St. Louis, MO 63139",
+          "neighborhood": "Dogtown",
+          "lat": 38.631482,
+          "lng": -90.292608,
+          "diningStyle": "Casual Sit-Down",
+          "priceRange": "$$",
+          "recommendedDish": "Fish and chips — a pub staple at this 1942 Irish tavern across from Forest Park (the fried chicken is the house legend)",
+          "website": "https://www.patconnollytavern.com/",
+          "sourceUrl": "https://www.yelp.com/biz/the-pat-connolly-tavern-st-louis-2",
+          "lastVerified": "2026-10-17"
+        }
+      ]
+    },
+    {
       "id": "nigeria",
       "countryName": "Nigeria",
       "shortName": "Nigeria",
@@ -1048,6 +1198,28 @@
       ]
     },
     {
+      "id": "honduras",
+      "countryName": "Honduras",
+      "shortName": "Honduras",
+      "cuisineLabel": "Honduran",
+      "isoCode": "hn",
+      "restaurants": [
+        {
+          "id": "merendero-las-catrachitas",
+          "name": "Merendero Las Catrachitas",
+          "address": "5639 S Kingshighway Blvd, St. Louis, MO 63109",
+          "neighborhood": "Princeton Heights",
+          "lat": 38.578724,
+          "lng": -90.28222,
+          "diningStyle": "Casual Sit-Down",
+          "priceRange": "$",
+          "recommendedDish": "Baleada sencilla — a thick flour tortilla folded over refried beans, crema and cheese (from user research)",
+          "sourceUrl": "https://www.yelp.com/biz/merendero-la-catrachitas-st-louis",
+          "lastVerified": "2026-10-17"
+        }
+      ]
+    },
+    {
       "id": "nepal",
       "countryName": "Nepal",
       "shortName": "Nepal",
@@ -1094,6 +1266,29 @@
           "recommendedDish": "Momos — several Nepali dumpling varieties alongside the curries",
           "website": "https://namastecurrylounge.com",
           "sourceUrl": "https://www.yelp.com/biz/namaste-restaurant-and-bar-st-louis-2",
+          "lastVerified": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "venezuela",
+      "countryName": "Venezuela",
+      "shortName": "Venezuela",
+      "cuisineLabel": "Venezuelan",
+      "isoCode": "ve",
+      "restaurants": [
+        {
+          "id": "amaizing-arepa-bar",
+          "name": "Amaizing Arepa Bar",
+          "address": "500 N 14th St, St. Louis, MO 63103",
+          "neighborhood": "Downtown",
+          "lat": 38.63195,
+          "lng": -90.19947,
+          "diningStyle": "Fast Casual",
+          "priceRange": "$$",
+          "recommendedDish": "Pabellón criollo — Venezuela's national plate of rice, black beans, plantain and cheese with shredded beef (or grab a stuffed arepa)",
+          "website": "https://www.amaizingarepabar.com/",
+          "sourceUrl": "https://www.yelp.com/biz/amaizing-arepa-bar-saint-louis-2",
           "lastVerified": "2026-10-17"
         }
       ]
