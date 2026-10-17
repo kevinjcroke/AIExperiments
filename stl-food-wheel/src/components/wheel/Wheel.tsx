@@ -34,8 +34,8 @@ import {
   WHEEL_R,
 } from "./constants";
 import { WEDGE_COLORS, wedgeColorIndices } from "./palette";
-import { LABEL_Z, fitCamera, fitMeasuredText, flagLayout, textLayout, type TextLayout } from "./layout";
-import outfitBold from "./fonts/Outfit-Bold.ttf?url";
+import { LABEL_Z, fitCamera, flagLayout, textLayout, type TextLayout } from "./layout";
+import { LABEL_FONT_URL, LABEL_LETTER_SPACING, useLabelMeasure } from "./labelFont";
 import { createFlapperGeometry, createWedgeGeometry } from "./geometry";
 import { Marquee } from "./Marquee";
 
@@ -131,7 +131,8 @@ export function Wheel() {
           roughness: 0.3,
           metalness: 0.05,
           clearcoat: 1,
-          clearcoatRoughness: 0.06,
+          clearcoatRoughness: 0.12,
+          envMapIntensity: 0.55,
         });
       }),
     [n],
@@ -177,10 +178,12 @@ export function Wheel() {
     });
     const flapperGeo = createFlapperGeometry();
     const flapperMat = new THREE.MeshPhysicalMaterial({
-      color: "#ef4444",
-      roughness: 0.25,
-      clearcoat: 1,
-      clearcoatRoughness: 0.05,
+      color: "#c81414",
+      roughness: 0.45,
+      metalness: 0,
+      clearcoat: 0.5,
+      clearcoatRoughness: 0.3,
+      envMapIntensity: 0.4,
     });
     return { flagPlane, pegGeo, pegCapGeo, chrome, gold, flapperGeo, flapperMat };
   }, []);
@@ -194,9 +197,10 @@ export function Wheel() {
   // ---------- label layout ----------
   const theta = sliceAngle(n);
   const flag = useMemo(() => flagLayout(n, desktop), [n, desktop]);
+  const measure = useLabelMeasure();
   const labels = useMemo(
-    () => countries.map((c) => (desktop ? textLayout(c.shortName, n, flag) : null)),
-    [countries, desktop, n, flag],
+    () => countries.map((c) => (desktop ? textLayout(c.shortName, n, flag, measure) : null)),
+    [countries, desktop, n, flag, measure],
   );
 
   const cam = useMemo(() => fitCamera(size.width, size.height), [size.width, size.height]);
@@ -421,9 +425,6 @@ export function Wheel() {
 
       {/* Pointer / flapper at 12 o'clock (static; pivots when pegs pass). */}
       <group position={[0, FLAPPER_PIVOT_Y, FLAPPER_Z]}>
-        <mesh position={[0, 0.16, -0.18]} material={shared.gold}>
-          <boxGeometry args={[0.16, 0.3, 0.2]} />
-        </mesh>
         <group ref={flapperRef}>
           <mesh geometry={shared.flapperGeo} material={shared.flapperMat} />
         </group>
@@ -467,7 +468,7 @@ export function Wheel() {
                 />
                 {label && (
                   <Suspense fallback={null}>
-                    <LabelText text={c.shortName} layout={label} n={n} />
+                    <LabelText text={c.shortName} layout={label} />
                   </Suspense>
                 )}
               </group>
@@ -504,36 +505,23 @@ export function Wheel() {
   );
 }
 
-/**
- * Radial country name. Size comes from an estimate (layout.ts); once troika has laid the
- * glyphs out we measure the real width and shrink — or hide (flag-only) — if it overflows.
- */
-function LabelText({ text, layout, n }: { text: string; layout: TextLayout; n: number }) {
-  const onSync = (mesh: THREE.Mesh & { textRenderInfo?: { blockBounds?: number[] } }) => {
-    const b = mesh.textRenderInfo?.blockBounds;
-    if (!b || b.length < 4) return;
-    const s = fitMeasuredText((b[2]! - b[0]!), layout, n);
-    console.warn("SYNC", text, b.join(","), s);
-    // mesh.visible = s > 0;
-    // if (s > 0) mesh.scale.setScalar(s);
-  };
+/** Radial country name (size pre-fitted in layout.ts using real font metrics once loaded). */
+function LabelText({ text, layout }: { text: string; layout: TextLayout }) {
   return (
     <Text
-      font={outfitBold}
+      font={LABEL_FONT_URL}
       position={[layout.rEnd, 0, LABEL_Z + 0.002]}
       fontSize={layout.fontSize}
       maxWidth={layout.maxWidth}
       whiteSpace="nowrap"
       anchorX="right"
       anchorY="middle"
-      letterSpacing={0.02}
+      letterSpacing={LABEL_LETTER_SPACING}
       color="#ffffff"
       outlineWidth="10%"
       outlineColor="#0f172a"
       outlineOpacity={0.8}
-      // outlineBlur="4%"
       raycast={noRaycast}
-      // onSync={onSync}
     >
       {text}
     </Text>

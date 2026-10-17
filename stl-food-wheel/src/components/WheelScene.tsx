@@ -33,6 +33,7 @@ function RoomEnv() {
     pmrem.dispose();
     scene.environment = rt.texture;
     scene.environmentIntensity = 0.4;
+    scene.environmentRotation.set(0.5, 0.4, 0);
     return () => {
       scene.environment = null;
       rt.dispose();
@@ -87,9 +88,8 @@ export default function WheelScene() {
       <color attach="background" args={["#020617"]} />
       <RoomEnv />
       <ambientLight intensity={0.35} />
-      <directionalLight position={[-3, 4, 8]} intensity={2.2} />
+      <directionalLight position={[-3, 4, 8]} intensity={1.7} color="#fffaf0" />
       <directionalLight position={[4, -3, 5]} intensity={0.6} color="#bfdbfe" />
-      <pointLight position={[0, 3.2, 2.5]} intensity={6} distance={8} color="#fff7e6" />
       <Backdrop />
       <Wheel />
       <DebugHooks />

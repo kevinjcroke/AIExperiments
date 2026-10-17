@@ -55,12 +55,18 @@ export function estimateEm(text: string): number {
 }
 
 /** Fit `label` radially between the hub and the flag; null → render flag-only. */
-export function textLayout(label: string, n: number, flag: FlagLayout): TextLayout | null {
+export function textLayout(
+  label: string,
+  n: number,
+  flag: FlagLayout,
+  measureEm: ((text: string) => number) | null = null,
+): TextLayout | null {
   const rEnd = flag.r - (0.75 * flag.w) / 2 - 0.07;
   const rMin = HUB_R + 0.1;
   const avail = rEnd - rMin;
   if (avail <= 0) return null;
-  const em = estimateEm(label) * 1.08; // safety margin
+  // Real font metrics when available (labelFont.ts), else a conservative estimate.
+  const em = measureEm ? measureEm(label) * 1.03 : estimateEm(label) * 1.08;
   for (let fs = FONT_MAX; fs >= FONT_MIN - 1e-9; fs -= 0.005) {
     const len = em * fs;
     if (len > avail) continue;
@@ -72,21 +78,6 @@ export function textLayout(label: string, n: number, flag: FlagLayout): TextLayo
 }
 
 export const LABEL_Z = FRONT_Z + 0.004;
-
-/**
- * Given a measured text width (world units, at scale 1), returns the scale that keeps the
- * label between the hub and the flag and inside the wedge; 0 means "render flag-only".
- */
-export function fitMeasuredText(width: number, layout: TextLayout, n: number): number {
-  const avail = layout.rEnd - layout.rMin;
-  let s = width > avail ? avail / width : 1;
-  for (let k = 0; k < 30; k++) {
-    if (layout.fontSize * s < FONT_MIN - 1e-6) return 0;
-    if (layout.fontSize * s <= wedgeWidthAt(layout.rEnd - width * s, n) * 0.8) return s;
-    s *= 0.95;
-  }
-  return 0;
-}
 
 /** HUD chrome that overlaps the stage (readout pill on top, Spin button / sheet below), in px. */
 export function stageInsets(width: number, height: number): { top: number; bottom: number } {
