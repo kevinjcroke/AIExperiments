@@ -25,7 +25,7 @@ export function PointerReadout({ top }: { top: number }) {
       <div
         className={[
           "flex max-w-full items-center gap-2.5 rounded-full py-2 pl-2.5 pr-4",
-          "bg-slate-950/85 shadow-lg shadow-black/40 ring-1 backdrop-blur-md transition-[box-shadow,ring-color]",
+          "bg-slate-950/90 shadow-lg shadow-black/40 ring-1 md:backdrop-blur-md transition-[box-shadow,ring-color]",
           spinning ? "ring-amber-300/70" : "ring-white/15",
         ].join(" ")}
       >

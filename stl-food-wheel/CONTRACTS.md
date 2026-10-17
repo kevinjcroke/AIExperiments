@@ -18,6 +18,7 @@ Shared files — **do not edit in Phase 2**; report back if a change is needed:
 - `requestSpin()` sets `phase: "spinning"`, clears `selectedId`, increments `spinRequestId` (no-op while spinning or with 0 active countries).
 - WheelScene reacts to `spinRequestId`, and on completion calls `setPhase("settled")` then `select(winnerId)`.
 - `select(id)` ignores ids not on the wheel. `eliminate` / `setFilters` null out `selectedId` / `pointerId` that fall off the wheel.
+- `stageCovered` / `setStageCovered`: HudOverlay reports when the mobile sheet fully covers the wheel; WheelScene pauses rendering then (except mid-spin).
 - `setFilters`, `eliminate`, `restore`, `resetEliminated` are ignored while spinning (wedge count is frozen mid-spin).
 
 ## Component props

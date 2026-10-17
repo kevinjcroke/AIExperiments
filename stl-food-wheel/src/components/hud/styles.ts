@@ -9,6 +9,8 @@ export const FOCUS_RING =
  */
 export const READOUT_TOP_PX = { desktop: 20, mobile: 64 } as const;
 
-export const GLASS = "backdrop-blur-md bg-slate-900/80";
+// No backdrop blur below md: the mobile sheet sits over the WebGL canvas, and re-blurring it every frame
+// is expensive enough to stall phone compositors.
+export const GLASS = "bg-slate-900/95 md:bg-slate-900/80 md:backdrop-blur-md";
 
 export const SR_ONLY = "sr-only";

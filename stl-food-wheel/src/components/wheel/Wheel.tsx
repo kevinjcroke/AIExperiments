@@ -361,7 +361,7 @@ export function Wheel() {
         const vw = window.innerWidth || 1;
         const vh = window.innerHeight || 1;
         void confetti({
-          particleCount: 140,
+          particleCount: window.innerWidth < 768 ? 70 : 140,
           spread: 80,
           startVelocity: 42,
           ticks: 220,

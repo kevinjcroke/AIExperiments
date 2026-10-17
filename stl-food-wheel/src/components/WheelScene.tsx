@@ -3,6 +3,7 @@ import * as THREE from "three";
 import { Canvas, useThree } from "@react-three/fiber";
 import { RoomEnvironment } from "three/examples/jsm/environments/RoomEnvironment.js";
 import { useWheelStore } from "../store/wheelStore";
+import { useIsDesktop } from "../lib/useMediaQuery";
 import { debugState, isDebug } from "../lib/debug";
 import { CAMERA_FOV } from "./wheel/constants";
 import { fitCamera } from "./wheel/layout";
@@ -78,10 +79,15 @@ function DebugHooks() {
  */
 export default function WheelScene() {
   const initial = fitCamera(1280, 800);
+  const isDesktop = useIsDesktop();
+  // Pause when the HUD covers the wheel, but never mid-spin (the spin must settle on time).
+  const paused = useWheelStore((s) => s.stageCovered && s.phase !== "spinning");
   return (
     <Canvas
       className="h-full w-full"
-      dpr={[1, 2]}
+      // Phones have ~3x screens; 1.5x keeps the wheel crisp at well under half the pixels of 2x+.
+      dpr={[1, isDesktop ? 2 : 1.5]}
+      frameloop={paused ? "never" : "always"}
       camera={{ fov: CAMERA_FOV, near: 0.1, far: 100, position: [0, initial.centerY, initial.distance] }}
       gl={{ antialias: true, powerPreference: "high-performance", toneMapping: THREE.NeutralToneMapping }}
     >

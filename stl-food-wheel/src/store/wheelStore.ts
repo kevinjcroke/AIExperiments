@@ -17,6 +17,7 @@ export interface WheelState {
   selectedId: string | null; // country shown in drawer
   pointerId: string | null; // country currently under the pointer (live readout)
   spinRequestId: number; // increments to request a spin
+  stageCovered: boolean; // HUD fully covers the wheel (mobile sheet at "full"): WheelScene may pause rendering
 
   // derived (selector, not stored): activeCountries — see selectActiveCountries
   requestSpin(): void; // no-op unless phase !== "spinning" and activeCountries.length > 0
@@ -28,6 +29,7 @@ export interface WheelState {
   resetEliminated(): void;
   setFilters(f: Partial<Filters>): void; // ignored while spinning
   toggleMute(): void;
+  setStageCovered(covered: boolean): void;
 }
 
 export const STORAGE_KEYS = {
@@ -135,6 +137,7 @@ export function createWheelStore(
       selectedId: null,
       pointerId: null,
       spinRequestId: 0,
+      stageCovered: false,
 
       requestSpin() {
         const s = get();
@@ -184,6 +187,10 @@ export function createWheelStore(
         const s = get();
         if (s.phase === "spinning") return;
         set(reconcile({ filters: { ...s.filters, ...f } }));
+      },
+
+      setStageCovered(stageCovered) {
+        if (get().stageCovered !== stageCovered) set({ stageCovered });
       },
 
       toggleMute() {

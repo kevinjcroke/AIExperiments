@@ -56,6 +56,9 @@ export function HudOverlay({ stage }: HudOverlayProps) {
   const returnFocus = useRef<Element | null>(null);
 
   const [snap, setSnap] = useState<Snap>("peek");
+  const setStageCovered = useWheelStore((s) => s.setStageCovered);
+  // Lets WheelScene stop rendering while the full-height sheet hides it (saves the phone's GPU).
+  useEffect(() => setStageCovered(!isDesktop && snap === "full"), [isDesktop, snap, setStageCovered]);
   const [toast, setToast] = useState<ToastState | null>(null);
 
   const modal = !isDesktop && !!country && snap !== "peek";

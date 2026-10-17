@@ -13,16 +13,17 @@ body {
   overscroll-behavior: none;
 }
 
-/* flag-icons base rules (4x3). Per-flag background-image is set inline by <FlagIcon>. */
+/* flag-icons base rules (4x3). Per-flag background-image is set inline by <FlagIcon>.
+   Explicit height instead of flag-icons' NBSP ::before trick, which minifies to a raw
+   NBSP and collapses to 0 px if it is ever swapped for a plain space. */
 .fi {
   position: relative;
   display: inline-block;
   width: 1.333333em;
+  height: 1em;
   line-height: 1em;
+  vertical-align: middle;
   background-size: contain;
   background-position: 50%;
   background-repeat: no-repeat;
-}
-.fi::before {
-  content: " ";
 }
