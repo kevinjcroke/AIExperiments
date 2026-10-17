@@ -9,6 +9,7 @@ export function EliminatedList() {
   const dataset = useWheelStore((s) => s.dataset);
   const restore = useWheelStore((s) => s.restore);
   const resetEliminated = useWheelStore((s) => s.resetEliminated);
+  const spinning = useWheelStore((s) => s.phase === "spinning");
   const [confirming, setConfirming] = useState(false);
   const eliminated = dataset.countries.filter((c) => eliminatedIds.includes(c.id));
 
@@ -31,9 +32,10 @@ export function EliminatedList() {
               <button
                 type="button"
                 onClick={() => restore(c.id)}
+                disabled={spinning}
                 aria-label={`Put ${c.countryName} back on the wheel`}
                 title="Put back on the wheel"
-                className={`group flex min-h-9 items-center gap-2 rounded-full bg-emerald-400/10 py-1.5 pl-2 pr-3 text-sm font-semibold text-emerald-100 ring-1 ring-emerald-300/30 transition hover:bg-emerald-400/20 ${FOCUS_RING}`}
+                className={`group flex min-h-9 items-center gap-2 rounded-full bg-emerald-400/10 py-1.5 pl-2 pr-3 text-sm font-semibold text-emerald-100 ring-1 ring-emerald-300/30 transition hover:bg-emerald-400/20 disabled:cursor-not-allowed disabled:opacity-50 ${FOCUS_RING}`}
               >
                 <FlagIcon code={c.isoCode} className="text-base" />
                 <span>{c.shortName}</span>
@@ -71,7 +73,8 @@ export function EliminatedList() {
           <button
             type="button"
             onClick={() => setConfirming(true)}
-            className={`flex items-center gap-2 rounded-full px-3 py-1.5 text-sm font-semibold text-slate-200 ring-1 ring-white/15 hover:bg-white/10 hover:text-slate-50 ${FOCUS_RING}`}
+            disabled={spinning}
+            className={`flex items-center gap-2 rounded-full px-3 py-1.5 text-sm font-semibold text-slate-200 ring-1 ring-white/15 hover:bg-white/10 hover:text-slate-50 disabled:cursor-not-allowed disabled:opacity-50 ${FOCUS_RING}`}
           >
             <RotateCcw className="size-4" aria-hidden />
             Reset wheel

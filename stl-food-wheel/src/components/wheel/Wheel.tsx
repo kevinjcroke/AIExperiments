@@ -53,6 +53,7 @@ type Anim =
     }
   | {
       kind: "wobble";
+      from: number;
       base: number;
       duration: number;
       start: number;
@@ -221,7 +222,9 @@ export function Wheel() {
         const only = list[0]!;
         anim.current = {
           kind: "wobble",
-          base: rot.current,
+          from: rot.current,
+          // Single full disc: settle with its flag/name centred under the pointer.
+          base: nearestRotationFor(rot.current, 0, 1),
           duration: reduced ? 250 : 750,
           start: -1,
           winnerIndex: 0,
@@ -289,7 +292,11 @@ export function Wheel() {
       const t = Math.min(1, (now - a.start) / a.duration);
       if (a.kind === "spin") r = a.from + (a.to - a.from) * easeOutQuart(t);
       else if (a.kind === "nudge") r = a.from + (a.to - a.from) * easeOutCubic(t);
-      else r = a.base + (a.reduced ? 0 : 0.16 * Math.sin(t * Math.PI * 5) * (1 - t) * (1 - t));
+      else
+        r =
+          a.from +
+          (a.base - a.from) * easeOutCubic(t) +
+          (a.reduced ? 0 : 0.16 * Math.sin(t * Math.PI * 5) * (1 - t) * (1 - t));
       if (t >= 1) {
         r = a.kind === "wobble" ? a.base : a.to;
         finished = a;

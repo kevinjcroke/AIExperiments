@@ -13,7 +13,21 @@ import { FOCUS_RING, GLASS } from "./styles";
 
 export type Snap = "peek" | "half" | "full";
 
-export const SHEET_PEEK_PX = 108;
+/** iPhone home-indicator inset, read once (env() is only resolvable via computed style). */
+function safeAreaBottomPx(): number {
+  try {
+    const probe = document.createElement("div");
+    probe.style.cssText = "position:fixed;visibility:hidden;padding-bottom:env(safe-area-inset-bottom)";
+    document.body.appendChild(probe);
+    const px = parseFloat(getComputedStyle(probe).paddingBottom) || 0;
+    probe.remove();
+    return px;
+  } catch {
+    return 0;
+  }
+}
+
+export const SHEET_PEEK_PX = 108 + safeAreaBottomPx();
 export const MOBILE_HEADER_PX = 56;
 
 export function sheetMetrics(vh: number) {

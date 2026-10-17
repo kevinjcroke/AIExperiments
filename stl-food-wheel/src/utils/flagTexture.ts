@@ -1,4 +1,5 @@
 import * as THREE from "three";
+import { flagUrl } from "./flagUrls";
 
 /**
  * flag-icons 4x3 SVG → cached CanvasTexture (rounded corners baked into alpha).
@@ -8,14 +9,8 @@ import * as THREE from "three";
  * Textures are cached per ISO code for the lifetime of the app — callers must not
  * dispose them (use `disposeFlagTextures` only for full teardown).
  *
- * The glob is lazy, so only the flags that are actually requested are fetched
- * (each flag becomes its own emitted asset URL in the build).
+ * Only the flags actually requested are fetched (each flag is its own emitted asset).
  */
-const flagUrls = import.meta.glob<string>("/node_modules/flag-icons/flags/4x3/*.svg", {
-  query: "?url",
-  import: "default",
-});
-
 const W = 256;
 const H = 192;
 const RADIUS = 22;
@@ -60,14 +55,13 @@ function drawFlag(ctx: CanvasRenderingContext2D, img: HTMLImageElement) {
 }
 
 async function load(isoCode: string, canvas: HTMLCanvasElement, tex: THREE.CanvasTexture) {
-  const loader = flagUrls[`/node_modules/flag-icons/flags/4x3/${isoCode}.svg`];
-  if (!loader) {
+  const url = flagUrl(isoCode);
+  if (!url) {
     console.warn(`[flagTexture] no flag for ISO code "${isoCode}"`);
     return;
   }
   let blobUrl: string | null = null;
   try {
-    const url = await loader();
     // flag-icons SVGs only carry a viewBox; without explicit width/height some
     // browsers rasterise them at 300x150 (letterboxed) or refuse to draw them.
     const svg = await (await fetch(url)).text();

@@ -54,6 +54,19 @@ describe("wheelStore", () => {
     expect(st.getState().spinRequestId).toBe(1);
   });
 
+  it("eliminate / restore / reset are ignored while spinning", () => {
+    const st = createWheelStore(ds, memStorage());
+    st.getState().eliminate("ethiopia");
+    st.getState().requestSpin();
+    st.getState().eliminate("bosnia");
+    st.getState().restore("ethiopia");
+    st.getState().resetEliminated();
+    expect(st.getState().eliminatedIds).toEqual(["ethiopia"]);
+    st.getState().setPhase("settled");
+    st.getState().restore("ethiopia");
+    expect(st.getState().eliminatedIds).toEqual([]);
+  });
+
   it("persists eliminated + muted and drops unknown IDs on load", () => {
     const storage = memStorage({ [STORAGE_KEYS.eliminated]: JSON.stringify(["ethiopia", "atlantis", 3]) });
     const st = createWheelStore(ds, storage);

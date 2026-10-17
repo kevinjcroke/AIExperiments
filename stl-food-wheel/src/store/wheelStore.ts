@@ -23,8 +23,8 @@ export interface WheelState {
   setPhase(p: WheelState["phase"]): void;
   setPointerId(id: string | null): void;
   select(id: string | null): void;
-  eliminate(id: string): void;
-  restore(id: string): void;
+  eliminate(id: string): void; // eliminate/restore/reset are ignored while spinning
+  restore(id: string): void;  //   (the wedge count must not change mid-spin)
   resetEliminated(): void;
   setFilters(f: Partial<Filters>): void; // ignored while spinning
   toggleMute(): void;
@@ -159,7 +159,7 @@ export function createWheelStore(
 
       eliminate(id) {
         const s = get();
-        if (!knownIds.has(id) || s.eliminatedIds.includes(id)) return;
+        if (s.phase === "spinning" || !knownIds.has(id) || s.eliminatedIds.includes(id)) return;
         const next = [...s.eliminatedIds, id];
         writeJSON(storage, STORAGE_KEYS.eliminated, next);
         set(reconcile({ eliminatedIds: next }));
@@ -167,14 +167,15 @@ export function createWheelStore(
 
       restore(id) {
         const s = get();
-        if (!s.eliminatedIds.includes(id)) return;
+        if (s.phase === "spinning" || !s.eliminatedIds.includes(id)) return;
         const next = s.eliminatedIds.filter((x) => x !== id);
         writeJSON(storage, STORAGE_KEYS.eliminated, next);
         set({ eliminatedIds: next });
       },
 
       resetEliminated() {
-        if (get().eliminatedIds.length === 0) return;
+        const s = get();
+        if (s.phase === "spinning" || s.eliminatedIds.length === 0) return;
         writeJSON(storage, STORAGE_KEYS.eliminated, []);
         set({ eliminatedIds: [] });
       },

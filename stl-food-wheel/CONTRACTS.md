@@ -10,15 +10,15 @@ Shared files — **do not edit in Phase 2**; report back if a change is needed:
 | `src/lib/wheelMath.ts` | Pure wheel math + `planSpin` (winner first) + `nearestRotationFor` (direct selection) + `easeOutQuart`. |
 | `src/lib/debug.ts` | Mutable `debugState` WheelScene writes for the `?debug=1` overlay. |
 | `src/lib/useMediaQuery.ts` | `useIsDesktop()` (≥ 768 px), `usePrefersReducedMotion()`, `prefersReducedMotion()`. |
-| `src/components/FlagIcon.tsx` | `<FlagIcon code="ba" className? title? />` — DOM flag. Never flag emoji. |
-| `src/data/index.ts` | Exports `dataset` (fixture now, `restaurants.json` in Phase 3). |
+| `src/components/FlagIcon.tsx` | `<FlagIcon code="ba" className? title? />` — DOM flag (flag-icons `.fi` base rules in index.css; SVG URL from `utils/flagUrls.ts`). Never flag emoji. |
+| `src/data/index.ts` | Exports `dataset` (`restaurants.json`; swap to `fixture.json` for offline UI work). |
 | `src/App.tsx` | `<HudOverlay stage={<WheelScene />} />`, syncs `muted` → `setMuted`. |
 
 ## Store semantics
 - `requestSpin()` sets `phase: "spinning"`, clears `selectedId`, increments `spinRequestId` (no-op while spinning or with 0 active countries).
 - WheelScene reacts to `spinRequestId`, and on completion calls `setPhase("settled")` then `select(winnerId)`.
 - `select(id)` ignores ids not on the wheel. `eliminate` / `setFilters` null out `selectedId` / `pointerId` that fall off the wheel.
-- `setFilters` is ignored while spinning.
+- `setFilters`, `eliminate`, `restore`, `resetEliminated` are ignored while spinning (wedge count is frozen mid-spin).
 
 ## Component props
 - `WheelScene` — default export, no props.

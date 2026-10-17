@@ -1,5 +1,5 @@
 import type { WheelDataset } from "../types/wheel";
-// Phase 1 fixture. Phase 3 swaps this import for ./restaurants.json.
-import raw from "./fixture.json";
+// Verified dataset (see data-report.md). Swap to ./fixture.json for offline UI work.
+import raw from "./restaurants.json";
 
 export const dataset: WheelDataset = raw as WheelDataset;

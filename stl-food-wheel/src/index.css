@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@import "flag-icons/css/flag-icons.min.css";
 
 html,
 body,
@@ -12,4 +11,18 @@ body {
   font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
   overscroll-behavior: none;
+}
+
+/* flag-icons base rules (4x3). Per-flag background-image is set inline by <FlagIcon>. */
+.fi {
+  position: relative;
+  display: inline-block;
+  width: 1.333333em;
+  line-height: 1em;
+  background-size: contain;
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+.fi::before {
+  content: "\00a0";
 }
