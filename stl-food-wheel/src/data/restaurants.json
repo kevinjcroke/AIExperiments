@@ -1,1 +1,768 @@
-{ "countries": [] }
+{
+  "countries": [
+    {
+      "id": "bosnia",
+      "countryName": "Bosnia & Herzegovina",
+      "shortName": "Bosnia",
+      "cuisineLabel": "Bosnian",
+      "isoCode": "ba",
+      "restaurants": [
+        {
+          "id": "balkan-treat-box",
+          "name": "Balkan Treat Box",
+          "address": "8103 Big Bend Blvd, Webster Groves, MO 63119",
+          "neighborhood": "Webster Groves",
+          "lat": 38.5921553,
+          "lng": -90.3378687,
+          "diningStyle": "Fast Casual",
+          "priceRange": "$$",
+          "recommendedDish": "Pide — wood-fired flatbread topped with cheese, smoky ajvar and kajmak (or go classic with the ćevapi)",
+          "sourceUrl": "https://www.yelp.com/biz/balkan-treat-box-webster-groves",
+          "lastVerified": "2026-10-17"
+        },
+        {
+          "id": "berix",
+          "name": "Berix",
+          "address": "2201 Lemay Ferry Rd, St. Louis, MO 63125",
+          "neighborhood": "Lemay",
+          "lat": 38.52373201,
+          "lng": -90.29978323,
+          "diningStyle": "Casual Sit-Down",
+          "priceRange": "$",
+          "recommendedDish": "Meat burek — flaky coiled pastry stuffed with seasoned beef, the reviewers' top pick here",
+          "sourceUrl": "https://www.yelp.com/biz/berix-restaurant-st-louis-2",
+          "lastVerified": "2026-10-17"
+        },
+        {
+          "id": "taste-of-bosnia",
+          "name": "Taste of Bosnia",
+          "address": "3970 Union Rd, St. Louis, MO 63125",
+          "neighborhood": "Mehlville",
+          "lat": 38.5105161,
+          "lng": -90.3306651,
+          "diningStyle": "Takeout / Counter",
+          "priceRange": "$",
+          "recommendedDish": "Ćevapi platter — hand-rolled grilled sausages piled high, with a slice of cheese burek on the side",
+          "website": "https://tasteofbosniastl.com",
+          "sourceUrl": "https://www.yelp.com/biz/taste-of-bosnia-saint-louis",
+          "lastVerified": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "thailand",
+      "countryName": "Thailand",
+      "shortName": "Thailand",
+      "cuisineLabel": "Thai",
+      "isoCode": "th",
+      "restaurants": [
+        {
+          "id": "fork-and-stix",
+          "name": "Fork & Stix",
+          "address": "549 Rosedale Ave, St. Louis, MO 63112",
+          "neighborhood": "Delmar Loop",
+          "lat": 38.6546974,
+          "lng": -90.2962459,
+          "diningStyle": "Casual Sit-Down",
+          "priceRange": "$$",
+          "recommendedDish": "Hung Lay curry — northern-Thai pork curry, one of Yelp's highlighted dishes here",
+          "sourceUrl": "https://www.yelp.com/biz/fork-and-stix-saint-louis",
+          "lastVerified": "2026-10-17"
+        },
+        {
+          "id": "pearl-cafe",
+          "name": "Pearl Cafe",
+          "address": "8416 N Lindbergh Blvd, Florissant, MO 63031",
+          "neighborhood": "Florissant",
+          "lat": 38.79317,
+          "lng": -90.34243,
+          "diningStyle": "Casual Sit-Down",
+          "priceRange": "$$",
+          "recommendedDish": "Drunken noodles — wide rice noodles reviewers rave about, with the chicken satay to start",
+          "website": "https://pearlstl.com",
+          "sourceUrl": "https://www.yelp.com/biz/pearl-cafe-florissant",
+          "lastVerified": "2026-10-17"
+        },
+        {
+          "id": "king-and-i",
+          "name": "King & I Thai Cuisine",
+          "address": "8039 Dale Ave, Richmond Heights, MO 63117",
+          "neighborhood": "Richmond Heights",
+          "lat": 38.628067,
+          "lng": -90.33287,
+          "diningStyle": "Casual Sit-Down",
+          "priceRange": "$$",
+          "recommendedDish": "King Platter — appetizer sampler starring the tamarind shrimp satay; red curry duck for a main",
+          "website": "https://www.kingandistl.com",
+          "sourceUrl": "https://www.yelp.com/biz/king-and-i-thai-cuisine-richmond-height",
+          "lastVerified": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "mexico",
+      "countryName": "Mexico",
+      "shortName": "Mexico",
+      "cuisineLabel": "Mexican",
+      "isoCode": "mx",
+      "restaurants": [
+        {
+          "id": "neveria-la-vallesana",
+          "name": "Nevería La Vallesana",
+          "address": "2801 Cherokee St, St. Louis, MO 63118",
+          "neighborhood": "Cherokee Street",
+          "lat": 38.594044,
+          "lng": -90.23021,
+          "diningStyle": "Casual Sit-Down",
+          "priceRange": "$",
+          "recommendedDish": "Tacos al pastor — then a scoop of the house-made ice cream that started it as a nevería in 2003",
+          "website": "https://www.neverialavallesana.com",
+          "sourceUrl": "https://www.yelp.com/biz/neveria-la-vallesana-st-louis",
+          "lastVerified": "2026-10-17"
+        },
+        {
+          "id": "mestiza",
+          "name": "Mestiza",
+          "address": "3279 Hampton Ave, St. Louis, MO 63139",
+          "neighborhood": "Lindenwood Park",
+          "lat": 38.6023594,
+          "lng": -90.2921937,
+          "diningStyle": "Fast Casual",
+          "priceRange": "$$",
+          "recommendedDish": "Tacos — the counter-service spin-off from the Malinche team, built around the tacos the Post-Dispatch praised",
+          "website": "https://mestizastl.com",
+          "sourceUrl": "https://www.yelp.com/biz/mestiza-st-louis",
+          "lastVerified": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "ethiopia",
+      "countryName": "Ethiopia",
+      "shortName": "Ethiopia",
+      "cuisineLabel": "Ethiopian",
+      "isoCode": "et",
+      "restaurants": [
+        {
+          "id": "meskerem",
+          "name": "Meskerem Ethiopian Restaurant",
+          "address": "3210 S Grand Blvd, St. Louis, MO 63118",
+          "neighborhood": "Tower Grove East",
+          "lat": 38.59871,
+          "lng": -90.24284,
+          "diningStyle": "Casual Sit-Down",
+          "priceRange": "$$",
+          "recommendedDish": "Combination for Two — five meat and veggie dishes on injera, with well-spiced doro wat in the mix",
+          "sourceUrl": "https://www.yelp.com/biz/meskerem-ethiopian-restaurant-saint-louis-2",
+          "lastVerified": "2026-10-17"
+        },
+        {
+          "id": "eat-today",
+          "name": "Eat Today",
+          "address": "3201 S Grand Blvd, St. Louis, MO 63118",
+          "neighborhood": "Tower Grove South",
+          "lat": 38.59897,
+          "lng": -90.24311,
+          "diningStyle": "Casual Sit-Down",
+          "priceRange": "$$",
+          "recommendedDish": "Veggie combo — a generous spread of vegan stews on gluten-free teff injera",
+          "sourceUrl": "https://www.yelp.com/biz/eat-today-st-louis",
+          "lastVerified": "2026-10-17"
+        },
+        {
+          "id": "mosob",
+          "name": "Mosob",
+          "address": "6665 Olive Blvd, University City, MO 63130",
+          "neighborhood": "University City",
+          "lat": 38.66323,
+          "lng": -90.30692,
+          "diningStyle": "Casual Sit-Down",
+          "priceRange": "$$",
+          "recommendedDish": "Zigni — Eritrean red-sauce beef stew, or the Shakla Tibs",
+          "website": "https://www.mosobstl.com",
+          "sourceUrl": "https://www.yelp.com/biz/mosob-restaurant-st-louis",
+          "lastVerified": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "japan",
+      "countryName": "Japan",
+      "shortName": "Japan",
+      "cuisineLabel": "Japanese",
+      "isoCode": "jp",
+      "restaurants": [
+        {
+          "id": "sado",
+          "name": "Sado",
+          "address": "5201 Shaw Ave, St. Louis, MO 63110",
+          "neighborhood": "The Hill",
+          "lat": 38.618088,
+          "lng": -90.272644,
+          "diningStyle": "Upscale Sit-Down",
+          "priceRange": "$$$$",
+          "recommendedDish": "Sushi from chef Nick Bognar — the Riverfront Times called it the best in St. Louis",
+          "website": "https://www.sado-stl.com",
+          "sourceUrl": "https://www.yelp.com/biz/sado-st-louis",
+          "lastVerified": "2026-10-17"
+        },
+        {
+          "id": "menya-rui",
+          "name": "Menya Rui",
+          "address": "3453 Hampton Ave, St. Louis, MO 63139",
+          "neighborhood": "Lindenwood Park",
+          "lat": 38.599205,
+          "lng": -90.29284,
+          "diningStyle": "Casual Sit-Down",
+          "priceRange": "$$",
+          "recommendedDish": "Ramen on noodles made in-house by noodle maker Kenn Kildron — a Feast Best New Restaurant",
+          "website": "https://menyarui.com",
+          "sourceUrl": "https://www.yelp.com/biz/menya-rui-st-louis",
+          "lastVerified": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "italy",
+      "countryName": "Italy",
+      "shortName": "Italy",
+      "cuisineLabel": "Italian",
+      "isoCode": "it",
+      "restaurants": [
+        {
+          "id": "charlie-gittos-on-the-hill",
+          "name": "Charlie Gitto's On the Hill",
+          "address": "5226 Shaw Ave, St. Louis, MO 63110",
+          "neighborhood": "The Hill",
+          "lat": 38.617873,
+          "lng": -90.2734917,
+          "diningStyle": "Upscale Sit-Down",
+          "priceRange": "$$$",
+          "recommendedDish": "Toasted ravioli — St. Louis' signature starter, then the lobster ravioli",
+          "website": "https://www.charliegittos.com",
+          "sourceUrl": "https://www.yelp.com/biz/charlie-gittos-on-the-hill-saint-louis-2",
+          "lastVerified": "2026-10-17"
+        },
+        {
+          "id": "gioias-deli",
+          "name": "Gioia's Deli",
+          "address": "1934 Macklind Ave, St. Louis, MO 63110",
+          "neighborhood": "The Hill",
+          "lat": 38.617387,
+          "lng": -90.276817,
+          "diningStyle": "Takeout / Counter",
+          "priceRange": "$",
+          "recommendedDish": "Hot salami sandwich — the house signature behind its James Beard America's Classics award",
+          "sourceUrl": "https://www.yelp.com/biz/gioias-deli-saint-louis",
+          "lastVerified": "2026-10-17"
+        },
+        {
+          "id": "zias-on-the-hill",
+          "name": "Zia's on the Hill",
+          "address": "5256 Wilson Ave, St. Louis, MO 63110",
+          "neighborhood": "The Hill",
+          "lat": 38.615681,
+          "lng": -90.274941,
+          "diningStyle": "Casual Sit-Down",
+          "priceRange": "$$",
+          "recommendedDish": "Seafood ravioli — a top Yelp item at this family spot since 1985",
+          "website": "https://ziasstl.com",
+          "sourceUrl": "https://www.yelp.com/biz/zias-on-the-hill-saint-louis-2",
+          "lastVerified": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "afghanistan",
+      "countryName": "Afghanistan",
+      "shortName": "Afghanistan",
+      "cuisineLabel": "Afghan",
+      "isoCode": "af",
+      "restaurants": [
+        {
+          "id": "sameem-afghan",
+          "name": "Sameem Afghan Restaurant",
+          "address": "4341 Manchester Ave, St. Louis, MO 63110",
+          "neighborhood": "Forest Park Southeast",
+          "lat": 38.6269541,
+          "lng": -90.2584154,
+          "diningStyle": "Casual Sit-Down",
+          "priceRange": "$$",
+          "recommendedDish": "Lamb Qabelli Palau — lamb shank with Afghanistan's festive rice, the dish reviewers rave about",
+          "website": "https://www.sameems.com",
+          "sourceUrl": "https://www.yelp.com/biz/sameem-afghan-restaurant-saint-louis",
+          "lastVerified": "2026-10-17"
+        },
+        {
+          "id": "afghan-kabob-house",
+          "name": "Afghan Kabob House",
+          "address": "3500 Watson Rd, St. Louis, MO 63139",
+          "neighborhood": "Lindenwood Park",
+          "lat": 38.599107,
+          "lng": -90.300008,
+          "diningStyle": "Casual Sit-Down",
+          "priceRange": "$$",
+          "recommendedDish": "Mantu — Afghan steamed dumplings, a menu staple at this halal kebab house",
+          "website": "https://afghankabobhouse.co",
+          "sourceUrl": "https://www.yelp.com/biz/afghan-kabob-house-st-louis",
+          "lastVerified": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "philippines",
+      "countryName": "Philippines",
+      "shortName": "Philippines",
+      "cuisineLabel": "Filipino",
+      "isoCode": "ph",
+      "restaurants": [
+        {
+          "id": "kain-tayo",
+          "name": "Kain Tayo",
+          "address": "2700 Locust St, St. Louis, MO 63103",
+          "neighborhood": "Midtown",
+          "lat": 38.63442469,
+          "lng": -90.21633234,
+          "diningStyle": "Casual Sit-Down",
+          "priceRange": "$$",
+          "recommendedDish": "Sisig — chef Sally Arcega's chopped pork, the dish reviewers praise most (lumpia on the side)",
+          "sourceUrl": "https://www.yelp.com/biz/kain-tayo-st-louis-2",
+          "lastVerified": "2026-10-17"
+        },
+        {
+          "id": "the-fattened-caf",
+          "name": "The Fattened Caf",
+          "address": "3405 S Jefferson Ave, St. Louis, MO 63118",
+          "neighborhood": "Benton Park West",
+          "lat": 38.5930505,
+          "lng": -90.2257142,
+          "diningStyle": "Fast Casual",
+          "priceRange": "$$",
+          "recommendedDish": "Piyanggang chicken — smoked chicken in burnt-coconut sauce; save room for the ube banana pudding",
+          "website": "https://thefattenedcaf.com",
+          "sourceUrl": "https://www.yelp.com/biz/the-fattened-caf-st-louis",
+          "lastVerified": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "brazil",
+      "countryName": "Brazil",
+      "shortName": "Brazil",
+      "cuisineLabel": "Brazilian",
+      "isoCode": "br",
+      "restaurants": [
+        {
+          "id": "brasilia",
+          "name": "Brasilia",
+          "address": "3212 S Grand Blvd, St. Louis, MO 63118",
+          "neighborhood": "Tower Grove East",
+          "lat": 38.598464,
+          "lng": -90.242672,
+          "diningStyle": "Casual Sit-Down",
+          "priceRange": "$$",
+          "recommendedDish": "Feijoada — the signature black-bean stew slow-cooked with beef, bacon and sausage; add pão de queijo",
+          "website": "https://www.brasiliastl.com",
+          "sourceUrl": "https://www.yelp.com/biz/brasilia-saint-louis",
+          "lastVerified": "2026-10-17"
+        },
+        {
+          "id": "yemanja-brasil",
+          "name": "Yemanja Brasil",
+          "address": "2900 Missouri Ave, St. Louis, MO 63118",
+          "neighborhood": "Benton Park",
+          "lat": 38.600202,
+          "lng": -90.221411,
+          "diningStyle": "Casual Sit-Down",
+          "priceRange": "$$",
+          "recommendedDish": "Feijoada — the Benton Park version reviewers call consistently excellent, plus empanadas",
+          "website": "https://yemanjabrasilmo.com",
+          "sourceUrl": "https://www.yelp.com/biz/yemanja-brasil-saint-louis-3",
+          "lastVerified": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "india",
+      "countryName": "India",
+      "shortName": "India",
+      "cuisineLabel": "Indian",
+      "isoCode": "in",
+      "restaurants": [
+        {
+          "id": "turmeric",
+          "name": "Turmeric",
+          "address": "6679 Delmar Blvd, University City, MO 63130",
+          "neighborhood": "University City",
+          "lat": 38.65649,
+          "lng": -90.30805,
+          "diningStyle": "Casual Sit-Down",
+          "priceRange": "$$",
+          "recommendedDish": "Dosa — South Indian crepes from the dinner menu, a rarity in St. Louis",
+          "website": "https://turmericstl.com",
+          "sourceUrl": "https://www.yelp.com/biz/turmeric-university-city",
+          "lastVerified": "2026-10-17"
+        },
+        {
+          "id": "house-of-india",
+          "name": "House of India",
+          "address": "8501 Delmar Blvd, St. Louis, MO 63124",
+          "neighborhood": "University City",
+          "lat": 38.661068,
+          "lng": -90.35597,
+          "diningStyle": "Casual Sit-Down",
+          "priceRange": "$$",
+          "recommendedDish": "Dal with naan — the staples Sauce Magazine's editor recommends at this 1994 standby",
+          "website": "https://hoistl.com",
+          "sourceUrl": "https://www.yelp.com/biz/house-of-india-saint-louis",
+          "lastVerified": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "jamaica",
+      "countryName": "Jamaica",
+      "shortName": "Jamaica",
+      "cuisineLabel": "Jamaican",
+      "isoCode": "jm",
+      "restaurants": [
+        {
+          "id": "irie-eats",
+          "name": "Irie Eats",
+          "address": "8428 Olive Blvd, St. Louis, MO 63132",
+          "neighborhood": "University City",
+          "lat": 38.67387,
+          "lng": -90.35474,
+          "diningStyle": "Fast Casual",
+          "priceRange": "$$",
+          "recommendedDish": "Oxtail plate — tender, well-seasoned oxtail that tops reviewers' lists",
+          "sourceUrl": "https://www.yelp.com/biz/irie-eats-st-louis",
+          "lastVerified": "2026-10-17"
+        },
+        {
+          "id": "caribbean-delight",
+          "name": "Caribbean Delight",
+          "address": "3526 Gravois Ave, St. Louis, MO 63118",
+          "neighborhood": "Gravois Park",
+          "lat": 38.592823,
+          "lng": -90.24294,
+          "diningStyle": "Takeout / Counter",
+          "priceRange": "$",
+          "recommendedDish": "Oxtail or the curry/jerk chicken mix — from a cash-only walk-up counter",
+          "sourceUrl": "https://www.yelp.com/biz/caribbean-delight-st-louis",
+          "lastVerified": "2026-10-17"
+        },
+        {
+          "id": "mi-hungry-bbq-jamaican",
+          "name": "Mi Hungry BBQ & Jamaican Cuisine",
+          "address": "8660 St Charles Rock Rd, Overland, MO 63114",
+          "neighborhood": "Overland",
+          "lat": 38.7075648,
+          "lng": -90.3451222,
+          "diningStyle": "Takeout / Counter",
+          "priceRange": "$",
+          "recommendedDish": "Jerk chicken and rib tips — the Jamaican-meets-BBQ customer favorites, served cafeteria-style",
+          "website": "https://mihungryjamaicastl.com",
+          "sourceUrl": "https://www.yelp.com/biz/mi-hungry-bbq-and-jamaican-cuisine-saint-louis",
+          "lastVerified": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "vietnam",
+      "countryName": "Vietnam",
+      "shortName": "Vietnam",
+      "cuisineLabel": "Vietnamese",
+      "isoCode": "vn",
+      "restaurants": [
+        {
+          "id": "mai-lee",
+          "name": "Mai Lee",
+          "address": "8396 Musick Memorial Dr, Brentwood, MO 63144",
+          "neighborhood": "Brentwood",
+          "lat": 38.6273402,
+          "lng": -90.3373432,
+          "diningStyle": "Casual Sit-Down",
+          "priceRange": "$$",
+          "recommendedDish": "Phở tái — the rare-beef noodle soup in the broth that made Mai Lee a St. Louis legend",
+          "sourceUrl": "https://www.opentable.com/r/mai-lee-saint-louis",
+          "lastVerified": "2026-10-17"
+        },
+        {
+          "id": "grand-bistro",
+          "name": "Grand Bistro",
+          "address": "3195 S Grand Blvd, St. Louis, MO 63118",
+          "neighborhood": "Tower Grove South",
+          "lat": 38.59946,
+          "lng": -90.243164,
+          "diningStyle": "Casual Sit-Down",
+          "priceRange": "$$",
+          "recommendedDish": "Bún thịt nướng chả giò — charbroiled pork and egg rolls over vermicelli, in the old Pho Grand space",
+          "sourceUrl": "https://www.yelp.com/biz/grand-bistro-st-louis",
+          "lastVerified": "2026-10-17"
+        },
+        {
+          "id": "nudo-house",
+          "name": "Nudo House",
+          "address": "11423 Olive Blvd, Creve Coeur, MO 63141",
+          "neighborhood": "Creve Coeur",
+          "lat": 38.672386,
+          "lng": -90.43368,
+          "diningStyle": "Fast Casual",
+          "priceRange": "$$",
+          "recommendedDish": "3-1-Phở Chicken — the house chicken phở, one of the most-ordered bowls",
+          "website": "https://www.nudohousestl.com",
+          "sourceUrl": "https://www.yelp.com/biz/nudo-house-stl-st-louis",
+          "lastVerified": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "greece",
+      "countryName": "Greece",
+      "shortName": "Greece",
+      "cuisineLabel": "Greek",
+      "isoCode": "gr",
+      "restaurants": [
+        {
+          "id": "spiros",
+          "name": "Spiro's Restaurant",
+          "address": "1054 N Woods Mill Rd, Chesterfield, MO 63017",
+          "neighborhood": "Chesterfield",
+          "lat": 38.678192,
+          "lng": -90.49923,
+          "diningStyle": "Casual Sit-Down",
+          "priceRange": "$$",
+          "recommendedDish": "Lamb shank — the diners' standout, with saganaki to start",
+          "website": "https://www.spiros-restaurant.com",
+          "sourceUrl": "https://www.yelp.com/biz/spiros-restaurant-chesterfield",
+          "lastVerified": "2026-10-17"
+        },
+        {
+          "id": "olympia-kebob-house",
+          "name": "Olympia Kebob House & Taverna",
+          "address": "1543 McCausland Ave, St. Louis, MO 63117",
+          "neighborhood": "Franz Park",
+          "lat": 38.62411,
+          "lng": -90.30804,
+          "diningStyle": "Casual Sit-Down",
+          "priceRange": "$$",
+          "recommendedDish": "Gyro — the house claims it's voted best gyro in town year after year",
+          "website": "https://www.olympiakebobandtavern.com",
+          "sourceUrl": "https://www.yelp.com/biz/olympia-kebob-house-and-taverna-st-louis-3",
+          "lastVerified": "2026-10-17"
+        },
+        {
+          "id": "the-gyro-company",
+          "name": "The Gyro Company",
+          "address": "7240 Gravois Ave, St. Louis, MO 63116",
+          "neighborhood": "Boulevard Heights",
+          "lat": 38.565145,
+          "lng": -90.292536,
+          "diningStyle": "Takeout / Counter",
+          "priceRange": "$",
+          "recommendedDish": "Supreme Gyro — the top seller at this counter spot; tiramisu for dessert",
+          "sourceUrl": "https://www.yelp.com/biz/the-gyro-company-st-louis",
+          "lastVerified": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "ghana",
+      "countryName": "Ghana",
+      "shortName": "Ghana",
+      "cuisineLabel": "Ghanaian",
+      "isoCode": "gh",
+      "restaurants": [
+        {
+          "id": "house-of-jollof",
+          "name": "House of Jollof",
+          "address": "503 Paul Ave, Florissant, MO 63031",
+          "neighborhood": "Florissant",
+          "lat": 38.805796,
+          "lng": -90.352962,
+          "diningStyle": "Casual Sit-Down",
+          "priceRange": "$$",
+          "recommendedDish": "Jollof rice — the namesake dish, ranked among Yelp's top jollof spots in St. Louis",
+          "website": "https://www.houseofjollof.com",
+          "sourceUrl": "https://www.yelp.com/biz/house-of-jollof-florissant",
+          "lastVerified": "2026-10-17"
+        },
+        {
+          "id": "africana",
+          "name": "Africana",
+          "address": "5860 Delmar Blvd, St. Louis, MO 63112",
+          "neighborhood": "Skinker-DeBaliviere",
+          "lat": 38.6542158,
+          "lng": -90.2893144,
+          "diningStyle": "Casual Sit-Down",
+          "priceRange": "$$",
+          "recommendedDish": "Waakye — Ghanaian rice and beans; reviewers also love the jollof rice with tofu",
+          "website": "https://www.africanastl.com",
+          "sourceUrl": "https://www.yelp.com/search?cflt=african&find_loc=Saint+Louis%2C+MO",
+          "lastVerified": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "korea",
+      "countryName": "South Korea",
+      "shortName": "Korea",
+      "cuisineLabel": "Korean",
+      "isoCode": "kr",
+      "restaurants": [
+        {
+          "id": "seoul-garden",
+          "name": "Seoul Garden",
+          "address": "10441 Olive Blvd, Creve Coeur, MO 63141",
+          "neighborhood": "Creve Coeur",
+          "lat": 38.674088,
+          "lng": -90.41,
+          "diningStyle": "Casual Sit-Down",
+          "priceRange": "$$",
+          "recommendedDish": "Tabletop Korean barbecue — grill marinated meats yourself at this Creve Coeur BBQ house",
+          "website": "https://koreanbbqstl.com",
+          "sourceUrl": "https://www.yelp.com/biz/seoul-garden-creve-coeur",
+          "lastVerified": "2026-10-17"
+        },
+        {
+          "id": "korean-food-mart",
+          "name": "Korean Food Mart",
+          "address": "4412 Jamieson Ave, St. Louis, MO 63109",
+          "neighborhood": "Lindenwood Park",
+          "lat": 38.591736,
+          "lng": -90.309394,
+          "diningStyle": "Takeout / Counter",
+          "priceRange": "$",
+          "recommendedDish": "Korean fried chicken — carried over from the owners' Chicken Seven, plus a DIY ramen bar",
+          "sourceUrl": "https://www.stlmag.com/dining/korean-food-mart-now-open-in-former-moms-deli-space/",
+          "lastVerified": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "lebanon",
+      "countryName": "Lebanon",
+      "shortName": "Lebanon",
+      "cuisineLabel": "Lebanese",
+      "isoCode": "lb",
+      "restaurants": [
+        {
+          "id": "taste-of-lebanon",
+          "name": "Taste of Lebanon",
+          "address": "331 N Euclid Ave, St. Louis, MO 63108",
+          "neighborhood": "Central West End",
+          "lat": 38.64562,
+          "lng": -90.26137,
+          "diningStyle": "Fast Casual",
+          "priceRange": "$",
+          "recommendedDish": "Beef shawarma — on thin, homemade-tasting pita; or the Taste of Lebanon platter",
+          "website": "https://www.tasteoflebanonstl.com",
+          "sourceUrl": "https://www.yelp.com/biz/taste-of-lebanon-st-louis",
+          "lastVerified": "2026-10-17"
+        },
+        {
+          "id": "the-vine-mediterranean",
+          "name": "The Vine Mediterranean Cafe & Market",
+          "address": "3171 S Grand Blvd, St. Louis, MO 63118",
+          "neighborhood": "Tower Grove South",
+          "lat": 38.600346,
+          "lng": -90.24273,
+          "diningStyle": "Casual Sit-Down",
+          "priceRange": "$$",
+          "recommendedDish": "Lebanese nachos — a reviewer favorite, alongside the falafel and beef shawarma",
+          "sourceUrl": "https://www.yelp.com/search?find_desc=The+Vine+Mediterranean+Cafe+And+Market&find_loc=Saint+Louis,+MO",
+          "lastVerified": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "nepal",
+      "countryName": "Nepal",
+      "shortName": "Nepal",
+      "cuisineLabel": "Nepali",
+      "isoCode": "np",
+      "restaurants": [
+        {
+          "id": "himalayan-yeti",
+          "name": "Himalayan Yeti",
+          "address": "3515 S Kingshighway Blvd, St. Louis, MO 63139",
+          "neighborhood": "Northampton",
+          "lat": 38.59519,
+          "lng": -90.27149,
+          "diningStyle": "Casual Sit-Down",
+          "priceRange": "$$",
+          "recommendedDish": "Steamed chicken momos and goat curry — the dishes fans single out",
+          "website": "https://www.himalayanyetimo.com",
+          "sourceUrl": "https://www.yelp.com/biz/himalayan-yeti-st-louis",
+          "lastVerified": "2026-10-17"
+        },
+        {
+          "id": "himalayan-hut",
+          "name": "Himalayan Hut",
+          "address": "9814 Manchester Rd, Webster Groves, MO 63119",
+          "neighborhood": "Rock Hill",
+          "lat": 38.60624,
+          "lng": -90.37433,
+          "diningStyle": "Casual Sit-Down",
+          "priceRange": "$$",
+          "recommendedDish": "Steamed momos — 'the best place to get steamed momos in St. Louis,' per a Yelp reviewer",
+          "website": "https://himalayanhutmanchester.com",
+          "sourceUrl": "https://www.yelp.com/biz/himalayan-hut-restaurant-webster-groves",
+          "lastVerified": "2026-10-17"
+        },
+        {
+          "id": "namaste-curry-lounge",
+          "name": "Namaste Curry Lounge",
+          "address": "4915 Hampton Ave, St. Louis, MO 63109",
+          "neighborhood": "St. Louis Hills",
+          "lat": 38.586166,
+          "lng": -90.29277,
+          "diningStyle": "Casual Sit-Down",
+          "priceRange": "$$",
+          "recommendedDish": "Momos — several Nepali dumpling varieties alongside the curries",
+          "website": "https://namastecurrylounge.com",
+          "sourceUrl": "https://www.yelp.com/biz/namaste-restaurant-and-bar-st-louis-2",
+          "lastVerified": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "china",
+      "countryName": "China",
+      "shortName": "China",
+      "cuisineLabel": "Chinese",
+      "isoCode": "cn",
+      "restaurants": [
+        {
+          "id": "corner-17",
+          "name": "Corner 17",
+          "address": "6623 Delmar Blvd, University City, MO 63130",
+          "neighborhood": "Delmar Loop",
+          "lat": 38.656284,
+          "lng": -90.306464,
+          "diningStyle": "Casual Sit-Down",
+          "priceRange": "$$",
+          "recommendedDish": "Hand-shaved stir-fried noodles — watch the chefs make them; Three Cup Chicken too",
+          "website": "https://corner17usa.com",
+          "sourceUrl": "https://www.yelp.com/biz/corner-17-saint-louis",
+          "lastVerified": "2026-10-17"
+        },
+        {
+          "id": "cate-zone",
+          "name": "Cate Zone Chinese Cafe",
+          "address": "8148 Olive Blvd, University City, MO 63130",
+          "neighborhood": "University City",
+          "lat": 38.673361,
+          "lng": -90.346565,
+          "diningStyle": "Casual Sit-Down",
+          "priceRange": "$$",
+          "recommendedDish": "Pork belly noodles — Northeastern Chinese cooking a reviewer likened to Taiwanese noodle soup",
+          "website": "https://www.catezonestl.com",
+          "sourceUrl": "https://www.yelp.com/biz/cate-zone-chinese-cafe-university-city",
+          "lastVerified": "2026-10-17"
+        }
+      ]
+    }
+  ]
+}
