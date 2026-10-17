@@ -35,7 +35,7 @@ export interface CountryNode {
   countryName: string; // "Bosnia & Herzegovina"
   shortName: string; // ≤ 12 chars for tight UI, e.g. "Bosnia"
   cuisineLabel: string; // "Bosnian"
-  isoCode: string; // ISO 3166-1 alpha-2, lowercase, e.g. "ba" (used by flag-icons)
+  isoCode: string; // ISO 3166-1 alpha-2, lowercase, e.g. "ba" (used by flag-icons); or a subdivision like "gb-sct"
   restaurants: Restaurant[];
 }
 

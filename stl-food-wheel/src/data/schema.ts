@@ -36,7 +36,8 @@ export const countryNodeSchema = z
     countryName: z.string().min(1),
     shortName: z.string().min(1).max(12),
     cuisineLabel: z.string().min(1),
-    isoCode: z.string().regex(/^[a-z]{2}$/, "must be lowercase ISO 3166-1 alpha-2"),
+    // ISO 3166-1 alpha-2, or a flag-icons subdivision code such as "gb-sct" (Scotland).
+    isoCode: z.string().regex(/^[a-z]{2}(?:-[a-z]{3})?$/, "must be lowercase ISO 3166-1 alpha-2 or flag-icons subdivision"),
     restaurants: z.array(restaurantSchema),
   })
   .strict();
