@@ -2,11 +2,11 @@
 
 A collection of independent side-project experiments. Each lives in its own folder with its own README and tooling.
 
-**Live site:** https://kevinjcroke.github.io/aiexperiments/ (deployed by `.github/workflows/pages.yml` on every push to `main`; the landing page is `site/index.html`).
+**Live site:** https://kevinjcroke.github.io/AIExperiments/ (deployed by `.github/workflows/pages.yml` on every push to `main`; the landing page is `site/index.html`).
 
 | Experiment | Description |
 | --- | --- |
-| [`stl-food-wheel/`](stl-food-wheel/) | St. Louis World Food Wheel — spin a 3D game-show wheel of countries and get verified local restaurants for the winner. [Play it](https://kevinjcroke.github.io/aiexperiments/stl-food-wheel/) |
+| [`stl-food-wheel/`](stl-food-wheel/) | St. Louis World Food Wheel — spin a 3D game-show wheel of countries and get verified local restaurants for the winner. [Play it](https://kevinjcroke.github.io/AIExperiments/stl-food-wheel/) |
 
 ## Adding an experiment to the site
 
