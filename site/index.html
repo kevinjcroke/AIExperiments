@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Experiments</title>
+    <meta name="description" content="Side-project experiments by Kevin Croke." />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #020617;
+        --card: #0f172a;
+        --line: rgba(255, 255, 255, 0.12);
+        --fg: #f1f5f9;
+        --muted: #cbd5e1;
+        --accent: #fcd34d;
+        --hot: #f43f5e;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background: radial-gradient(ellipse at top, #0b2545 0%, var(--bg) 60%);
+        color: var(--fg);
+        font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+        line-height: 1.5;
+      }
+      main {
+        max-width: 720px;
+        margin: 0 auto;
+        padding-block: 64px;
+        padding-inline: max(16px, env(safe-area-inset-left, 0px)) max(16px, env(safe-area-inset-right, 0px));
+      }
+      .eyebrow {
+        margin: 0;
+        color: var(--accent);
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+      }
+      h1 { margin: 4px 0 8px; font-size: clamp(2rem, 6vw, 2.75rem); line-height: 1.1; text-wrap: balance; }
+      .lede { margin: 0 0 40px; color: var(--muted); max-width: 52ch; }
+      ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 16px; }
+      a.card {
+        display: flex;
+        gap: 16px;
+        align-items: center;
+        padding: 20px;
+        border-radius: 20px;
+        background: var(--card);
+        border: 1px solid var(--line);
+        color: inherit;
+        text-decoration: none;
+        transition: border-color 0.15s, transform 0.15s;
+      }
+      a.card:hover { border-color: rgba(252, 211, 77, 0.6); transform: translateY(-2px); }
+      a.card:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+      .icon { flex: none; width: 56px; height: 56px; }
+      .card h2 { margin: 0 0 4px; font-size: 1.15rem; }
+      .card p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+      .go { margin-left: auto; flex: none; color: var(--hot); font-weight: 800; letter-spacing: 0.1em; font-size: 0.85rem; }
+      footer { margin-top: 48px; color: var(--muted); font-size: 0.85rem; }
+      footer a { color: var(--muted); }
+      @media (max-width: 480px) { .go { display: none; } }
+      @media (prefers-reduced-motion: reduce) { a.card { transition: none; } a.card:hover { transform: none; } }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p class="eyebrow">Side projects</p>
+      <h1>AI Experiments</h1>
+      <p class="lede">Small apps built to try out ideas. Each one lives in its own folder in the repository.</p>
+      <ul>
+        <li>
+          <a class="card" href="stl-food-wheel/">
+            <img class="icon" src="favicon.svg" alt="" />
+            <div>
+              <h2>St. Louis World Food Wheel</h2>
+              <p>Spin a 3D game-show wheel of 32 cuisines and get verified local restaurants for the winner.</p>
+            </div>
+            <span class="go" aria-hidden="true">SPIN</span>
+          </a>
+        </li>
+      </ul>
+      <footer>
+        Source on <a href="https://github.com/kevinjcroke/aiexperiments">GitHub</a>.
+      </footer>
+    </main>
+  </body>
+</html>
