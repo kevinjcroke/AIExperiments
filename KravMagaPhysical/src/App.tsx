@@ -61,17 +61,6 @@ function Planner({ profile }: { profile: Profile }) {
 
   useCelebrate(plan);
 
-  // Phones: show a compact score bar once the gauge scrolls out of view.
-  const gaugeRef = useRef<HTMLElement>(null);
-  const [gaugeVisible, setGaugeVisible] = useState(true);
-  useEffect(() => {
-    const el = gaugeRef.current;
-    if (!el) return;
-    const io = new IntersectionObserver(([entry]) => setGaugeVisible(entry?.isIntersecting ?? true), { rootMargin: "-60px 0px 0px 0px" });
-    io.observe(el);
-    return () => io.disconnect();
-  }, []);
-
   const openReference = (focus: EventId | null) => {
     setChartFocus(focus);
     setSheet("reference");
@@ -82,21 +71,21 @@ function Planner({ profile }: { profile: Profile }) {
       <p className="sr-only" aria-live="polite">
         {feedback.announce}
       </p>
-      {!gaugeVisible && <MiniScore plan={plan} />}
 
       <div className="mx-auto max-w-[1440px]">
         <Header profile={profile} onOpenChart={() => openReference(null)} onOpenSettings={() => setSheet("settings")} />
+        {/* Phones get this pinned score bar instead of the big dial. */}
+        <MiniScore plan={plan} />
 
         {/*
-          Phones: score, status, the four events you edit, then the points chart.
+          Phones: status, the four events you edit, then the points chart (the score is the pinned bar above).
           960px and up: score, status and points chart stacked on the left, events on the right.
           The DOM follows the phone order so screen readers and keyboard focus match it too.
         */}
         <main className="grid grid-cols-1 gap-5 px-5 pt-5 min-[960px]:grid-cols-[420px_minmax(0,1fr)] min-[960px]:grid-rows-[auto_auto_auto_1fr] min-[960px]:items-start min-[960px]:gap-x-8 min-[960px]:gap-y-4">
           <section
-            ref={gaugeRef}
             aria-label="Overall score"
-            className="relative min-w-0 rounded-lg border border-line px-3.5 pt-10 pb-4 min-[960px]:col-start-1 min-[960px]:row-start-1"
+            className="relative hidden min-w-0 rounded-lg border border-line px-3.5 pt-10 pb-4 min-[960px]:col-start-1 min-[960px]:row-start-1 min-[960px]:block"
             style={{ background: "radial-gradient(90% 70% at 50% 0%, rgb(255 255 255 / 0.07), transparent 70%), var(--color-hero)" }}
           >
             <span aria-hidden="true" className={`${corner} top-2.5 left-2.5 border-t-2 border-l-2`} />

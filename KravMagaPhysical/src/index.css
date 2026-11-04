@@ -294,14 +294,11 @@ body {
   }
 }
 
-/* Phone score bar */
-@keyframes slide-down {
-  from {
-    transform: translateY(-100%);
+/* Phones pin the score bar to the top; keep scrolled-to and focused fields clear of it. */
+@media (max-width: 959px) {
+  html {
+    scroll-padding-top: 4.5rem;
   }
-}
-.slide-down {
-  animation: slide-down 240ms var(--ease-out-soft);
 }
 
 /* Gauge arcs and knob */
@@ -388,7 +385,6 @@ dialog.sheet[open] {
   }
   .pop,
   .burst,
-  .slide-down,
   dialog.sheet[open] {
     animation: fade 240ms linear both;
   }

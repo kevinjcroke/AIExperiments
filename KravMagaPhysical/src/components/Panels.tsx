@@ -183,23 +183,30 @@ export function HowItWorks() {
   );
 }
 
-/** Compact score bar that slides in on phones once the gauge scrolls away. */
+/** Phones: the score, pinned to the top while you scroll. (960px and up shows the full dial instead.) */
 export function MiniScore({ plan }: { plan: Plan }) {
+  const color = OUTCOME_COLOR[plan.outcome];
+  const best = plan.status === "impossible";
   return (
-    <div
-      aria-hidden="true"
-      className="slide-down fixed inset-x-0 top-0 z-30 border-b border-line bg-bg/90 pt-[env(safe-area-inset-top)] backdrop-blur min-[960px]:hidden"
+    <section
+      aria-label="Your score"
+      className="sticky top-0 z-30 mt-3 border-y border-line bg-bg/90 pt-[env(safe-area-inset-top)] backdrop-blur min-[960px]:hidden"
     >
       <div className="flex h-14 items-center gap-3 px-5">
-        <span className="size-3 rounded-full" style={{ backgroundColor: OUTCOME_COLOR[plan.outcome] }} />
-        <span className="font-display text-3xl font-extrabold tabular">{formatAverage(plan.average)}%</span>
-        <span className="font-display text-sm font-bold tracking-[0.12em] uppercase" style={{ color: OUTCOME_COLOR[plan.outcome] }}>
-          {OUTCOME_COPY[plan.outcome].label}
+        <span aria-hidden="true" className="size-3 flex-none rounded-full" style={{ backgroundColor: color }} />
+        <span className="font-display text-3xl font-extrabold tabular">
+          {best && <span className="text-base text-ink-3 uppercase">Best{" "}</span>}
+          {formatAverage(plan.average)}%
         </span>
-        <span className="ml-auto font-display text-lg font-bold text-ink-3 tabular">
-          {plan.totalPoints}/{plan.requiredTotal}
+        <span className="flex min-w-0 flex-col leading-tight">
+          <span className="truncate font-display text-sm font-bold tracking-[0.12em] uppercase" style={{ color }}>
+            {OUTCOME_COPY[plan.outcome].label}
+          </span>
+          <span className="truncate text-xs text-ink-3 tabular">
+            {plan.totalPoints} / {plan.requiredTotal} pts needed
+          </span>
         </span>
       </div>
-    </div>
+    </section>
   );
 }
