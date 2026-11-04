@@ -8,6 +8,7 @@ A collection of independent side-project experiments. Each lives in its own fold
 | --- | --- |
 | [`stl-food-wheel/`](stl-food-wheel/) | St. Louis World Food Wheel — spin a 3D game-show wheel of countries and get verified local restaurants for the winner. [Play it](https://kevinjcroke.github.io/AIExperiments/stl-food-wheel/) |
 | [`KravMagaPhysical/`](KravMagaPhysical/) | Red Stripe Ready: plan the Krav Maga red-stripe physical test. Lock in what you can do, and the other events rebalance to what you need to pass. [Use it](https://kevinjcroke.github.io/AIExperiments/KravMagaPhysical/) |
+| [`ssat-flashcards/`](ssat-flashcards/) | Upper Hand: SSAT Upper Level flashcards built from 110 real released NAEP and MCAS test questions (50 math, 60 reading), with explanations, national answer stats and mastery tracking. [Study](https://kevinjcroke.github.io/AIExperiments/ssat-flashcards/) |
 
 ## Adding an experiment to the site
 

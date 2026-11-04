@@ -1,0 +1,109 @@
+{
+  "id": "mcas-2025-g10-letters-from-the-dust-bowl",
+  "test": "MCAS",
+  "year": 2025,
+  "grade": 10,
+  "pdf": "g10_ela_2025.pdf",
+  "pdfPages": "5-7, 12",
+  "title": "from “Letters from the Dust Bowl”",
+  "author": "Caroline A. Henderson",
+  "genre": "nonfiction",
+  "setIntro": "Read the letter and the excerpt about life during the Dust Bowl, a period of severe drought and dust storms in the south-central prairies of the United States in the 1930s. Then answer the questions that follow.",
+  "intro": "Caroline A. Henderson and her husband were wheat farmers near Eva, Oklahoma. In the 1930s, Caroline wrote a series of letters to her friend Evelyn. In this letter, she writes about the impact of the Dust Bowl.",
+  "lineNumbered": false,
+  "paragraphNumbered": true,
+  "paragraphs": [
+    "My Dear Evelyn:—",
+    ". . . Our recent transition from rain-soaked eastern Kansas with its green pastures, luxuriant foliage, abundance of flowers, and promise of a generous harvest, to the dust-covered desolation of No Man’s Land¹ was a difficult change to crowd into one short day’s travel. Eleanor has laid aside the medical books for a time. Wearing our shade hats, with handkerchiefs tied over our faces and vaseline in our nostrils, we have been trying to rescue our home from the accumulations of wind-blown dust which penetrates wherever air can go. It is an almost hopeless task, for there is rarely a day when at some time the dust clouds do not roll over. ‘Visibility’ approaches zero and everything is covered again with a silt-like deposit which may vary in depth from a film to actual ripples on the kitchen floor. I keep oiled cloths on the window sills and between the upper and lower sashes. They help just a little to . . . collect the dust. Some seal the windows with the gummed-paper strips used in wrapping parcels, but no method is fully effective. We buy what appears to be red cedar sawdust with oil added to use in sweeping our floors, and do our best to avoid inhaling the irritating dust.",
+    "In telling you of these conditions I realize that I expose myself to charges of disloyalty to this western region. A good Kansas friend suggests that we should imitate the Californian attitude toward earthquakes and keep to ourselves what we know about dust storms. Since the very limited rains of May in this section gave some slight ground for renewed hope, optimism has been the approved policy. Printed articles or statements by journalists, railroad officials, and secretaries of small-town Chambers of Commerce have heralded too enthusiastically the return of prosperity to the drouth² region. And in our part of the country that is the one durable basis for any prosperity whatever. There is nothing else to build upon. But you wished to know the truth, so I am telling you the actual situation, though I freely admit that the facts are themselves often contradictory and confusing. . . .",
+    "Contrary to many published reports, a good many people had left this country either temporarily or permanently before any rains came. . . . [Few] actual residents have left our neighborhood, but on a sixty-mile trip yesterday to procure tractor repairs we saw many pitiful reminders of broken hopes and apparently wasted effort. Little abandoned homes where people had drilled deep wells for the precious water, had set trees and vines, built reservoirs, and fenced in gardens,—with everything now walled in or half buried by banks of drifted soil,—told a painful story of loss and disappointment. I grieved especially over one lonely plum thicket³ buried to the tips of the twigs, and a garden with a fence closely built of boards for wind protection, now enclosing only a hillock⁴ of dust covered with the blue-flowered bull nettles which no winds or sands discourage.",
+    "It might give you some notion of our great ‘open spaces’ if I tell you that on the sixty-mile trip, going by a state road over which our mail comes from the railroad, and coming back by a Federal highway, we encountered only one car, and no other vehicles of any sort. And this was on Saturday, the farmers’ marketing day! . . .",
+    "We have had two most welcome rains in June—three quarters of an inch and one-half inch. Normally these should have been of the utmost benefit, though they by no means guarantee an abundant feed crop from our now sprouting seeds as many editorial writers have decreed, and they do nothing toward restoring subsoil moisture. Actually the helpful effects of the rains have been for us and for other people largely destroyed by the drifting soil from abandoned, unworked lands around us. It fills the air and our eyes and noses and throats, and, worst of all, our furrows, where tender shoots are coming to the surface only to be buried by the smothering silt from the fields of rugged individualists who persist in their right to do nothing. . . .",
+    "Naturally you will wonder why we stay where conditions are so extremely disheartening. Why not pick up and leave as so many others have done? It is a fair question, but a hard one to answer. . . .",
+    "To leave voluntarily—to break all these closely knit ties for the sake of a possibly greater comfort elsewhere—seems like defaulting on our task. We may have to leave. We can’t hold out indefinitely without some return from the land, some source of income, however small. But I think I can never go willingly or without pain that as yet seems unendurable. . . .",
+    "We long for the garden and little chickens, the trees and birds and wild flowers of the years gone by. Perhaps if we do our part these good things may return some day, for others if not for ourselves.",
+    "Will joins me in earnest hopes for your recovery. The dust has been particularly aggravating to his bronchial trouble, but he keeps working on. A great reddish-brown dust cloud is rising now from the southeast, so we must get out and do our night work before it arrives. Our thoughts go with you."
+  ],
+  "footnotes": [
+    {
+      "mark": "1",
+      "text": "No Man’s Land -- a region of Oklahoma"
+    },
+    {
+      "mark": "2",
+      "text": "drouth -- drought"
+    },
+    {
+      "mark": "3",
+      "text": "thicket -- group of trees"
+    },
+    {
+      "mark": "4",
+      "text": "hillock -- small hill"
+    }
+  ],
+  "credit": "Letters from the Dust Bowl by Caroline Henderson. In the public domain.",
+  "pairedWith": "The Grapes of Wrath by John Steinbeck (copyrighted; not included)",
+  "questions": [
+    {
+      "num": 1,
+      "itemCode": null,
+      "stem": "Read the sentence from paragraph 2 of “Letters from the Dust Bowl” in the box.\nWhich word could best replace the word luxuriant in the sentence?",
+      "boxed": "Our recent transition from rain-soaked eastern Kansas with its green pasture, luxuriant foliage, abundance of flowers, and promise of a generous harvest, to the dust-covered desolation of No Man’s Land was a difficult change to crowd into one short day’s travel.",
+      "choices": {
+        "A": "mature",
+        "B": "precise",
+        "C": "graceful",
+        "D": "flourishing"
+      },
+      "answer": "D",
+      "answerCheck": "agree",
+      "note": "Vocabulary-in-context item (reporting category 'Language'). The boxed sentence as printed says 'green pasture' while paragraph 2 of the passage says 'green pastures'; both kept verbatim."
+    },
+    {
+      "num": 2,
+      "itemCode": null,
+      "stem": "Read the sentence from paragraph 2 of “Letters from the Dust Bowl” in the box.\nWhich inference is best supported by the sentence?",
+      "boxed": "Wearing our shade hats, with handkerchiefs tied over our faces and vaseline in our nostrils, we have been trying to rescue our home from the accumulations of wind-blown dust which penetrates wherever air can go.",
+      "choices": {
+        "A": "The dust causes serious discoloration of clothing.",
+        "B": "The wind is causing predictable weather patterns.",
+        "C": "The dust is uncomfortable and even dangerous to breathe.",
+        "D": "The measures taken to combat wind are useful and productive."
+      },
+      "answer": "C",
+      "answerCheck": "agree",
+      "note": ""
+    }
+  ],
+  "skipped": [
+    {
+      "num": 3,
+      "reason": "needs non-PD paired passage (about The Grapes of Wrath only)"
+    },
+    {
+      "num": 4,
+      "reason": "needs non-PD paired passage (about The Grapes of Wrath only)"
+    },
+    {
+      "num": 5,
+      "reason": "needs non-PD paired passage (about The Grapes of Wrath only)"
+    },
+    {
+      "num": 6,
+      "reason": "needs non-PD paired passage"
+    },
+    {
+      "num": 7,
+      "reason": "needs non-PD paired passage; also multi-part table item (physical/emotional for five quotations)"
+    },
+    {
+      "num": 8,
+      "reason": "needs non-PD paired passage; also multi-part sentence-completion item"
+    },
+    {
+      "num": 9,
+      "reason": "essay"
+    }
+  ]
+}

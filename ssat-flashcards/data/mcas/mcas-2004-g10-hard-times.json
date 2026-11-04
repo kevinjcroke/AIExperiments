@@ -1,0 +1,102 @@
+{
+  "id": "mcas-2004-g10-hard-times",
+  "test": "MCAS",
+  "year": 2004,
+  "grade": 10,
+  "pdf": "pioneer_2004.pdf",
+  "pdfPages": "108-110",
+  "printedPages": "104-106",
+  "title": "Hard Times",
+  "author": "Charles Dickens",
+  "genre": "fiction",
+  "intro": "Charles Dickens, a nineteenth-century English author, wrote about the Industrial Revolution. In this excerpt from the novel Hard Times, Dickens focuses his social commentary on an English mill town. Read the excerpt below and use information from it to answer the questions that follow.",
+  "lineNumbered": false,
+  "paragraphs": [
+    "It was a town of red brick, or of brick that would have been red if the smoke and ashes had allowed it; but as matters stood it was a town of unnatural red and black. . . . It was a town of machinery and tall chimneys, out of which interminable serpents of smoke trailed themselves forever and ever, and never got uncoiled. It had a black canal in it, and a river that ran purple with ill-smelling dye, and vast piles of building full of windows where there was a rattling and a trembling all day long, and where the piston of the steam-engine worked monotonously up and down like the head of an elephant in a state of melancholy madness. It contained several large streets all very like one another, and many small streets still more like one another, inhabited by people equally like one another, who all went in and out at the same hours, with the same sound upon the same pavements, to do the same work, and to whom every day was the same as yesterday and tomorrow, and every year the counterpart of the last and the next.",
+    "These attributes of Coketown were in the main inseparable from the work by which it was sustained; against them were to be set off comforts of life which found their way all over the world, and elegancies of life which made, we will not ask how much of the fine lady, who could scarcely bear to hear the place mentioned. The rest of its features were voluntary, and they were these.",
+    "You saw nothing in Coketown but what was severely workful. If the members of a religious persuasion built a chapel there—as the members of eighteen religious persuasions had done—they made it a pious warehouse of red brick, with sometimes (but this is only in highly ornamental examples) a bell in a bird-cage on the top of it. The solitary exception was the New Church; a stuccoed edifice with a square steeple over the door, terminating in four short pinnacles like florid wooden legs. All the public inscriptions in the town were painted alike, in severe characters of black and white. The jail might have been the infirmary, the infirmary might have been the jail, the townhall might have been either, or both, or anything else, for anything that appeared to the contrary in the graces of their construction. Fact, fact, fact, everywhere in the material aspect of the town; fact, fact, fact, everywhere in the immaterial. The McChoakumchild school was all fact, and the school of design was all fact, and the relations between master and man were all fact, and everything was fact between the lying-in hospital and the cemetery, and what you couldn’t state in figures, or show to be purchaseable in the cheapest market and saleable in the dearest, was not, and never should be, world without end, Amen."
+  ],
+  "footnotes": [],
+  "credit": "In the public domain.",
+  "questions": [
+    {
+      "num": 10,
+      "itemCode": "2095375-10R0219L",
+      "stem": "Which of the following is suggested by the imagery in paragraph 1?",
+      "boxed": null,
+      "choices": {
+        "A": "faith",
+        "B": "comfort",
+        "C": "efficiency",
+        "D": "uniformity"
+      },
+      "answer": "D",
+      "answerCheck": "agree",
+      "note": ""
+    },
+    {
+      "num": 11,
+      "itemCode": "2095376-10R0219L",
+      "leadIn": "Read the sentence from paragraph 1 in the box below.",
+      "stem": "What does the serpent metaphor emphasize?",
+      "boxed": "It was a town of machinery and\ntall chimneys, out of which\ninterminable serpents of smoke\ntrailed themselves forever and\never, and never got uncoiled.",
+      "choices": {
+        "A": "the long-term dangers of snakes and machines",
+        "B": "the unending poisonous effects of industrialization",
+        "C": "the crookedness of the chimneys",
+        "D": "the destruction of nature"
+      },
+      "answer": "B",
+      "answerCheck": "agree",
+      "note": ""
+    },
+    {
+      "num": 12,
+      "itemCode": "3022787-10R0219L",
+      "leadIn": "Read the sentence from paragraph 3 in the box below.",
+      "stem": "What does this sentence mean?",
+      "boxed": "The jail might have been the\ninfirmary, the infirmary might\nhave been the jail, the townhall\nmight have been either, or both,\nor anything else, for anything\nthat appeared to the contrary in\nthe graces of their construction.",
+      "choices": {
+        "A": "Though their purposes vary, the buildings look the same.",
+        "B": "The infirmary is between the jail and the townhall.",
+        "C": "The citizens of Coketown often confuse the buildings.",
+        "D": "With each new construction, Coketown becomes more appealing."
+      },
+      "answer": "A",
+      "answerCheck": "agree",
+      "note": ""
+    },
+    {
+      "num": 13,
+      "itemCode": "3049642-10R0219L",
+      "stem": "Novels include many different elements of writing. Which of the following best describes the writing in this excerpt?",
+      "boxed": null,
+      "choices": {
+        "A": "plot",
+        "B": "dialogue",
+        "C": "description",
+        "D": "characterization"
+      },
+      "answer": "C",
+      "answerCheck": "agree",
+      "note": ""
+    },
+    {
+      "num": 14,
+      "itemCode": "2095378-10R0219L",
+      "leadIn": "Read the sentence from paragraph 3 in the box below.",
+      "stem": "The author uses repetition and parallelism to",
+      "boxed": "Fact, fact, fact, everywhere in the\nmaterial aspect of the town; fact, fact,\nfact, everywhere in the immaterial.",
+      "choices": {
+        "A": "emphasize the monotony of Coketown.",
+        "B": "indicate a change in tone.",
+        "C": "show respect for the town.",
+        "D": "suggest that the townspeople admire Coketown."
+      },
+      "answer": "A",
+      "answerCheck": "agree",
+      "note": "Answer table lists this item under the Language reporting category (standard 5, structure of English), but it asks about the rhetorical effect of repetition/parallelism, not grammar."
+    }
+  ],
+  "skipped": []
+}

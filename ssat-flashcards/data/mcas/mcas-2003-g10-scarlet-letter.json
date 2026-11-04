@@ -1,0 +1,205 @@
+{
+  "id": "mcas-2003-g10-scarlet-letter",
+  "test": "MCAS",
+  "year": 2003,
+  "grade": 10,
+  "pdf": "pioneer_2003.pdf",
+  "pdfPages": "108-111",
+  "printedPages": "104-107",
+  "title": "The Scarlet Letter — Chapter I: The Prison-Door",
+  "author": "Nathaniel Hawthorne",
+  "genre": "fiction",
+  "intro": "This selection is the first chapter of Nathaniel Hawthorne’s The Scarlet Letter, a tale of a woman and her Puritan community. The story takes place in the Massachusetts Bay Colony in the mid-1600s. Read the chapter below. Use information from the chapter to answer the questions that follow.",
+  "lineNumbered": true,
+  "lines": [
+    "A THRONG of bearded men, in sad-colored garments,",
+    "and gray, steeple-crowned hats, intermixed with",
+    "women, some wearing hoods and others bareheaded, was",
+    "assembled in front of a wooden edifice, the door of which",
+    "was heavily timbered with oak, and studded with iron",
+    "spikes.",
+    "The founders of a new colony, whatever Utopia of human",
+    "virtue and happiness they might originally project, have",
+    "invariably recognized it among their earliest practical",
+    "necessities to allot a portion of the virgin soil as a cemetery,",
+    "and another portion as the site of a prison. In accordance",
+    "with this rule, it may safely be assumed that the forefathers",
+    "of Boston had built the first prison-house, somewhere in the",
+    "vicinity of Cornhill, almost as seasonably as they marked",
+    "out the first burial-ground, on Isaac Johnson’s lot, and round",
+    "about his grave, which subsequently became the nucleus of",
+    "all the congregated sepulchres¹ in the old churchyard of",
+    "King’s Chapel. Certain it is, that, some fifteen or twenty",
+    "years after the settlement of the town, the wooden jail was",
+    "already marked with weather-stains and other indications of",
+    "age, which gave a yet darker aspect to its beetle-browed and",
+    "gloomy front. The rust on the ponderous iron-work of its",
+    "oaken door looked more antique than anything else in the",
+    "New World. Like all that pertains to crime, it seemed never",
+    "to have known a youthful era. Before this ugly edifice, and",
+    "between it and the wheel-track of the street, was a",
+    "grass-plot, much overgrown with burdock,² pig-weed,³",
+    "apple-peru, and such unsightly vegetation, which evidently",
+    "found something congenial in the soil that had so early",
+    "borne the black flower of civilized society, a prison. But, on",
+    "one side of the portal, and rooted almost at the threshold, was",
+    "a wild rose-bush, covered, in this month of June, with its",
+    "delicate gems, which might be imagined to offer their",
+    "fragrance and fragile beauty to the prisoner as he went in, and",
+    "to the condemned criminal as he came forth to his doom, in",
+    "token that the deep heart of Nature could pity and be kind",
+    "to him.",
+    "This rose-bush, by a strange chance, has been kept alive in",
+    "history; but whether it had merely survived out of the stern",
+    "old wilderness, so long after the fall of the gigantic pines and",
+    "oaks that originally over-shadowed it,—or whether, as there",
+    "is fair authority for believing, it had sprung up under the",
+    "footsteps of the sainted Anne Hutchinson, as she entered the",
+    "prison-door,—we shall not take upon us to determine. Finding",
+    "it so directly on the threshold of our narrative, which is now",
+    "about to issue from that inauspicious portal, we could hardly",
+    "do otherwise than pluck one of its flowers and present it to the",
+    "reader. It may serve, let us hope, to symbolize some sweet",
+    "moral blossom, that may be found along the track, or relieve",
+    "the darkening close of a tale of human frailty and sorrow."
+  ],
+  "stanzaBreaksAfter": [],
+  "indent": {
+    "7": 1,
+    "38": 1
+  },
+  "paragraphStarts": [
+    1,
+    7,
+    38
+  ],
+  "footnotes": [
+    {
+      "mark": "1",
+      "text": "sepulchres -- burial places"
+    },
+    {
+      "mark": "2",
+      "text": "burdock -- an herb"
+    },
+    {
+      "mark": "3",
+      "text": "pig-weed -- a large weedy plant"
+    }
+  ],
+  "credit": "From The Scarlet Letter by Nathaniel Hawthorne. In the public domain.",
+  "questions": [
+    {
+      "num": 19,
+      "itemCode": "2095298-10R0225L",
+      "stem": "The author conveys the mood of this chapter by focusing mainly on",
+      "boxed": null,
+      "choices": {
+        "A": "plot.",
+        "B": "setting.",
+        "C": "characters.",
+        "D": "personification."
+      },
+      "answer": "B",
+      "answerCheck": "agree",
+      "note": ""
+    },
+    {
+      "num": 20,
+      "itemCode": "2095297-10R0225L",
+      "stem": "Which of the following phrases best expresses the main idea of the chapter?",
+      "boxed": null,
+      "choices": {
+        "A": "Sometimes the dreariest place may contain a ray of hope.",
+        "B": "Colonists who do not uphold the law deserve to die.",
+        "C": "Virtue is not enough to protect one from death.",
+        "D": "Ancient surroundings tend to attract evil-doers."
+      },
+      "answer": "A",
+      "answerCheck": "agree",
+      "note": ""
+    },
+    {
+      "num": 21,
+      "itemCode": "2095306-10R0225L",
+      "stem": "Which of the following is the best context clue to indicate that this is the first chapter of the novel?",
+      "boxed": null,
+      "choices": {
+        "A": "“whatever Utopia of human virtue and happiness they might originally project”",
+        "B": "“the deep heart of Nature could pity and be kind to him”",
+        "C": "“the wooden jail was already marked with weather-stains and other indications of age”",
+        "D": "“the threshold of our narrative, which is now about to issue from that inauspicious portal”"
+      },
+      "answer": "D",
+      "answerCheck": "agree",
+      "note": ""
+    },
+    {
+      "num": 22,
+      "itemCode": "2095299-10R0225L",
+      "stem": "All of the following words could be used to describe the mood of lines 1–3 except",
+      "boxed": null,
+      "choices": {
+        "A": "cheerless.",
+        "B": "colorless.",
+        "C": "rebellious.",
+        "D": "grave."
+      },
+      "answer": "C",
+      "answerCheck": "agree",
+      "note": "EXCEPT-type item (pick the word that does NOT fit)."
+    },
+    {
+      "num": 23,
+      "itemCode": "2095302-10R0225L",
+      "stem": "According to the chapter, where was the wild rose-bush growing?",
+      "boxed": null,
+      "choices": {
+        "A": "among the weeds",
+        "B": "near the street",
+        "C": "by the walkway",
+        "D": "beside the prison door"
+      },
+      "answer": "D",
+      "answerCheck": "agree",
+      "note": ""
+    },
+    {
+      "num": 24,
+      "itemCode": "2095303-10R0225L",
+      "stem": "What is the best synonym for the word edifice as it is used in line 4?",
+      "boxed": null,
+      "choices": {
+        "A": "door",
+        "B": "stage",
+        "C": "building",
+        "D": "carriage"
+      },
+      "answer": "C",
+      "answerCheck": "agree",
+      "note": "Vocabulary in context."
+    },
+    {
+      "num": 25,
+      "itemCode": "2095304-10R0225L",
+      "leadIn": "Read the phrase from lines 26–28 in the box below.",
+      "stem": "Which of the following words is the best synonym for the word unsightly?",
+      "boxed": "a grass-plot, much overgrown with\nburdock, pig-weed, apple-peru, and\nsuch unsightly vegetation",
+      "choices": {
+        "A": "ordinary",
+        "B": "unattractive",
+        "C": "delicate",
+        "D": "unhealthy"
+      },
+      "answer": "B",
+      "answerCheck": "agree",
+      "note": "Vocabulary in context. The sentence above the box is kept in leadIn."
+    }
+  ],
+  "skipped": [
+    {
+      "num": 26,
+      "reason": "open-response"
+    }
+  ]
+}

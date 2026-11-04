@@ -1,0 +1,358 @@
+@import "tailwindcss";
+@import "@fontsource-variable/inter";
+@import "@fontsource-variable/fraunces";
+@import "@fontsource-variable/literata";
+
+@theme {
+  --color-paper: #f6f3ec;
+  --color-paper-2: #efeae0;
+  --color-card: #fffdf9;
+  --color-ink: #1b2233;
+  --color-ink-2: #49526a;
+  --color-ink-3: #6f778c;
+  --color-line: #e3ddd1;
+  --color-line-2: #d3ccbd;
+  --color-brand: #1f2a44;
+  --color-brand-ink: #f6f3ec;
+  --color-accent: #e8962a;
+  --color-accent-soft: #fbecd3;
+  --color-math: #4b4fc9;
+  --color-math-soft: #e7e7fb;
+  --color-reading: #0b7f72;
+  --color-reading-soft: #dcf1ed;
+  --color-good: #1d8a4d;
+  --color-good-soft: #e1f3e8;
+  --color-bad: #c63d33;
+  --color-bad-soft: #fbe5e2;
+  --color-mark: #fbd98a;
+  --color-ref: #fbf0d2;
+
+  --font-display: "Fraunces Variable", "Iowan Old Style", Georgia, serif;
+  --font-sans: "Inter Variable", Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-read: "Literata Variable", "Iowan Old Style", Georgia, serif;
+
+  --radius-card: 22px;
+  --ease-out-soft: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ease-spring: cubic-bezier(0.34, 1.4, 0.64, 1);
+
+  --shadow-card: 0 1px 0 rgb(27 34 51 / 0.04), 0 10px 30px -12px rgb(27 34 51 / 0.18);
+  --shadow-lift: 0 1px 0 rgb(27 34 51 / 0.05), 0 18px 40px -16px rgb(27 34 51 / 0.28);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-paper: #14161b;
+    --color-paper-2: #1a1d23;
+    --color-card: #1e2128;
+    --color-ink: #eeeae2;
+    --color-ink-2: #bcc0cb;
+    --color-ink-3: #959bab;
+    --color-line: #2e333d;
+    --color-line-2: #3b414d;
+    --color-brand: #e9e4d8;
+    --color-brand-ink: #14161b;
+    --color-accent: #f2ab48;
+    --color-accent-soft: #3a2f1d;
+    --color-math: #9da0ff;
+    --color-math-soft: #262849;
+    --color-reading: #4fd1bd;
+    --color-reading-soft: #16332f;
+    --color-good: #4fd18b;
+    --color-good-soft: #17301f;
+    --color-bad: #ff7d70;
+    --color-bad-soft: #3a1d1b;
+    --color-mark: rgb(242 171 72 / 0.42);
+    --color-ref: rgb(242 171 72 / 0.13);
+    --shadow-card: 0 1px 0 rgb(0 0 0 / 0.2), 0 12px 32px -14px rgb(0 0 0 / 0.6);
+    --shadow-lift: 0 1px 0 rgb(0 0 0 / 0.25), 0 20px 44px -16px rgb(0 0 0 / 0.7);
+  }
+}
+
+:root {
+  color-scheme: light dark;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-feature-settings: "cv11", "ss01";
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.font-display {
+  font-variation-settings: "SOFT" 50, "WONK" 0;
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+@layer base {
+  :where(:focus-visible) {
+    outline: 2.5px solid var(--color-accent);
+    outline-offset: 2px;
+  }
+}
+
+/* ---------- rich question / choice content (sanitized at build time) ---------- */
+.rich {
+  overflow-wrap: anywhere;
+}
+.rich .p + .p,
+.rich .p + .stmt,
+.rich .stmt + .p,
+.rich .p + table,
+.rich table + .p,
+.rich .boxed + .p,
+.rich .p + .boxed {
+  margin-top: 0.7em;
+}
+.rich .ri {
+  margin-top: 0.3em;
+  padding-left: 2.4em;
+  text-indent: -2.4em;
+}
+.rich .p + .ri {
+  margin-top: 0.7em;
+}
+.rich .ri b {
+  display: inline-block;
+  min-width: 2.4em;
+  text-indent: 0;
+}
+.rich .lead {
+  color: var(--color-ink-2);
+  font-size: 0.94em;
+}
+.rich .center,
+.rich .stmt {
+  text-align: center;
+}
+.rich .stmt {
+  margin-block: 0.6em;
+}
+.rich .fig,
+.rich img {
+  display: inline-block;
+  max-width: 100%;
+  height: auto;
+}
+.rich img {
+  vertical-align: middle;
+  background: #fff;
+  border-radius: 6px;
+}
+.rich .fig img {
+  padding: 8px;
+}
+.rich var {
+  font-style: italic;
+  font-family: var(--font-read);
+}
+.rich math {
+  font-size: 1.16em;
+}
+.rich table.data {
+  border-collapse: collapse;
+  margin-inline: auto;
+  font-variant-numeric: tabular-nums;
+}
+.rich table.data td,
+.rich table.data th {
+  border: 1px solid var(--color-line-2);
+  padding: 0.3em 0.9em;
+  text-align: center;
+}
+.rich table.data th {
+  background: var(--color-paper-2);
+  font-weight: 600;
+}
+.rich .boxed {
+  margin: 0.6em 0;
+  padding: 0.7em 1em;
+  border: 1.5px solid var(--color-line-2);
+  border-radius: 12px;
+  background: var(--color-paper);
+  font-family: var(--font-read);
+  font-size: 0.95em;
+  line-height: 1.55;
+}
+.rich ul {
+  list-style: disc;
+  padding-left: 1.4em;
+}
+
+/* ---------- passages ---------- */
+.passage {
+  font-family: var(--font-read);
+  font-size: 1.04rem;
+  line-height: 1.75;
+  color: var(--color-ink);
+  hanging-punctuation: first;
+}
+.passage .para + .para {
+  margin-top: 0.85em;
+}
+.passage .para[data-n]::before {
+  content: attr(data-n);
+  float: left;
+  margin-left: -2.4rem;
+  width: 1.8rem;
+  text-align: right;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  line-height: 2.5;
+  color: var(--color-ink-3);
+}
+.passage .ln {
+  position: relative;
+  padding-left: calc(var(--indent, 0) * 1.6em);
+  border-radius: 6px;
+  transition: background-color 200ms var(--ease-out-soft);
+}
+.passage .ln[data-num]::before {
+  content: attr(data-num);
+  position: absolute;
+  left: -2.4rem;
+  width: 1.8rem;
+  text-align: right;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  line-height: 2.45;
+  color: var(--color-ink-3);
+}
+.passage .ln.gap {
+  margin-bottom: 0.9em;
+}
+.passage .is-ref {
+  background: var(--color-ref);
+  box-shadow: 0 0 0 4px var(--color-ref);
+  border-radius: 3px;
+}
+.passage .ln.is-ref::before,
+.passage .para.is-ref::before,
+.passage .fl.is-ref::before {
+  color: var(--color-accent);
+}
+/* Reflowed prose with printed line numbers: the number is absolutely placed in the margin but keeps
+   its static (in-flow) vertical position, so it lines up with the screen line where its line begins. */
+.passage .flow {
+  position: relative;
+}
+.passage .fl[data-num]::before {
+  content: attr(data-num);
+  position: absolute;
+  left: -2.4rem;
+  width: 1.8rem;
+  text-align: right;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  line-height: 2.45;
+  color: var(--color-ink-3);
+}
+.passage .fl.is-ref {
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  box-shadow: 0 0 0 3px var(--color-ref);
+}
+::highlight(hint) {
+  background-color: var(--color-mark);
+  color: inherit;
+}
+
+/* ---------- motion ---------- */
+@keyframes card-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.99);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes pop {
+  0% {
+    transform: scale(1);
+  }
+  45% {
+    transform: scale(1.025);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-4px);
+  }
+  75% {
+    transform: translateX(4px);
+  }
+}
+@keyframes grow {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.anim-card-in {
+  animation: card-in 280ms var(--ease-out-soft) both;
+}
+.anim-pop {
+  animation: pop 360ms var(--ease-spring);
+}
+.anim-shake {
+  animation: shake 260ms ease-in-out;
+}
+.anim-grow {
+  transform-origin: left center;
+  animation: grow 600ms var(--ease-out-soft) both;
+}
+.anim-fade-up {
+  animation: fade-up 260ms var(--ease-out-soft) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* thin, quiet scrollbars inside panels */
+.scroll-quiet {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-line-2) transparent;
+}

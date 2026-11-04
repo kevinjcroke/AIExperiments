@@ -1,0 +1,92 @@
+{
+  "id": "mcas-2001-g10-sonnet-116",
+  "test": "MCAS",
+  "year": 2001,
+  "grade": 10,
+  "pdf": "pioneer_2001.pdf",
+  "pdfPages": "205-206",
+  "printedPages": "199-200",
+  "title": "Sonnet 116",
+  "author": "William Shakespeare",
+  "genre": "poetry",
+  "intro": "The following poem is one of Shakespeare’s many love sonnets. As you read the poem, pay attention to poetic structure and theme. When you have finished reading, answer the questions that follow.",
+  "lineNumbered": true,
+  "lines": [
+    "Let me not to the marriage of true minds",
+    "Admit impediments. Love is not love",
+    "Which alters when it alteration finds",
+    "Or bends with the remover to remove.",
+    "O, no! It is an ever-fixed mark",
+    "That looks on tempests and is never shaken.",
+    "It is the star to every wand’ring bark,",
+    "Whose worth’s unknown, although his heighth be taken.",
+    "Love’s not Time’s fool, though rosy lips and cheeks",
+    "Within his bending sickle’s compass come.",
+    "Love alters not with his brief hours and weeks,",
+    "But bears it out even to the edge of doom.",
+    "If this be error and upon me proved,",
+    "I never writ, nor no man ever loved."
+  ],
+  "stanzaBreaksAfter": [],
+  "indent": {
+    "13": 1,
+    "14": 1
+  },
+  "footnotes": [],
+  "credit": "“Sonnet 116” by William Shakespeare. In the public domain.",
+  "questions": [
+    {
+      "num": 13,
+      "itemCode": "24652-100023P",
+      "stem": "In line 2 of the poem, what does the word impediments mean?",
+      "boxed": null,
+      "choices": {
+        "A": "inconsistencies",
+        "B": "obstacles",
+        "C": "independence",
+        "D": "virtues"
+      },
+      "answer": "B",
+      "answerCheck": "agree",
+      "note": "Vocabulary in context (word italicized in print)."
+    },
+    {
+      "num": 14,
+      "itemCode": "24656-100023P",
+      "stem": "What is the rhyme scheme of this poem?",
+      "boxed": null,
+      "choices": {
+        "A": "ABBA CDDC EFFE GG",
+        "B": "ABC ABC DEF DEF GG",
+        "C": "AA BB CC DD EE FF GG",
+        "D": "ABAB CDCD EFEF GG"
+      },
+      "answer": "D",
+      "answerCheck": "agree",
+      "note": "Poetic-structure item (rhyme scheme)."
+    },
+    {
+      "num": 15,
+      "itemCode": "50014-100023P",
+      "stem": "What is the theme of “Sonnet 116”?",
+      "boxed": null,
+      "choices": {
+        "A": "True love remains steady.",
+        "B": "Even the strongest love is temporary.",
+        "C": "Love changes as life changes.",
+        "D": "Age and time alter love."
+      },
+      "answer": "A",
+      "answerCheck": "agree",
+      "note": ""
+    }
+  ],
+  "skipped": [
+    {
+      "num": 16,
+      "reason": "open-response"
+    }
+  ],
+  "exclude": true,
+  "excludeReason": "Balance: the deck already has a lot of Shakespeare and poetry, and one of its three questions is a rhyme-scheme item."
+}

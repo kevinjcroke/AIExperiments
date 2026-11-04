@@ -1,0 +1,141 @@
+{
+  "id": "mcas-2002-g10-seven-ages-of-man",
+  "test": "MCAS",
+  "year": 2002,
+  "grade": 10,
+  "pdf": "pioneer_2002.pdf",
+  "pdfPages": "139-140",
+  "printedPages": "133-134",
+  "title": "The Seven Ages of Man — from As You Like It",
+  "author": "William Shakespeare",
+  "genre": "drama",
+  "intro": "The following selection is from William Shakespeare’s play As You Like It. Read the selection below. Use information from the selection to answer the questions that follow.",
+  "lineNumbered": true,
+  "lines": [
+    "Jacques: All the world’s a stage,",
+    "And all the men and women merely players;",
+    "They have their exits and their entrances,",
+    "And one man in his time plays many parts,",
+    "His acts being seven ages. At first, the infant,",
+    "Mewling and puking in the nurse’s arms.",
+    "Then the whining schoolboy, with his satchel",
+    "And shining morning face, creeping like snail",
+    "Unwillingly to school. And then the lover,",
+    "Sighing like furnace, with a woeful ballad",
+    "Made to his mistress’ eyebrow. Then a soldier,",
+    "Full of strange oaths and bearded like the pard¹,",
+    "Jealous in honour, sudden and quick in quarrel,",
+    "Seeking the bubble² reputation",
+    "Even in the cannon’s mouth. And then the justice,",
+    "In fair round belly with good capon³ lined,",
+    "With eyes severe and beard of formal cut,",
+    "Full of wise saws and modern instances⁴;",
+    "And so he plays his part. The sixth age shifts",
+    "Into the lean and slippered pantaloon⁵",
+    "With spectacles on nose and pouch on side;",
+    "His youthful hose, well saved, a world too wide",
+    "For his shrunk shank, and his big manly voice,",
+    "Turning again toward childish treble, pipes",
+    "And whistles in his sound. Last scene of all,",
+    "That ends this strange eventful history,",
+    "Is second childishness and mere oblivion,",
+    "Sans⁶ teeth, sans eyes, sans taste, sans everything."
+  ],
+  "stanzaBreaksAfter": [],
+  "indent": {},
+  "footnotes": [
+    {
+      "mark": "1",
+      "text": "pard -- leopard or large cat"
+    },
+    {
+      "mark": "2",
+      "text": "bubble -- short-lived"
+    },
+    {
+      "mark": "3",
+      "text": "capon -- a young, fattened chicken"
+    },
+    {
+      "mark": "4",
+      "text": "instances -- examples to prove a point"
+    },
+    {
+      "mark": "5",
+      "text": "pantaloon -- foolish old man in Italian comedy"
+    },
+    {
+      "mark": "6",
+      "text": "sans -- without"
+    }
+  ],
+  "credit": "“The Seven Ages of Man” from AS YOU LIKE IT by William Shakespeare. In the public domain.",
+  "questions": [
+    {
+      "num": 14,
+      "itemCode": "90701-100008L",
+      "stem": "In line 3, what do the words “exits” and “entrances” represent in this selection?",
+      "boxed": null,
+      "choices": {
+        "A": "sorrow and love",
+        "B": "illness and health",
+        "C": "death and birth",
+        "D": "misfortune and happiness"
+      },
+      "answer": "C",
+      "answerCheck": "agree",
+      "note": ""
+    },
+    {
+      "num": 15,
+      "itemCode": "90702-100008L",
+      "stem": "How does Shakespeare characterize a soldier in lines 11–15?",
+      "boxed": null,
+      "choices": {
+        "A": "A soldier is short-tempered and eager for fame.",
+        "B": "A soldier is loving and faithful to his mistress.",
+        "C": "A soldier is honorable and loyal to the throne.",
+        "D": "A soldier is jealous and cowardly in battle."
+      },
+      "answer": "A",
+      "answerCheck": "agree",
+      "note": ""
+    },
+    {
+      "num": 16,
+      "itemCode": "90703-100008L",
+      "stem": "In lines 23–25, what does Shakespeare most likely mean by “his big manly voice, / Turning again toward childish treble, pipes / And whistles in his sound”?",
+      "boxed": null,
+      "choices": {
+        "A": "The aging man plays many musical instruments.",
+        "B": "The aging man’s voice changes from deep to high.",
+        "C": "The aging man snores loudly in his sleep.",
+        "D": "The aging man sings playful songs to his grandchildren."
+      },
+      "answer": "B",
+      "answerCheck": "agree",
+      "note": ""
+    },
+    {
+      "num": 17,
+      "itemCode": "90704-100008L",
+      "stem": "In line 27, the word oblivion most likely means",
+      "boxed": null,
+      "choices": {
+        "A": "liveliness.",
+        "B": "courage.",
+        "C": "nothingness.",
+        "D": "misery."
+      },
+      "answer": "C",
+      "answerCheck": "agree",
+      "note": "Vocabulary in context."
+    }
+  ],
+  "skipped": [
+    {
+      "num": 18,
+      "reason": "open-response"
+    }
+  ]
+}

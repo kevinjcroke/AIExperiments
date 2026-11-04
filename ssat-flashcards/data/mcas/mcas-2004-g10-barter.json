@@ -1,0 +1,116 @@
+{
+  "id": "mcas-2004-g10-barter",
+  "test": "MCAS",
+  "year": 2004,
+  "grade": 10,
+  "pdf": "pioneer_2004.pdf",
+  "pdfPages": "111-113",
+  "printedPages": "107-109",
+  "title": "Barter",
+  "author": "Sara Teasdale",
+  "genre": "poetry",
+  "intro": "American poet Sara Teasdale won a Pulitzer Prize in 1918. As you read the poem below think about what Teasdale has to say about life. Use information from the poem to answer the questions that follow.",
+  "lineNumbered": true,
+  "lines": [
+    "Life has loveliness to sell,",
+    "All beautiful and splendid things,",
+    "Blue waves whitened on a cliff,",
+    "Soaring fire that sways and sings,",
+    "And children’s faces looking up",
+    "Holding wonder like a cup.",
+    "Life has loveliness to sell,",
+    "Music like a curve of gold,",
+    "Scent of pine trees in the rain,",
+    "Eyes that love you, arms that hold,",
+    "And for your spirit’s still delight,",
+    "Holy thoughts that star the night.",
+    "Spend all you have for loveliness,",
+    "Buy it and never count the cost;",
+    "For one white singing hour of peace",
+    "Count many a year of strife well lost,",
+    "And for a breath of ecstasy",
+    "Give all you have been, or could be."
+  ],
+  "stanzaBreaksAfter": [
+    6,
+    12
+  ],
+  "indent": {
+    "2": 1,
+    "4": 1,
+    "8": 1,
+    "10": 1,
+    "14": 1,
+    "16": 1
+  },
+  "footnotes": [],
+  "credit": "In the public domain.",
+  "questions": [
+    {
+      "num": 15,
+      "itemCode": "2095249-10R0234P",
+      "stem": "What is emphasized in stanzas 1 and 2?",
+      "boxed": null,
+      "choices": {
+        "A": "examples of beauty in life",
+        "B": "reasons for the reader to take action",
+        "C": "the importance of reevaluating one’s life",
+        "D": "the poet’s affection for children"
+      },
+      "answer": "A",
+      "answerCheck": "agree",
+      "note": ""
+    },
+    {
+      "num": 16,
+      "itemCode": "2095253-10R0234P",
+      "stem": "Which of the following figures of speech is used in line 4?",
+      "boxed": null,
+      "choices": {
+        "A": "simile",
+        "B": "analogy",
+        "C": "onomatopoeia",
+        "D": "personification"
+      },
+      "answer": "D",
+      "answerCheck": "agree",
+      "note": "Literary-term identification (fire that “sings”)."
+    },
+    {
+      "num": 17,
+      "itemCode": "2095254-10R0234P",
+      "stem": "What does line 10 suggest to the reader?",
+      "boxed": null,
+      "choices": {
+        "A": "the surprises one can find in nature",
+        "B": "the need for aggressive action",
+        "C": "the warmth of humanity",
+        "D": "the unpredictability of kindness"
+      },
+      "answer": "C",
+      "answerCheck": "agree",
+      "note": ""
+    },
+    {
+      "num": 18,
+      "itemCode": "2095252-10R0234P",
+      "stem": "Which of the following lines from the poem states that beauty is worth any sacrifice?",
+      "boxed": null,
+      "choices": {
+        "A": "“Life has loveliness to sell”",
+        "B": "“Holy thoughts that star the night”",
+        "C": "“Spend all you have for loveliness”",
+        "D": "“For one white singing hour of peace”"
+      },
+      "answer": "C",
+      "answerCheck": "agree",
+      "note": ""
+    }
+  ],
+  "skipped": [
+    {
+      "num": 19,
+      "reason": "open-response"
+    }
+  ]
+}
