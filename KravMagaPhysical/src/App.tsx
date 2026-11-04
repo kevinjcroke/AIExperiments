@@ -87,37 +87,44 @@ function Planner({ profile }: { profile: Profile }) {
       <div className="mx-auto max-w-[1440px]">
         <Header profile={profile} onOpenChart={() => openReference(null)} onOpenSettings={() => setSheet("settings")} />
 
-        <main className="grid grid-cols-1 gap-5 px-5 pt-5 min-[960px]:grid-cols-[420px_minmax(0,1fr)] min-[960px]:items-start min-[960px]:gap-8">
-          <div className="flex min-w-0 flex-col gap-4">
-            <section
-              ref={gaugeRef}
-              aria-label="Overall score"
-              className="relative rounded-lg border border-line px-3.5 pt-10 pb-4"
-              style={{ background: "radial-gradient(90% 70% at 50% 0%, rgb(255 255 255 / 0.07), transparent 70%), var(--color-hero)" }}
-            >
-              <span aria-hidden="true" className={`${corner} top-2.5 left-2.5 border-t-2 border-l-2`} />
-              <span aria-hidden="true" className={`${corner} top-2.5 right-2.5 border-t-2 border-r-2`} />
-              <span aria-hidden="true" className={`${corner} bottom-2.5 left-2.5 border-b-2 border-l-2`} />
-              <span aria-hidden="true" className={`${corner} right-2.5 bottom-2.5 border-r-2 border-b-2`} />
-              <span className="absolute top-3.5 left-1/2 inline-flex h-[22px] -translate-x-1/2 items-center gap-[7px] rounded-xs border border-line-strong bg-surface-2 px-2.5 font-display text-xs font-bold tracking-[0.2em] whitespace-nowrap uppercase">
-                <span aria-hidden="true" className="size-[7px] rounded-full" style={{ background: bug.dot }} />
-                {bug.text}
-              </span>
-              <ScoreGauge
-                average={plan.average}
-                required={plan.required}
-                total={plan.totalPoints}
-                need={plan.requiredTotal}
-                outcome={plan.outcome}
-                caption={plan.status === "impossible" ? "Best possible" : "Average"}
-              />
-            </section>
+        {/*
+          Phones: score, status, the four events you edit, then the points chart.
+          960px and up: score, status and points chart stacked on the left, events on the right.
+          The DOM follows the phone order so screen readers and keyboard focus match it too.
+        */}
+        <main className="grid grid-cols-1 gap-5 px-5 pt-5 min-[960px]:grid-cols-[420px_minmax(0,1fr)] min-[960px]:grid-rows-[auto_auto_auto_1fr] min-[960px]:items-start min-[960px]:gap-x-8 min-[960px]:gap-y-4">
+          <section
+            ref={gaugeRef}
+            aria-label="Overall score"
+            className="relative min-w-0 rounded-lg border border-line px-3.5 pt-10 pb-4 min-[960px]:col-start-1 min-[960px]:row-start-1"
+            style={{ background: "radial-gradient(90% 70% at 50% 0%, rgb(255 255 255 / 0.07), transparent 70%), var(--color-hero)" }}
+          >
+            <span aria-hidden="true" className={`${corner} top-2.5 left-2.5 border-t-2 border-l-2`} />
+            <span aria-hidden="true" className={`${corner} top-2.5 right-2.5 border-t-2 border-r-2`} />
+            <span aria-hidden="true" className={`${corner} bottom-2.5 left-2.5 border-b-2 border-l-2`} />
+            <span aria-hidden="true" className={`${corner} right-2.5 bottom-2.5 border-r-2 border-b-2`} />
+            <span className="absolute top-3.5 left-1/2 inline-flex h-[22px] -translate-x-1/2 items-center gap-[7px] rounded-xs border border-line-strong bg-surface-2 px-2.5 font-display text-xs font-bold tracking-[0.2em] whitespace-nowrap uppercase">
+              <span aria-hidden="true" className="size-[7px] rounded-full" style={{ background: bug.dot }} />
+              {bug.text}
+            </span>
+            <ScoreGauge
+              average={plan.average}
+              required={plan.required}
+              total={plan.totalPoints}
+              need={plan.requiredTotal}
+              outcome={plan.outcome}
+              caption={plan.status === "impossible" ? "Best possible" : "Average"}
+            />
+          </section>
 
+          <div className="min-w-0 min-[960px]:col-start-1 min-[960px]:row-start-2">
             <StateBanner plan={plan} onSet={setValue} onUnlock={unlock} onUnlockAll={unlockAll} />
-            <PointsSplit plan={plan} moved={feedback.moved} />
           </div>
 
-          <section aria-labelledby="events-title" className="flex min-w-0 flex-col gap-3">
+          <section
+            aria-labelledby="events-title"
+            className="flex min-w-0 flex-col gap-3 min-[960px]:col-start-2 min-[960px]:row-span-4 min-[960px]:row-start-1"
+          >
             <div className="flex min-h-11 items-center justify-between gap-3">
               <h2 id="events-title" className="m-0 font-display text-2xl font-extrabold tracking-[0.08em] uppercase">
                 The four events
@@ -167,6 +174,10 @@ function Planner({ profile }: { profile: Profile }) {
               ))}
             </div>
           </section>
+
+          <div className="min-w-0 min-[960px]:col-start-1 min-[960px]:row-start-3">
+            <PointsSplit plan={plan} moved={feedback.moved} />
+          </div>
         </main>
 
         <HowItWorks />
