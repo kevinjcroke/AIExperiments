@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { ageBracketLabels } from "../lib/charts";
 import { formatTime } from "../lib/format";
-import { EVENT_IDS, EVENTS, type EventId, type Profile } from "../lib/model";
+import { CHART_LABEL, EVENT_IDS, EVENTS, type EventId, type Profile } from "../lib/model";
 import { MAX_POINTS, type Plan } from "../lib/scoring";
 
 const RULE: Record<EventId, string> = { mile: "at or under", pushups: "at least", squats: "at least", plank: "at least" };
@@ -11,7 +11,7 @@ export function ReferenceTable({ plan, profile, highlight }: { plan: Plan; profi
   const [every, setEvery] = useState<1 | 5>(5);
   const req = plan.required;
   const b = ageBracketLabels(profile.age);
-  const profileText = `Age ${profile.age} · ${profile.gender === "female" ? "Female" : "Male"} · mile chart ${b.mile} · push-ups and squats ${b.reps}`;
+  const profileText = `Age ${profile.age} · ${CHART_LABEL[profile.gender]} charts · mile ${b.mile} · push-ups and squats ${b.reps}`;
 
   const cellText = (id: EventId, p: number): string | null => {
     const v = plan.events[id].table.bracket.values[p];

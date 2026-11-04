@@ -1,5 +1,5 @@
 import { Pencil, SlidersHorizontal, Table2 } from "lucide-react";
-import { rankById, type Profile } from "../lib/model";
+import { CHART_LABEL, rankById, type Profile } from "../lib/model";
 import { Belt } from "./Belt";
 
 export function Wordmark({ size = "l" }: { size?: "s" | "l" }) {
@@ -20,7 +20,7 @@ const iconBtn =
 /** Belt band, wordmark + actions, and the "testing at" strip with the profile. */
 export function Header({ profile, onOpenChart, onOpenSettings }: { profile: Profile; onOpenChart: () => void; onOpenSettings: () => void }) {
   const rank = rankById(profile.rank);
-  const gender = profile.gender === "female" ? "Female" : "Male";
+  const chart = `${CHART_LABEL[profile.gender]} chart`;
   return (
     <header className="flex flex-col gap-3.5 pt-[env(safe-area-inset-top)]">
       <Belt rank={profile.rank} variant="band" className="h-3" />
@@ -56,11 +56,11 @@ export function Header({ profile, onOpenChart, onOpenSettings }: { profile: Prof
         <button
           type="button"
           onClick={onOpenSettings}
-          aria-label={`Change profile. Age ${profile.age}, ${gender.toLowerCase()}, testing at ${rank.label}.`}
+          aria-label={`Change profile. Age ${profile.age}, ${chart}, testing at ${rank.label}.`}
           className="btn flex min-h-11 flex-[1_1_100%] items-center gap-2 rounded-sm text-left"
         >
           <span className="inline-flex h-8 items-center rounded-full border border-line-strong bg-control px-3 text-sm font-semibold">Age {profile.age}</span>
-          <span className="inline-flex h-8 items-center rounded-full border border-line-strong bg-control px-3 text-sm font-semibold">{gender}</span>
+          <span className="inline-flex h-8 items-center rounded-full border border-line-strong bg-control px-3 text-sm font-semibold">{chart}</span>
           <span className="ml-auto inline-flex h-8 items-center gap-1.5 px-2.5 font-display text-[15px] font-bold tracking-[0.1em] text-[#ff8a8f] uppercase">
             <Pencil className="size-[15px]" strokeWidth={2.4} aria-hidden="true" />
             Change

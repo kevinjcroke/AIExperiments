@@ -42,7 +42,7 @@ export function Onboarding() {
           Build my plan <ArrowRight className="size-5" strokeWidth={2.8} aria-hidden="true" />
         </button>
         <p className="-mt-1.5 mb-0 text-center text-xs leading-[17px] text-ink-3">
-          {profile ? "Saved on this device. No account, no sign-in." : "Pick your age, gender and rank to continue."}
+          {profile ? "Saved on this device. No account, no sign-in." : "Pick your age, scoring chart and rank to continue."}
         </p>
       </section>
     </main>
@@ -138,8 +138,8 @@ export function HowItWorks() {
             <b className="text-ink">plank</b>.
           </p>
           <p className="m-0">
-            Each event scores 0&ndash;100 from the school&rsquo;s charts. The run and push-ups depend on age and gender, squats on age, and the plank is
-            the same for everyone. Your score is the <b className="text-ink">average of the four</b>, so a strong event can make up for a weak one.
+            Each event scores 0&ndash;100 from the school&rsquo;s charts. The run and push-ups have separate men&rsquo;s and women&rsquo;s charts by age, squats go by age, and
+            the plank is the same for everyone. Your score is the <b className="text-ink">average of the four</b>, so a strong event can make up for a weak one.
           </p>
         </div>
         <div className="flex flex-col gap-3">

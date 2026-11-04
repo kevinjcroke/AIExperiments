@@ -5,6 +5,12 @@ export type EventId = (typeof EVENT_IDS)[number];
 
 export type Gender = "male" | "female";
 
+/**
+ * What people see for the men's/women's choice. The app asks which chart someone is scored on,
+ * not who they are; which chart a student tests on is the dojo's call.
+ */
+export const CHART_LABEL: Record<Gender, string> = { male: "Men's", female: "Women's" };
+
 export const RANKS = [
   { id: "green-blue", label: "Green/Blue Belt", short: "Green/Blue", required: 65, belt: ["#2E9E4F", "#2F6BD8"] },
   { id: "blue", label: "Blue Belt", short: "Blue", required: 70, belt: ["#2F6BD8", "#2F6BD8"] },

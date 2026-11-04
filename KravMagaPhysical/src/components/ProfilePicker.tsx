@@ -1,7 +1,7 @@
 import { Check, Minus, Plus } from "lucide-react";
 import { useId, useState } from "react";
 import { ageBracketLabels } from "../lib/charts";
-import { MAX_AGE, MIN_AGE, RANKS, type Gender, type Profile, type RankId } from "../lib/model";
+import { CHART_LABEL, MAX_AGE, MIN_AGE, RANKS, type Gender, type Profile, type RankId } from "../lib/model";
 import { Belt } from "./Belt";
 
 /** A profile that may still be incomplete (first visit starts blank so nobody lands on the wrong chart). */
@@ -63,7 +63,7 @@ export function ProfilePicker({ draft, onChange }: { draft: ProfileDraft; onChan
       </div>
 
       <fieldset className="m-0 flex min-w-0 flex-col gap-2 border-0 p-0">
-        <legend className={legend}>Gender</legend>
+        <legend className={legend}>Scoring chart</legend>
         <div className="grid grid-cols-2 gap-2">
           {(["male", "female"] as const).map((g) => {
             const on = draft.gender === g;
@@ -76,13 +76,15 @@ export function ProfilePicker({ draft, onChange }: { draft: ProfileDraft; onChan
                   }`}
                 >
                   {on && <Check className="size-4" strokeWidth={3} aria-hidden="true" />}
-                  {g === "male" ? "Male" : "Female"}
+                  {CHART_LABEL[g]}
                 </span>
               </label>
             );
           })}
         </div>
-        <p className="m-0 text-xs leading-[17px] text-ink-3">Sets your run and push-up charts. Squats go by age; the plank is the same for everyone.</p>
+        <p className="m-0 text-xs leading-[17px] text-ink-3">
+          Use the chart your instructor tests you on. It sets your mile and push-up targets; squats and the plank are the same either way.
+        </p>
       </fieldset>
 
       <fieldset className="m-0 flex min-w-0 flex-col gap-2 border-0 p-0">
