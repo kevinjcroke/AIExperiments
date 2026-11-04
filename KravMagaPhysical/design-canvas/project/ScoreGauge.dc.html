@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Score gauge</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="/_blob/a8bd2502b3f6f5657f47b6f7c62cb886">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,500;0,600;0,700;0,800;1,700;1,800&amp;family=Inter:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0}
+</style>
+</helmet>
+<div class="rsr-root" style="box-sizing: border-box; width: 100%; padding: {{ pad }}; background: {{ bg }}; min-height: {{ minH }}; display: flex; flex-direction: column; align-items: center; gap: 12px; font-family: Inter, system-ui, sans-serif; color: #F4F1EC">
+  <div class="{{ flashClass }}" role="img" aria-label="{{ ariaLabel }}" style="position: relative; width: 100%; max-width: {{ maxW }}; aspect-ratio: 1 / 1; container-type: inline-size; border-radius: 50%">
+    <svg aria-hidden="true" viewBox="0 0 320 320" width="100%" height="100%" style="display: block; overflow: visible">
+      <defs>
+        <pattern id="rsrCondHatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+          <rect width="6" height="6" fill="#4A3510"></rect>
+          <rect width="3" height="6" fill="#F7B940"></rect>
+        </pattern>
+      </defs>
+      <circle cx="160" cy="160" r="112" fill="#0E1013"></circle>
+      <circle cx="160" cy="160" r="150" fill="none" stroke="#1F2328" stroke-width="6" stroke-dasharray="706.86 942.48" transform="rotate(135 160 160)"></circle>
+      <circle cx="160" cy="160" r="150" fill="none" stroke="#36D17E" stroke-opacity="0.55" stroke-width="6" stroke-dasharray="{{ passDash }}" stroke-dashoffset="{{ passOffset }}" transform="rotate(135 160 160)"></circle>
+      <circle cx="160" cy="160" r="150" fill="none" stroke="url(#rsrCondHatch)" stroke-width="6" stroke-dasharray="{{ condDash }}" stroke-dashoffset="{{ condOffset }}" transform="rotate(135 160 160)"></circle>
+      <circle cx="160" cy="160" r="128" fill="none" stroke="#1F2328" stroke-width="20" stroke-dasharray="603.19 804.25" transform="rotate(135 160 160)"></circle>
+      <circle cx="160" cy="160" r="128" fill="none" stroke="{{ color }}" stroke-width="20" stroke-dasharray="{{ fillDash }}" transform="rotate(135 160 160)" style="transition: stroke-dasharray 420ms cubic-bezier(.34,1.56,.64,1), stroke 240ms ease; filter: drop-shadow(0 0 10px {{ glow }})"></circle>
+      <g stroke="#3A404A" stroke-width="2">
+        <line x1="266" y1="160" x2="274" y2="160" transform="rotate(135 160 160)"></line>
+        <line x1="268" y1="160" x2="274" y2="160" transform="rotate(162 160 160)"></line>
+        <line x1="268" y1="160" x2="274" y2="160" transform="rotate(189 160 160)"></line>
+        <line x1="268" y1="160" x2="274" y2="160" transform="rotate(216 160 160)"></line>
+        <line x1="268" y1="160" x2="274" y2="160" transform="rotate(243 160 160)"></line>
+        <line x1="266" y1="160" x2="274" y2="160" transform="rotate(270 160 160)"></line>
+        <line x1="268" y1="160" x2="274" y2="160" transform="rotate(297 160 160)"></line>
+        <line x1="268" y1="160" x2="274" y2="160" transform="rotate(324 160 160)"></line>
+        <line x1="268" y1="160" x2="274" y2="160" transform="rotate(351 160 160)"></line>
+        <line x1="268" y1="160" x2="274" y2="160" transform="rotate(378 160 160)"></line>
+        <line x1="266" y1="160" x2="274" y2="160" transform="rotate(405 160 160)"></line>
+      </g>
+      <g transform="rotate({{ reqDeg }} 160 160)">
+        <rect x="262" y="155" width="58" height="10" rx="2" fill="#FF3B44"></rect>
+        <rect x="262" y="159" width="58" height="2" fill="#FFFFFF" fill-opacity="0.85"></rect>
+      </g>
+      <g style="transform: rotate({{ knobDeg }}deg); transform-origin: 160px 160px; transition: transform 420ms cubic-bezier(.34,1.56,.64,1)">
+        <circle cx="288" cy="160" r="14" fill="#0A0B0D" stroke="{{ color }}" stroke-width="4"></circle>
+        <circle cx="288" cy="160" r="5" fill="#F4F1EC"></circle>
+      </g>
+    </svg>
+    <div style="position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; padding-bottom: 6%; pointer-events: none">
+      <span style="font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 0.2em; text-transform: uppercase; color: #B4B9C2">{{ caption }}</span>
+      <span style="display: flex; align-items: flex-start; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 800; font-size: 25cqi; line-height: 0.9; letter-spacing: -0.01em; font-variant-numeric: tabular-nums; color: #F4F1EC; overflow: hidden">
+        <span class="rsr-roll">{{ avgText }}</span>
+        <span style="font-size: 0.42em; line-height: 1.2; margin-left: 2px; color: {{ color }}">%</span>
+      </span>
+      <span style="font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 600; font-size: 19px; letter-spacing: 0.04em; font-variant-numeric: tabular-nums; color: #B4B9C2; text-transform: uppercase">
+        <span style="color: #F4F1EC">{{ total }}</span> / {{ need }} pts needed
+      </span>
+    </div>
+    <div style="position: absolute; left: 0; right: 0; bottom: 3%; display: flex; justify-content: center">
+      <dc-import name="OutcomeBadge" outcome="{{ outcome }}" req="{{ req }}" bare="yes" size="m" hint-size="200px,36px"></dc-import>
+    </div>
+  </div>
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 18px; font-size: 12px; line-height: 16px; color: #B4B9C2">
+    <span style="display: inline-flex; align-items: center; gap: 6px"><span aria-hidden="true" style="width: 14px; height: 6px; border-radius: 2px; background: #FF3B44"></span><span>{{ reqText }}</span></span>
+    <span style="display: inline-flex; align-items: center; gap: 6px"><span aria-hidden="true" style="width: 14px; height: 6px; border-radius: 2px; background-image: repeating-linear-gradient(45deg, #F7B940 0 2px, #4A3510 2px 4px)"></span><span>{{ condText }}</span></span>
+    <span style="display: inline-flex; align-items: center; gap: 6px"><span aria-hidden="true" style="width: 14px; height: 6px; border-radius: 2px; background: #36D17E; opacity: 0.7"></span>Pass zone</span>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"avg":{"editor":"range","min":40,"max":100,"step":0.25,"default":75.25},"req":{"editor":"enum","options":[65,70,75,80],"default":75},"g":{"editor":null},"$preview":{"width":390,"height":470}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const g = this.props.g;
+    const req = Number(g ? g.req : (this.props.req ?? 75));
+    const avg = Number(g ? g.avg : (this.props.avg ?? 75.25));
+    const total = g ? g.total : Math.round(avg * 4);
+    const need = g ? g.need : req * 4;
+    const outcome = g ? g.outcome : (avg >= req ? 'pass' : avg >= req - 5 ? 'conditional' : 'retest');
+    const caption = g ? g.caption : 'Average';
+    const COLOR = { pass: '#36D17E', conditional: '#F7B940', retest: '#FF6B6B' };
+    const GLOW = { pass: 'rgba(54,209,126,0.45)', conditional: 'rgba(247,185,64,0.45)', retest: 'rgba(255,107,107,0.45)' };
+    const L = 603.19, C = 804.25, L2 = 706.86, C2 = 942.48;
+    const a = Math.max(0, Math.min(100, avg));
+    const LABEL = { pass: 'Pass', conditional: 'Conditional pass', retest: 'Retest in one month' };
+    return {
+      pad: g ? '0' : '28px 24px',
+      bg: g ? 'transparent' : '#0A0B0D',
+      minH: g ? '0' : '100vh',
+      reqText: req + '% required',
+      condText: (req - 5) + '–' + req + ' conditional pass',
+      maxW: g && g.maxW ? g.maxW : '320px',
+      flashClass: g && g.flash ? 'rsr-flash' : '',
+      color: COLOR[outcome],
+      glow: GLOW[outcome],
+      fillDash: (L * a / 100).toFixed(2) + ' ' + C,
+      passDash: (L2 * (100 - req) / 100).toFixed(2) + ' ' + C2,
+      passOffset: (-L2 * req / 100).toFixed(2),
+      condDash: (L2 * 5 / 100).toFixed(2) + ' ' + C2,
+      condOffset: (-L2 * (req - 5) / 100).toFixed(2),
+      reqDeg: (135 + 2.7 * req).toFixed(2),
+      knobDeg: (135 + 2.7 * a).toFixed(2),
+      avgText: avg.toFixed(2),
+      total, need, req, outcome, caption,
+      condLo: req - 5,
+      ariaLabel: caption + ' ' + avg.toFixed(2) + ' percent. ' + total + ' of ' + need + ' points needed. ' + req + ' percent required. ' + LABEL[outcome] + '.'
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Points split</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="/_blob/a8bd2502b3f6f5657f47b6f7c62cb886">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,500;0,600;0,700;0,800;1,700;1,800&amp;family=Inter:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0}
+</style>
+</helmet>
+<div class="rsr-root" style="box-sizing: border-box; width: 100%; padding: {{ pad }}; background: {{ rootBg }}; min-height: {{ minH }}; font-family: Inter, system-ui, sans-serif; color: #F4F1EC">
+<section aria-label="Points split" style="box-sizing: border-box; width: 100%; padding: 16px 16px 14px; border-radius: 14px; background: #121418; border: 1px solid #2C3139; display: flex; flex-direction: column; gap: 14px">
+  <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px">
+    <h2 style="margin: 0; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: 0.14em; text-transform: uppercase; color: #F4F1EC">Points split</h2>
+    <p style="margin: 0; display: flex; align-items: baseline; gap: 6px; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-variant-numeric: tabular-nums">
+      <span style="font-weight: 800; font-size: 26px; color: #F4F1EC">{{ total }}</span>
+      <span style="font-weight: 600; font-size: 16px; letter-spacing: 0.06em; color: #8A909B; text-transform: uppercase">/ 400 · need {{ need }}</span>
+    </p>
+  </div>
+
+  <p class="rsr-sr">{{ summary }}</p>
+
+  <div aria-hidden="true" style="position: relative; height: 34px">
+    <div style="position: absolute; left: 0; right: 0; top: 8px; height: 14px; display: flex; gap: 2px; border-radius: 4px; overflow: hidden; background: #1F2328">
+      <sc-for list="{{ items }}" as="it" hint-placeholder-count="4">
+        <div style="flex: none; width: {{ it.budgetW }}; height: 100%; background: {{ it.fill }}; transition: width 340ms cubic-bezier(.34,1.56,.64,1)"></div>
+      </sc-for>
+    </div>
+    <div style="position: absolute; top: 2px; left: {{ needPct }}; width: 3px; height: 26px; margin-left: -1.5px; background: #FF3B44; border-radius: 2px"></div>
+    <span style="position: absolute; top: 22px; left: {{ needPct }}; transform: translateX(-50%); font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.08em; color: #FF5C63">{{ need }}</span>
+  </div>
+
+  <div aria-hidden="true" style="position: relative; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; height: 150px; padding: 0 30px 0 2px; border-bottom: 1px solid #2C3139; background-image: linear-gradient(rgba(255,255,255,0.04) 1px, rgba(255,255,255,0) 1px); background-size: 100% 25%">
+    <sc-for list="{{ items }}" as="it" hint-placeholder-count="4">
+      <div style="position: relative; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; height: 100%">
+        <span style="position: absolute; z-index: 2; bottom: calc({{ it.h }} + 5px); padding: 1px 5px; border-radius: 4px; background: #121418; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 800; font-size: 20px; line-height: 1; font-variant-numeric: tabular-nums; color: {{ it.ptsColor }}; transition: bottom 340ms cubic-bezier(.34,1.56,.64,1)">{{ it.pts }}</span>
+        <div class="{{ it.barClass }}" style="position: relative; width: 100%; max-width: 54px; height: {{ it.h }}; border-radius: 6px 6px 2px 2px; background: {{ it.fill }}; box-shadow: {{ it.glow }}; transition: height 340ms cubic-bezier(.34,1.56,.64,1)"></div>
+      </div>
+    </sc-for>
+    <div style="position: absolute; z-index: 1; left: -4px; right: 0; bottom: {{ reqPct }}; border-top: 2px dashed #FF3B44"></div>
+    <span style="position: absolute; z-index: 1; right: 0; bottom: calc({{ reqPct }} - 9px); padding: 1px 5px; border-radius: 3px; background: #DB222B; color: #FFFFFF; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.08em">{{ req }}</span>
+  </div>
+
+  <div aria-hidden="true" style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-top: -4px; padding: 0 30px 0 2px">
+    <sc-for list="{{ items }}" as="it" hint-placeholder-count="4">
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 3px; min-width: 0">
+        <span style="font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: #B4B9C2; white-space: nowrap">{{ it.short }}</span>
+        <span style="display: inline-flex; align-items: center; gap: 3px; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 700; font-size: 14px; font-variant-numeric: tabular-nums; color: {{ it.diffColor }}">{{ it.diffText }}</span>
+        <span style="display: inline-flex; align-items: center; gap: 4px; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: {{ it.modeColor }}">{{ it.modeText }}</span>
+      </div>
+    </sc-for>
+  </div>
+
+  <p style="margin: 0; font-size: 12px; line-height: 17px; color: #8A909B; text-wrap: pretty">Above the red line pays for below it. Every point over {{ req }} in one event is a point another event doesn’t need.</p>
+</section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"split":{"editor":null},"$preview":{"width":390,"height":360}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const sp = this.props.split || {
+      req: 75, total: 301, need: 300,
+      items: [
+        { key: 'mile', short: 'Mile', pts: 70, mode: 'locked' },
+        { key: 'pushups', short: 'Push-ups', pts: 80, mode: 'locked' },
+        { key: 'squats', short: 'Squats', pts: 76, mode: 'locked' },
+        { key: 'plank', short: 'Plank', pts: 75, mode: 'locked' }
+      ]
+    };
+    const standalone = !this.props.split;
+    const req = sp.req;
+    const HATCH = 'repeating-linear-gradient(135deg, #43D9F5 0 6px, #2BB3CC 6px 12px)';
+    const items = sp.items.map((it) => {
+      const auto = it.mode === 'auto';
+      const diff = it.pts - req;
+      return {
+        short: it.short,
+        pts: it.pts,
+        h: (Math.max(0, Math.min(100, it.pts)) * 0.82).toFixed(2) + '%',
+        budgetW: 'calc(' + (it.pts / 4).toFixed(2) + '% - 2px)',
+        fill: auto ? HATCH : '#E9E5DE',
+        glow: auto ? '0 0 18px -4px rgba(67,217,245,0.6)' : 'none',
+        barClass: it.flash ? 'rsr-flash' : '',
+        ptsColor: auto ? '#7FE6FA' : '#F4F1EC',
+        diffText: diff > 0 ? '+' + diff : diff < 0 ? '−' + Math.abs(diff) : 'on the line',
+        diffColor: diff > 0 ? '#36D17E' : diff < 0 ? '#F7B940' : '#B4B9C2',
+        modeText: auto ? 'Auto' : 'Locked',
+        modeColor: auto ? '#43D9F5' : '#B4B9C2'
+      };
+    });
+    const summary = 'Points split. ' + sp.items.map((it) => it.short + ' ' + it.pts + (it.mode === 'auto' ? ' (auto)' : ' (locked)')).join(', ') + '. Total ' + sp.total + ' of 400; ' + sp.need + ' needed.';
+    return {
+      items, req, summary,
+      total: sp.total, need: sp.need,
+      needPct: (sp.need / 4) + '%',
+      reqPct: (req * 0.82).toFixed(2) + '%',
+      pad: standalone ? '16px' : '0',
+      rootBg: standalone ? '#0A0B0D' : 'transparent',
+      minH: standalone ? '100vh' : '0'
+    };
+  }
+}
+</script>
+</body>
+</html>

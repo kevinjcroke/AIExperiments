@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Scoring chart reference</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="/_blob/a8bd2502b3f6f5657f47b6f7c62cb886">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,500;0,600;0,700;0,800;1,700;1,800&amp;family=Inter:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0}
+</style>
+</helmet>
+<div class="rsr-root" style="box-sizing: border-box; width: 100%; padding: {{ pad }}; background: {{ rootBg }}; min-height: {{ minH }}; display: flex; flex-direction: column; gap: 14px; font-family: Inter, system-ui, sans-serif; color: #F4F1EC">
+  <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px">
+    <p style="margin: 0; font-size: 13px; line-height: 18px; color: #B4B9C2">{{ profileText }}</p>
+    <div role="group" aria-label="Rows to show" style="display: flex; padding: 3px; gap: 3px; border-radius: 10px; background: #1A1D22; border: 1px solid #2C3139">
+      <button class="rsr-btn" onClick="{{ every5 }}" aria-pressed="{{ is5 }}" style="height: 38px; padding: 0 12px; border-radius: 8px; border: 0; background: {{ b5bg }}; color: {{ b5fg }}; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase">Every 5 pts</button>
+      <button class="rsr-btn" onClick="{{ every1 }}" aria-pressed="{{ is1 }}" style="height: 38px; padding: 0 12px; border-radius: 8px; border: 0; background: {{ b1bg }}; color: {{ b1fg }}; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase">Every point</button>
+    </div>
+  </div>
+
+  <div style="display: flex; flex-wrap: wrap; gap: 8px 16px; font-size: 12px; line-height: 16px; color: #B4B9C2">
+    <span style="display: inline-flex; align-items: center; gap: 6px"><span aria-hidden="true" style="width: 18px; height: 12px; border-radius: 3px; background: rgba(219,34,43,0.22); box-shadow: inset 3px 0 0 #FF3B44"></span><span>{{ reqLegend }}</span></span>
+    <span style="display: inline-flex; align-items: center; gap: 6px"><span aria-hidden="true" style="width: 18px; height: 12px; border-radius: 3px; border: 1.5px solid #E9E5DE; box-sizing: border-box"></span>Your locked number</span>
+    <span style="display: inline-flex; align-items: center; gap: 6px"><span aria-hidden="true" style="width: 18px; height: 12px; border-radius: 3px; border: 1.5px dashed #43D9F5; box-sizing: border-box"></span>What Auto needs</span>
+  </div>
+
+  <div role="table" aria-label="{{ tableLabel }}" style="border-radius: 12px; border: 1px solid #2C3139; overflow: hidden; background: #111316; font-variant-numeric: tabular-nums">
+    <div role="rowgroup" style="position: sticky; top: 0; z-index: 1; background: #1A1D22; border-bottom: 1px solid #2C3139">
+      <div role="row" style="display: grid; grid-template-columns: 64px repeat(4, minmax(0, 1fr)); align-items: end">
+        <span role="columnheader" style="padding: 10px 4px 8px 12px; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: #F4F1EC">Pts</span>
+        <sc-for list="{{ cols }}" as="c" hint-placeholder-count="4">
+          <span role="columnheader" style="display: flex; flex-direction: column; align-items: center; padding: 10px 2px 8px; text-align: center">
+            <span style="font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: #F4F1EC">{{ c.label }}</span>
+            <span style="font-size: 11px; line-height: 14px; color: #8A909B">{{ c.rule }}</span>
+          </span>
+        </sc-for>
+      </div>
+    </div>
+    <div role="rowgroup">
+      <sc-for list="{{ rows }}" as="row" hint-placeholder-count="12">
+        <div role="row" style="display: grid; grid-template-columns: 64px repeat(4, minmax(0, 1fr)); align-items: center; min-height: 38px; background: {{ row.bg }}; box-shadow: {{ row.mark }}; border-top: 1px solid #1F2328">
+          <span role="rowheader" style="display: flex; align-items: center; gap: 5px; padding: 0 4px 0 12px; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 800; font-size: 19px; color: {{ row.ptsColor }}; white-space: nowrap">
+            {{ row.p }}
+            <sc-if value="{{ row.isReq }}" hint-placeholder-val="{{ false }}"><span style="padding: 1px 4px; border-radius: 3px; background: #DB222B; color: #FFFFFF; font-size: 10px; letter-spacing: 0.08em">REQ</span></sc-if>
+          </span>
+          <sc-for list="{{ row.cells }}" as="cell" hint-placeholder-count="4">
+            <span role="cell" style="display: block; padding: 3px">
+              <span style="display: flex; align-items: center; justify-content: center; height: 30px; border-radius: 6px; box-sizing: border-box; border: {{ cell.border }}; background: {{ cell.bg }}; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: {{ cell.weight }}; font-size: 18px; color: {{ cell.color }}">{{ cell.text }}<sc-if value="{{ cell.mine }}" hint-placeholder-val="{{ false }}"><span class="rsr-sr"> ({{ cell.mineText }})</span></sc-if></span>
+            </span>
+          </sc-for>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <ul style="margin: 0; padding: 0 0 0 16px; display: flex; flex-direction: column; gap: 4px; font-size: 12px; line-height: 17px; color: #8A909B">
+    <li>Mile: run at or under the time shown. Reps and plank: do at least the number shown.</li>
+    <li>{{ floorNote }}</li>
+    <li>Every event is capped at 100. Scores are whole points; between two rows you get the lower one.</li>
+  </ul>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"rt":{"editor":null},"$preview":{"width":390,"height":1240}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const rt = this.props.rt || {
+      profileText: 'Age 22 · Male · Mile chart 30 and under · Push-ups and squats 25 and under',
+      req: 75,
+      charts: { mile: { base: 800, step: -4 }, pushups: { base: -25, step: 1 }, squats: { base: -2, step: 1 }, plank: { base: -240, step: 5 } },
+      current: { mile: { pts: 70, mode: 'locked' }, pushups: { pts: 90, mode: 'locked' }, squats: { pts: 70, mode: 'auto' }, plank: { pts: 70, mode: 'auto' } }
+    };
+    const st = this.state || {};
+    const every = st.every || 5;
+    const fmt = (s) => Math.floor(s / 60) + ':' + String(s % 60).padStart(2, '0');
+    const KEYS = ['mile', 'pushups', 'squats', 'plank'];
+    const COLS = {
+      mile: { label: 'Mile', rule: 'at or under' },
+      pushups: { label: 'Push-ups', rule: 'at least' },
+      squats: { label: 'Squats', rule: 'at least' },
+      plank: { label: 'Plank', rule: 'at least' }
+    };
+    const valueAt = (k, p) => {
+      const c = rt.charts[k];
+      const v = c.base + c.step * p;
+      if (k === 'mile') return fmt(v);
+      if (v < 0) return null;
+      return k === 'plank' ? fmt(v) : String(v);
+    };
+    const rows = [];
+    for (let p = 100; p >= 0; p -= every) {
+      const isReq = p === rt.req || (every === 5 && p < rt.req && p + 5 > rt.req);
+      rows.push({
+        p, isReq,
+        bg: isReq ? 'rgba(219,34,43,0.16)' : (p % 10 === 0 ? '#111316' : '#14161A'),
+        mark: isReq ? 'inset 3px 0 0 #FF3B44' : 'none',
+        ptsColor: isReq ? '#FF8A8F' : '#F4F1EC',
+        cells: KEYS.map((k) => {
+          const cur = rt.current && rt.current[k];
+          const bucket = cur ? cur.pts - (cur.pts % every) : -1;
+          const mine = !!cur && bucket === p;
+          const auto = mine && cur.mode === 'auto';
+          const text = valueAt(k, p);
+          return {
+            text: text == null ? '—' : text,
+            mine,
+            mineText: auto ? 'what Auto needs' : 'your locked number',
+            border: mine ? (auto ? '1.5px dashed #43D9F5' : '1.5px solid #E9E5DE') : '1.5px solid rgba(0,0,0,0)',
+            bg: mine ? (auto ? 'rgba(67,217,245,0.12)' : 'rgba(233,229,222,0.1)') : 'transparent',
+            color: text == null ? '#8A909B' :(mine ? (auto ? '#7FE6FA' : '#FFFFFF') : '#D9D6D0'),
+            weight: mine ? 800 : 600
+          };
+        })
+      });
+    }
+    const pu0 = Math.max(0, -rt.charts.pushups.base);
+    const sq0 = Math.max(0, -rt.charts.squats.base);
+    const pl0 = Math.max(0, -rt.charts.plank.base / rt.charts.plank.step);
+    return {
+      pad: this.props.rt ? '0' : '20px 16px',
+      rootBg: this.props.rt ? 'transparent' : '#0A0B0D',
+      minH: this.props.rt ? '0' : '100vh',
+      reqLegend: 'Required: ' + rt.req + ' pts',
+      profileText: rt.profileText,
+      tableLabel: 'Points for each value on your charts. ' + rt.profileText,
+      req: rt.req,
+      cols: KEYS.map((k) => COLS[k]),
+      rows,
+      floorNote: '— means the chart has no value there: 0 push-ups already scores ' + pu0 + ', 0 squats scores ' + sq0 + ', and a 0:00 plank scores ' + pl0 + '.',
+      is5: every === 5 ? 'true' : 'false',
+      is1: every === 1 ? 'true' : 'false',
+      b5bg: every === 5 ? '#F4F1EC' : 'transparent',
+      b5fg: every === 5 ? '#0A0B0D' : '#B4B9C2',
+      b1bg: every === 1 ? '#F4F1EC' : 'transparent',
+      b1fg: every === 1 ? '#0A0B0D' : '#B4B9C2',
+      every5: () => this.setState({ every: 5 }),
+      every1: () => this.setState({ every: 1 })
+    };
+  }
+}
+</script>
+</body>
+</html>

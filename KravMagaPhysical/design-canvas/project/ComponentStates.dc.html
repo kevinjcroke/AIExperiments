@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Component states</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="/_blob/a8bd2502b3f6f5657f47b6f7c62cb886">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,500;0,600;0,700;0,800;1,700;1,800&amp;family=Inter:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:#0A0B0D}
+a{color:#FF5C63}a:hover{color:#FF8A8F}
+</style>
+</helmet>
+<div class="rsr-root" style="box-sizing: border-box; width: 1440px; min-height: 2300px; padding: 64px; background-color: #0A0B0D; background-image: linear-gradient(rgba(255,255,255,0.022) 1px, rgba(255,255,255,0) 1px), linear-gradient(90deg, rgba(255,255,255,0.022) 1px, rgba(255,255,255,0) 1px); background-size: 32px 32px; display: flex; flex-direction: column; gap: 56px; font-family: Inter, system-ui, sans-serif; color: #F4F1EC">
+
+  <div style="display: flex; flex-direction: column; gap: 10px">
+    <span style="display: flex; align-items: center; gap: 8px; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 800; font-style: italic; font-size: 20px; text-transform: uppercase">Red Stripe <span style="padding: 2px 10px 2px 8px; background: #DB222B; color: #FFFFFF; clip-path: polygon(6px 0, 100% 0, calc(100% - 6px) 100%, 0 100%)">Ready</span></span>
+    <h1 style="margin: 0; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 800; font-size: 64px; line-height: 0.95; text-transform: uppercase">Component states</h1>
+    <p style="margin: 0; max-width: 760px; font-size: 16px; line-height: 24px; color: #B4B9C2">Every state uses the example profile: a 22-year-old man testing at Blue/Brown (75%). Auto is dashed, cyan and breathing; Locked is solid and light. The icon and the word always come with the colour.</p>
+  </div>
+
+  <section style="display: flex; flex-direction: column; gap: 20px">
+    <h2 style="margin: 0; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 800; font-size: 30px; letter-spacing: 0.08em; text-transform: uppercase">Event card</h2>
+    <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px 28px">
+      <sc-for list="{{ cards }}" as="c" hint-placeholder-count="6">
+        <div style="display: flex; flex-direction: column; gap: 10px; min-width: 0">
+          <div style="display: flex; flex-direction: column; gap: 2px">
+            <span style="font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 700; font-size: 16px; letter-spacing: 0.14em; text-transform: uppercase; color: #F4F1EC">{{ c.title }}</span>
+            <span style="font-size: 13px; line-height: 18px; color: #8A909B">{{ c.caption }}</span>
+          </div>
+          <dc-import name="EventCard" ev="{{ c.ev }}" hint-size="100%,250px"></dc-import>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section style="display: flex; flex-direction: column; gap: 20px">
+    <h2 style="margin: 0; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 800; font-size: 30px; letter-spacing: 0.08em; text-transform: uppercase">Score gauge and outcome badge</h2>
+    <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px">
+      <sc-for list="{{ gauges }}" as="g" hint-placeholder-count="3">
+        <div style="display: flex; flex-direction: column; gap: 18px; padding: 24px 20px; border-radius: 18px; background: #101215; border: 1px solid #2C3139; min-width: 0">
+          <span style="font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 700; font-size: 16px; letter-spacing: 0.14em; text-transform: uppercase; color: #F4F1EC">{{ g.title }}</span>
+          <dc-import name="ScoreGauge" g="{{ g.g }}" hint-size="100%,360px"></dc-import>
+          <div style="height: 1px; background: #23272E"></div>
+          <dc-import name="OutcomeBadge" outcome="{{ g.g.outcome }}" req="75" bare="yes" detail="{{ true }}" size="l" hint-size="100%,110px"></dc-import>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section style="display: flex; flex-direction: column; gap: 20px">
+    <h2 style="margin: 0; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 800; font-size: 30px; letter-spacing: 0.08em; text-transform: uppercase">Points split</h2>
+    <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px">
+      <sc-for list="{{ splits }}" as="s" hint-placeholder-count="2">
+        <div style="display: flex; flex-direction: column; gap: 10px; min-width: 0">
+          <div style="display: flex; flex-direction: column; gap: 2px">
+            <span style="font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 700; font-size: 16px; letter-spacing: 0.14em; text-transform: uppercase; color: #F4F1EC">{{ s.title }}</span>
+            <span style="font-size: 13px; line-height: 18px; color: #8A909B">{{ s.caption }}</span>
+          </div>
+          <dc-import name="PointsSplit" split="{{ s.split }}" hint-size="100%,330px"></dc-import>
+        </div>
+      </sc-for>
+      <div style="display: flex; flex-direction: column; gap: 12px; padding: 20px; border-radius: 14px; border: 1px dashed #3A404A; align-self: start">
+        <span style="font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 700; font-size: 16px; letter-spacing: 0.14em; text-transform: uppercase; color: #F4F1EC">Rebalance motion</span>
+        <ol style="margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 8px; font-size: 14px; line-height: 20px; color: #B4B9C2">
+          <li>The edited card locks at once: no animation, it follows your finger.</li>
+          <li>Auto cards that moved get a cyan wash that fades over 1.1 s, and their value and points tick up into place (350 ms spring).</li>
+          <li>Slider fills, thumbs and split bars spring to their new length (340 ms, slight overshoot).</li>
+          <li>A chip says how much easier or harder each Auto event got, then clears after 1.4 s.</li>
+          <li>Reduced motion: no springs or ticks. Values change in place and the wash is a plain fade.</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":2300}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const base = (o) => Object.assign({
+      unitText: '', moved: 0, movedText: '', flash: '', editing: false, note: '',
+      lockLabel: 'Lock', editLabel: 'Edit', inputLabel: 'Value', stepDownLabel: 'Less', stepUpLabel: 'More'
+    }, o);
+    const squats = { key: 'squats', n: '03', label: 'Squats', sub: 'Reps in 2 min · more is better', isTime: false, unitText: 'reps', endLo: 'Fewer', endHi: 'More' };
+    const plank = { key: 'plank', n: '04', label: 'Plank', sub: 'Hold · m:ss · longer is better', isTime: true, endLo: 'Shorter', endHi: 'Longer' };
+    const pushups = { key: 'pushups', n: '02', label: 'Push-ups', sub: 'Reps in 2 min · more is better', isTime: false, unitText: 'reps', endLo: 'Fewer', endHi: 'More' };
+    const mile = { key: 'mile', n: '01', label: 'One-mile run', sub: 'm:ss · faster is better', isTime: true, endLo: 'Slower', endHi: 'Faster' };
+    const cards = [
+      { title: 'Auto · what you need', caption: 'Computed so the average lands on 75%. Tap AUTO to lock it.',
+        ev: base(Object.assign({}, squats, { mode: 'auto', tag: 'Auto', eyebrow: 'You need', valueText: '68', pts: 70, slider: { min: 0, max: 98, pos: 68, pct: 69.39, reqPct: 74.49 }, ariaText: 'Squats, 68 reps, 70 points, auto' })) },
+      { title: 'Auto · just rebalanced', caption: 'Push-ups went up, so the plank got 5 points easier.',
+        ev: base(Object.assign({}, plank, { mode: 'auto', tag: 'Auto', eyebrow: 'You need', valueText: '1:50', pts: 70, moved: -5, movedText: '5 pts easier', flash: 'hold', slider: { min: 0, max: 260, pos: 110, pct: 42.31, reqPct: 51.92 }, ariaText: 'Plank, 1 minute 50 seconds, 70 points, auto' })) },
+      { title: 'Locked · your number', caption: 'Holds what you typed or dragged. One tap on the lock frees it.',
+        ev: base(Object.assign({}, pushups, { mode: 'locked', tag: 'Locked', eyebrow: 'Your number', valueText: '65', pts: 90, slider: { min: 0, max: 75, pos: 65, pct: 86.67, reqPct: 66.67 }, ariaText: 'Push-ups, 65 reps, 90 points, locked' })) },
+      { title: 'Editing · tap to type', caption: 'Tap the number. m:ss for times; Enter saves and locks.',
+        ev: base(Object.assign({}, mile, { mode: 'locked', tag: 'Locked', eyebrow: 'Your number', valueText: '8:40', pts: 70, editing: true, draft: '8:40', inputLabel: 'One-mile run, minutes and seconds', slider: { min: 0, max: 400, pos: 280, pct: 70, reqPct: 75 }, ariaText: 'Mile, 8 minutes 40 seconds, 70 points, locked' })) },
+      { title: 'Auto · maxed (impossible)', caption: 'Pinned at 100 because the locks leave no room.',
+        ev: base(Object.assign({}, squats, { mode: 'auto', tag: 'Maxed', eyebrow: 'Best case', valueText: '98', pts: 100, note: 'Maxed at 100, the most this event can give.', slider: { min: 0, max: 98, pos: 98, pct: 100, reqPct: 74.49 }, ariaText: 'Squats, 98 reps, 100 points, auto' })) },
+      { title: 'Auto · chart minimum (covered)', caption: 'The locks already pass, so Auto drops to the floor.',
+        ev: base(Object.assign({}, plank, { mode: 'auto', tag: 'Auto', eyebrow: 'Chart minimum', valueText: '0:00', pts: 48, note: 'You pass even at the chart minimum (48 pts here). Anything more is a bonus.', slider: { min: 0, max: 260, pos: 0, pct: 0, reqPct: 51.92 }, ariaText: 'Plank, 0 seconds, 48 points, auto' })) }
+    ];
+    const g = (avg, total, outcome) => ({ avg, req: 75, total, need: 300, outcome, caption: 'Average', flash: false, maxW: '300px' });
+    const gauges = [
+      { title: 'Pass · 75.25%', g: g(75.25, 301, 'pass') },
+      { title: 'Conditional pass · 72.50%', g: g(72.5, 290, 'conditional') },
+      { title: 'Retest in one month · 66.25%', g: g(66.25, 265, 'retest') }
+    ];
+    const splits = [
+      { title: 'Planning · two locked', caption: 'Push-ups at 90 pays for squats and plank at 70.',
+        split: { req: 75, total: 300, need: 300, items: [
+          { key: 'mile', short: 'Mile', pts: 70, mode: 'locked' },
+          { key: 'pushups', short: 'Push-ups', pts: 90, mode: 'locked' },
+          { key: 'squats', short: 'Squats', pts: 70, mode: 'auto' },
+          { key: 'plank', short: 'Plank', pts: 70, mode: 'auto' }] } },
+      { title: 'Calculator · all locked', caption: '301 of 400: one point over the line.',
+        split: { req: 75, total: 301, need: 300, items: [
+          { key: 'mile', short: 'Mile', pts: 70, mode: 'locked' },
+          { key: 'pushups', short: 'Push-ups', pts: 80, mode: 'locked' },
+          { key: 'squats', short: 'Squats', pts: 76, mode: 'locked' },
+          { key: 'plank', short: 'Plank', pts: 75, mode: 'locked' }] } }
+    ];
+    return { cards, gauges, splits };
+  }
+}
+</script>
+</body>
+</html>

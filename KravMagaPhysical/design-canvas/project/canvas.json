@@ -1,0 +1,306 @@
+{
+  "v": 3,
+  "createdOnFiles": {
+    "v": 1,
+    "at": "2026-11-04T04:10:00Z"
+  },
+  "title": "Red Stripe Ready",
+  "launch": {
+    "view": "canvas",
+    "page": "phone"
+  },
+  "pages": [
+    {
+      "id": "phone",
+      "name": "Phone · 390"
+    },
+    {
+      "id": "desktop",
+      "name": "Desktop · 1440"
+    },
+    {
+      "id": "system",
+      "name": "Components & tokens"
+    }
+  ],
+  "boards": {
+    "Phone-01-FirstVisit.dc.html": {
+      "x": 0,
+      "y": 0,
+      "w": 390,
+      "h": 844,
+      "title": "1 · First visit",
+      "page": "phone",
+      "is_interactive": true
+    },
+    "Phone-02-AllAuto.dc.html": {
+      "x": 470,
+      "y": 0,
+      "w": 390,
+      "h": 2600,
+      "title": "1b · After setup: all Auto",
+      "page": "phone",
+      "is_interactive": true
+    },
+    "Main.dc.html": {
+      "x": 940,
+      "y": 0,
+      "w": 390,
+      "h": 2600,
+      "title": "2 · Some locked (the rebalance)",
+      "page": "phone",
+      "is_interactive": true
+    },
+    "Phone-04-AllLocked.dc.html": {
+      "x": 1410,
+      "y": 0,
+      "w": 390,
+      "h": 2640,
+      "title": "3 · All four locked",
+      "page": "phone",
+      "is_interactive": true
+    },
+    "Phone-05-Impossible.dc.html": {
+      "x": 1880,
+      "y": 0,
+      "w": 390,
+      "h": 2960,
+      "title": "4 · Impossible",
+      "page": "phone",
+      "is_interactive": true
+    },
+    "Phone-06-Covered.dc.html": {
+      "x": 2350,
+      "y": 0,
+      "w": 390,
+      "h": 2800,
+      "title": "5 · Already covered",
+      "page": "phone",
+      "is_interactive": true
+    },
+    "Phone-07-Reference.dc.html": {
+      "x": 2820,
+      "y": 0,
+      "w": 390,
+      "h": 844,
+      "title": "6 · Reference chart",
+      "page": "phone",
+      "is_interactive": true
+    },
+    "Phone-08-Settings.dc.html": {
+      "x": 3290,
+      "y": 0,
+      "w": 390,
+      "h": 844,
+      "title": "7 · Settings and reset",
+      "page": "phone",
+      "is_interactive": true
+    },
+    "Desktop-01-FirstVisit.dc.html": {
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 1300,
+      "title": "1 · First visit",
+      "page": "desktop",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "Desktop-02-SomeLocked.dc.html": {
+      "x": 1520,
+      "y": 0,
+      "w": 1440,
+      "h": 1300,
+      "title": "2 · Some locked",
+      "page": "desktop",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "Desktop-03-AllLocked.dc.html": {
+      "x": 3040,
+      "y": 0,
+      "w": 1440,
+      "h": 1300,
+      "title": "3 · All four locked",
+      "page": "desktop",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "Desktop-04-Impossible.dc.html": {
+      "x": 4560,
+      "y": 0,
+      "w": 1440,
+      "h": 1540,
+      "title": "4 · Impossible",
+      "page": "desktop",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "Desktop-05-Covered.dc.html": {
+      "x": 0,
+      "y": 1760,
+      "w": 1440,
+      "h": 1420,
+      "title": "5 · Already covered",
+      "page": "desktop",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "Desktop-06-Reference.dc.html": {
+      "x": 1520,
+      "y": 1760,
+      "w": 1440,
+      "h": 1300,
+      "title": "6 · Reference chart",
+      "page": "desktop",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "Desktop-07-Settings.dc.html": {
+      "x": 3040,
+      "y": 1760,
+      "w": 1440,
+      "h": 1300,
+      "title": "7 · Settings and reset",
+      "page": "desktop",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "ComponentStates.dc.html": {
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 2300,
+      "title": "Component states",
+      "page": "system"
+    },
+    "Tokens.dc.html": {
+      "x": 1520,
+      "y": 0,
+      "w": 1440,
+      "h": 2480,
+      "title": "Design tokens",
+      "page": "system"
+    },
+    "AppScreen.dc.html": {
+      "x": 0,
+      "y": 2920,
+      "w": 390,
+      "h": 2600,
+      "title": "AppScreen (state + rebalance logic)",
+      "page": "system",
+      "is_interactive": true
+    },
+    "EventCard.dc.html": {
+      "x": 470,
+      "y": 2920,
+      "w": 390,
+      "h": 300,
+      "title": "EventCard",
+      "page": "system"
+    },
+    "ScoreGauge.dc.html": {
+      "x": 940,
+      "y": 2920,
+      "w": 390,
+      "h": 470,
+      "title": "ScoreGauge",
+      "page": "system"
+    },
+    "OutcomeBadge.dc.html": {
+      "x": 1410,
+      "y": 2920,
+      "w": 390,
+      "h": 220,
+      "title": "OutcomeBadge",
+      "page": "system"
+    },
+    "PointsSplit.dc.html": {
+      "x": 1880,
+      "y": 2920,
+      "w": 390,
+      "h": 360,
+      "title": "PointsSplit",
+      "page": "system"
+    },
+    "ProfilePicker.dc.html": {
+      "x": 2350,
+      "y": 2920,
+      "w": 390,
+      "h": 760,
+      "title": "ProfilePicker",
+      "page": "system",
+      "is_interactive": true
+    },
+    "ReferenceTable.dc.html": {
+      "x": 2820,
+      "y": 2920,
+      "w": 390,
+      "h": 1240,
+      "title": "ReferenceTable",
+      "page": "system",
+      "is_interactive": true
+    }
+  },
+  "order": [
+    "Main.dc.html",
+    "Phone-01-FirstVisit.dc.html",
+    "Phone-02-AllAuto.dc.html",
+    "Phone-04-AllLocked.dc.html",
+    "Phone-05-Impossible.dc.html",
+    "Phone-06-Covered.dc.html",
+    "Phone-07-Reference.dc.html",
+    "Phone-08-Settings.dc.html",
+    "Desktop-01-FirstVisit.dc.html",
+    "Desktop-02-SomeLocked.dc.html",
+    "Desktop-03-AllLocked.dc.html",
+    "Desktop-04-Impossible.dc.html",
+    "Desktop-05-Covered.dc.html",
+    "Desktop-06-Reference.dc.html",
+    "Desktop-07-Settings.dc.html",
+    "ComponentStates.dc.html",
+    "Tokens.dc.html",
+    "AppScreen.dc.html",
+    "EventCard.dc.html",
+    "ScoreGauge.dc.html",
+    "OutcomeBadge.dc.html",
+    "PointsSplit.dc.html",
+    "ProfilePicker.dc.html",
+    "ReferenceTable.dc.html"
+  ],
+  "notes": {
+    "phoneTitle": {
+      "x": 0,
+      "y": -300,
+      "text": "Phone · 390 px · every screen runs the real rebalance: press Play",
+      "kind": "title1",
+      "maxW": 3680,
+      "page": "phone"
+    },
+    "desktopTitle": {
+      "x": 0,
+      "y": -300,
+      "text": "Desktop · 1440 px · events in a 2×2 grid beside the score hero",
+      "kind": "title1",
+      "maxW": 6000,
+      "page": "desktop"
+    },
+    "systemTitle": {
+      "x": 0,
+      "y": -300,
+      "text": "Components and design tokens",
+      "kind": "title1",
+      "maxW": 2960,
+      "page": "system"
+    },
+    "sourceTitle": {
+      "x": 0,
+      "y": 2620,
+      "text": "Source components: each one is imported by the screens above",
+      "kind": "title1",
+      "maxW": 3210,
+      "page": "system"
+    }
+  },
+  "designSystems": []
+}

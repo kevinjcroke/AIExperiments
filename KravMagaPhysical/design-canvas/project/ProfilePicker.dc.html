@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Profile picker</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="/_blob/a8bd2502b3f6f5657f47b6f7c62cb886">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,500;0,600;0,700;0,800;1,700;1,800&amp;family=Inter:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0}
+</style>
+</helmet>
+<div class="rsr-root" style="box-sizing: border-box; width: 100%; padding: {{ pad }}; background: {{ rootBg }}; min-height: {{ minH }}; display: flex; flex-direction: column; gap: 22px; font-family: Inter, system-ui, sans-serif; color: #F4F1EC">
+
+  <div style="display: flex; flex-direction: column; gap: 8px">
+    <label for="{{ ageId }}" style="font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 0.16em; text-transform: uppercase; color: #B4B9C2">Age</label>
+    <div style="display: flex; align-items: center; gap: 10px">
+      <button class="rsr-btn" onClick="{{ ageDown }}" aria-label="One year younger" style="display: flex; align-items: center; justify-content: center; width: 52px; height: 52px; border-radius: 12px; border: 1px solid #3A404A; background: #1F2328; color: #F4F1EC">
+        <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M5 12h14"></path></svg>
+      </button>
+      <input id="{{ ageId }}" type="text" inputmode="numeric" autocomplete="off" value="{{ ageText }}" onChange="{{ ageChange }}" onBlur="{{ ageBlur }}" aria-describedby="{{ ageHintId }}" style="width: 96px; height: 52px; box-sizing: border-box; border-radius: 12px; border: 2px solid #5D6470; background: #0A0B0D; color: #F4F1EC; text-align: center; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 800; font-size: 32px; font-variant-numeric: tabular-nums">
+      <button class="rsr-btn" onClick="{{ ageUp }}" aria-label="One year older" style="display: flex; align-items: center; justify-content: center; width: 52px; height: 52px; border-radius: 12px; border: 1px solid #3A404A; background: #1F2328; color: #F4F1EC">
+        <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14"></path><path d="M5 12h14"></path></svg>
+      </button>
+    </div>
+    <p id="{{ ageHintId }}" style="margin: 0; font-size: 12px; line-height: 17px; color: #8A909B">{{ bracketText }}</p>
+  </div>
+
+  <fieldset style="margin: 0; padding: 0; border: 0; display: flex; flex-direction: column; gap: 8px; min-width: 0">
+    <legend style="padding: 0; margin-bottom: 8px; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 0.16em; text-transform: uppercase; color: #B4B9C2">Gender</legend>
+    <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px">
+      <sc-for list="{{ genders }}" as="g" hint-placeholder-count="2">
+        <label style="position: relative; display: block">
+          <input type="radio" class="rsr-radio" name="{{ groupG }}" value="{{ g.id }}" checked="{{ g.checked }}" onChange="{{ g.pick }}">
+          <span class="rsr-choice" style="display: flex; align-items: center; justify-content: center; gap: 8px; height: 52px; border-radius: 12px; border: {{ g.border }}; background: {{ g.bg }}; color: {{ g.fg }}; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 700; font-size: 20px; letter-spacing: 0.08em; text-transform: uppercase">
+            <sc-if value="{{ g.checked }}" hint-placeholder-val="{{ false }}">
+              <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
+            </sc-if>
+            {{ g.label }}
+          </span>
+        </label>
+      </sc-for>
+    </div>
+    <p style="margin: 0; font-size: 12px; line-height: 17px; color: #8A909B">Sets your run and push-up charts. Squats go by age; the plank is the same for everyone.</p>
+  </fieldset>
+
+  <fieldset style="margin: 0; padding: 0; border: 0; display: flex; flex-direction: column; gap: 8px; min-width: 0">
+    <legend style="padding: 0; margin-bottom: 8px; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 0.16em; text-transform: uppercase; color: #B4B9C2">Testing at</legend>
+    <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px">
+      <sc-for list="{{ ranks }}" as="r" hint-placeholder-count="4">
+        <label style="position: relative; display: block">
+          <input type="radio" class="rsr-radio" name="{{ groupR }}" value="{{ r.id }}" checked="{{ r.checked }}" onChange="{{ r.pick }}">
+          <span class="rsr-choice" style="display: flex; flex-direction: column; gap: 9px; box-sizing: border-box; min-height: 96px; padding: 12px; border-radius: 12px; border: {{ r.border }}; background: {{ r.bg }}">
+            <span aria-hidden="true" style="position: relative; display: block; height: 12px; border-radius: 3px; background: linear-gradient(180deg, {{ r.a }} 0 50%, {{ r.b }} 50% 100%); box-shadow: inset 0 0 0 1px rgba(0,0,0,0.35)">
+              <span style="position: absolute; right: 14px; top: 0; bottom: 0; width: 12px; background: #DB222B; box-shadow: 0 0 0 1px #0A0B0D"></span>
+            </span>
+            <span style="font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 700; font-size: 18px; line-height: 1.05; letter-spacing: 0.04em; text-transform: uppercase; color: #F4F1EC">{{ r.label }}</span>
+            <span style="display: flex; align-items: center; justify-content: space-between; gap: 6px; font-size: 13px; color: {{ r.reqColor }}">
+              <span><span style="font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 800; font-size: 18px">{{ r.req }}%</span> average</span>
+              <sc-if value="{{ r.checked }}" hint-placeholder-val="{{ false }}">
+                <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FF5C63" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
+              </sc-if>
+            </span>
+          </span>
+        </label>
+      </sc-for>
+    </div>
+  </fieldset>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"pp":{"editor":null},"$preview":{"width":390,"height":760}}'>
+class Component extends DCLogic {
+  brackets(age) {
+    const mile = age <= 30 ? '30 and under' : age <= 35 ? '31–35' : age <= 39 ? '36–39' : age <= 45 ? '40–45' : age <= 50 ? '46–50' : age <= 55 ? '51–55' : age <= 60 ? '56–60' : age <= 65 ? '61–65' : '66+';
+    const reps = age <= 25 ? '25 and under' : age <= 30 ? '26–30' : age <= 35 ? '31–35' : age <= 40 ? '36–40' : age <= 45 ? '41–45' : age <= 50 ? '46–50' : '51+';
+    return 'Your charts: mile ' + mile + ' · push-ups and squats ' + reps + '.';
+  }
+  renderVals() {
+    const st = this.state || {};
+    const pp = this.props.pp;
+    const profile = pp ? pp.profile : (st.profile || { age: 22, gender: 'male', rank: 'bb' });
+    const set = (patch) => {
+      const next = Object.assign({}, profile, patch);
+      if (pp && pp.onChange) pp.onChange(next);
+      else this.setState({ profile: next });
+    };
+    if (!this._uid) this._uid = Math.random().toString(36).slice(2, 8);
+    const RANKS = [
+      { id: 'gb', label: 'Green/Blue Belt', req: 65, a: '#2E9E4F', b: '#2F6BD8' },
+      { id: 'b', label: 'Blue Belt', req: 70, a: '#2F6BD8', b: '#2F6BD8' },
+      { id: 'bb', label: 'Blue/Brown Belt', req: 75, a: '#2F6BD8', b: '#7B4F2C' },
+      { id: 'br', label: 'Brown Belt', req: 80, a: '#7B4F2C', b: '#7B4F2C' }
+    ];
+    const clampAge = (n) => Math.max(14, Math.min(99, n));
+    const draft = st.ageDraft;
+    return {
+      pad: pp ? '0' : '24px 20px',
+      rootBg: pp ? 'transparent' : '#0A0B0D',
+      minH: pp ? '0' : '100vh',
+      ageId: 'rsr-age-' + this._uid,
+      ageHintId: 'rsr-age-hint-' + this._uid,
+      groupG: 'rsr-gender-' + this._uid,
+      groupR: 'rsr-rank-' + this._uid,
+      ageText: draft != null ? draft : String(profile.age),
+      bracketText: this.brackets(profile.age),
+      ageDown: () => set({ age: clampAge(profile.age - 1) }),
+      ageUp: () => set({ age: clampAge(profile.age + 1) }),
+      ageChange: (e) => {
+        const raw = e.target.value.replace(/[^0-9]/g, '').slice(0, 2);
+        const n = parseInt(raw, 10);
+        this.setState({ ageDraft: raw });
+        if (!isNaN(n) && n >= 14) set({ age: clampAge(n) });
+      },
+      ageBlur: () => this.setState({ ageDraft: null }),
+      genders: [
+        { id: 'male', label: 'Male' },
+        { id: 'female', label: 'Female' }
+      ].map((g) => {
+        const on = profile.gender === g.id;
+        return Object.assign({}, g, {
+          checked: on,
+          border: on ? '2px solid #F4F1EC' : '1px solid #3A404A',
+          bg: on ? '#F4F1EC' : '#16181C',
+          fg: on ? '#0A0B0D' : '#F4F1EC',
+          pick: () => set({ gender: g.id })
+        });
+      }),
+      ranks: RANKS.map((r) => {
+        const on = profile.rank === r.id;
+        return Object.assign({}, r, {
+          checked: on,
+          border: on ? '2px solid #FF3B44' : '1px solid #3A404A',
+          bg: on ? '#1F1416' : '#16181C',
+          reqColor: on ? '#FF8A8F' : '#B4B9C2',
+          pick: () => set({ rank: r.id })
+        });
+      })
+    };
+  }
+}
+</script>
+</body>
+</html>

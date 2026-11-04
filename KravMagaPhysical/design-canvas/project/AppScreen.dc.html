@@ -1,0 +1,562 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Red Stripe Ready</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="/_blob/a8bd2502b3f6f5657f47b6f7c62cb886">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,500;0,600;0,700;0,800;1,700;1,800&amp;family=Inter:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0}
+</style>
+</helmet>
+<div class="rsr-app" style="position: relative; box-sizing: border-box; width: 100%; min-height: {{ rootMinH }}; height: {{ rootH }}; overflow: {{ rootOverflow }}; padding-bottom: 32px; background-color: #0A0B0D; background-image: radial-gradient(120% 50% at 50% -8%, rgba(219,34,43,0.16), rgba(10,11,13,0) 62%), linear-gradient(rgba(255,255,255,0.026) 1px, rgba(255,255,255,0) 1px), linear-gradient(90deg, rgba(255,255,255,0.026) 1px, rgba(255,255,255,0) 1px); background-size: 100% 100%, 32px 32px, 32px 32px; font-family: Inter, system-ui, sans-serif; color: #F4F1EC">
+
+  <p class="rsr-sr" aria-live="polite">{{ announce }}</p>
+
+  <header style="display: flex; flex-direction: column; gap: 14px">
+    <div aria-hidden="true" style="position: relative; height: 12px; background: linear-gradient(180deg, {{ rank.a }} 0 50%, {{ rank.b }} 50% 100%)">
+      <div style="position: absolute; inset: 0; background-image: repeating-linear-gradient(90deg, rgba(0,0,0,0.22) 0 1px, rgba(0,0,0,0) 1px 5px), linear-gradient(180deg, rgba(255,255,255,0.14), rgba(0,0,0,0.28))"></div>
+      <div style="position: absolute; top: 0; bottom: 0; right: 14%; width: 44px; background: #DB222B; box-shadow: -3px 0 0 #0A0B0D, 3px 0 0 #0A0B0D"></div>
+    </div>
+
+    <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; padding: 0 20px">
+      <h1 style="margin: 0; display: flex; align-items: center; gap: 8px; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 800; font-style: italic; font-size: 27px; line-height: 1; letter-spacing: 0.02em; text-transform: uppercase; color: #F4F1EC">
+        <span>Red Stripe</span>
+        <span style="display: inline-block; padding: 5px 13px 5px 11px; background: #DB222B; color: #FFFFFF; clip-path: polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%)">Ready</span>
+      </h1>
+      <div style="display: flex; gap: 8px">
+        <button class="rsr-btn" onClick="{{ openRef }}" aria-label="Scoring chart" style="display: flex; align-items: center; gap: 8px; height: 44px; min-width: 44px; padding: 0 12px; border-radius: 12px; border: 1px solid #3A404A; background: #15171B; color: #F4F1EC; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.1em; text-transform: uppercase">
+          <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"></rect><path d="M3 9h18"></path><path d="M3 15h18"></path><path d="M9 3v18"></path></svg>
+          <span class="rsr-wide-only">Scoring chart</span>
+        </button>
+        <button class="rsr-btn" onClick="{{ openSettings }}" aria-label="Settings" style="display: flex; align-items: center; gap: 8px; height: 44px; min-width: 44px; padding: 0 12px; border-radius: 12px; border: 1px solid #3A404A; background: #15171B; color: #F4F1EC; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.1em; text-transform: uppercase">
+          <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h9"></path><path d="M17 6h3"></path><path d="M4 12h3"></path><path d="M11 12h9"></path><path d="M4 18h11"></path><path d="M19 18h1"></path><circle cx="15" cy="6" r="2"></circle><circle cx="9" cy="12" r="2"></circle><circle cx="17" cy="18" r="2"></circle></svg>
+          <span class="rsr-wide-only">Settings</span>
+        </button>
+      </div>
+    </div>
+
+    <div style="margin: 0 20px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 18px; padding: 12px 14px; border-radius: 14px; background: #121418; border: 1px solid #2C3139">
+      <div style="display: flex; align-items: center; gap: 12px; flex: 1 1 190px; min-width: 0">
+        <span aria-hidden="true" style="position: relative; flex: none; width: 46px; height: 16px; border-radius: 3px; background: linear-gradient(180deg, {{ rank.a }} 0 50%, {{ rank.b }} 50% 100%); box-shadow: inset 0 0 0 1px rgba(0,0,0,0.35)">
+          <span style="position: absolute; top: 0; bottom: 0; right: 8px; width: 9px; background: #DB222B; box-shadow: 0 0 0 1px #0A0B0D"></span>
+        </span>
+        <div style="display: flex; flex-direction: column; gap: 2px; min-width: 0">
+          <span style="font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: #8A909B">Testing at</span>
+          <span style="font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 700; font-size: 22px; line-height: 1; letter-spacing: 0.04em; text-transform: uppercase; color: #F4F1EC; white-space: nowrap">{{ rank.label }}</span>
+        </div>
+      </div>
+      <div style="display: flex; align-items: baseline; gap: 6px">
+        <span style="font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 800; font-size: 34px; line-height: 1; color: #FF5C63; font-variant-numeric: tabular-nums">{{ rank.req }}%</span>
+        <span style="font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: #B4B9C2">avg needed</span>
+      </div>
+      <button class="rsr-btn" onClick="{{ openSettings }}" aria-label="{{ profileLabel }}" style="flex: 1 1 100%; display: flex; align-items: center; gap: 8px; min-height: 44px; padding: 0; border: 0; background: none; color: #F4F1EC; text-align: left">
+        <span style="display: inline-flex; align-items: center; height: 32px; padding: 0 12px; border-radius: 999px; background: #1F2328; border: 1px solid #3A404A; font-size: 14px; font-weight: 600">{{ ageText }}</span>
+        <span style="display: inline-flex; align-items: center; height: 32px; padding: 0 12px; border-radius: 999px; background: #1F2328; border: 1px solid #3A404A; font-size: 14px; font-weight: 600">{{ genderLabel }}</span>
+        <span style="display: inline-flex; align-items: center; gap: 6px; height: 32px; padding: 0 10px; margin-left: auto; color: #FF8A8F; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.1em; text-transform: uppercase">
+          <svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"></path></svg>
+          Change
+        </span>
+      </button>
+    </div>
+  </header>
+
+  <main class="rsr-body" style="padding: 20px 20px 0">
+    <div class="rsr-hero">
+      <section aria-label="Overall score" style="position: relative; padding: 40px 14px 16px; border-radius: 18px; background: radial-gradient(90% 70% at 50% 0%, rgba(255,255,255,0.07), rgba(255,255,255,0) 70%), #101215; border: 1px solid #2C3139">
+        <span aria-hidden="true" style="position: absolute; top: 10px; left: 10px; width: 16px; height: 16px; border-top: 2px solid #4A515C; border-left: 2px solid #4A515C"></span>
+        <span aria-hidden="true" style="position: absolute; top: 10px; right: 10px; width: 16px; height: 16px; border-top: 2px solid #4A515C; border-right: 2px solid #4A515C"></span>
+        <span aria-hidden="true" style="position: absolute; bottom: 10px; left: 10px; width: 16px; height: 16px; border-bottom: 2px solid #4A515C; border-left: 2px solid #4A515C"></span>
+        <span aria-hidden="true" style="position: absolute; bottom: 10px; right: 10px; width: 16px; height: 16px; border-bottom: 2px solid #4A515C; border-right: 2px solid #4A515C"></span>
+        <span style="position: absolute; top: 14px; left: 50%; transform: translateX(-50%); display: inline-flex; align-items: center; gap: 7px; height: 22px; padding: 0 10px; border-radius: 4px; background: #1A1D22; border: 1px solid #3A404A; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: #F4F1EC; white-space: nowrap">
+          <span aria-hidden="true" style="width: 7px; height: 7px; border-radius: 50%; background: {{ bug.dot }}"></span>{{ bug.text }}
+        </span>
+        <dc-import name="ScoreGauge" g="{{ gauge }}" hint-size="100%,380px"></dc-import>
+      </section>
+
+      <sc-if value="{{ isPlan }}" hint-placeholder-val="{{ true }}">
+        <div style="display: flex; align-items: flex-start; gap: 12px; padding: 14px; border-radius: 14px; background: #0C1518; border: 1px solid rgba(67,217,245,0.35)">
+          <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="#43D9F5" stroke="none" style="flex: none; margin-top: 1px"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"></path></svg>
+          <p style="margin: 0; font-size: 14px; line-height: 20px; color: #D9DDE3; text-wrap: pretty"><strong style="color: #7FE6FA">Auto events are set so you land exactly on {{ rank.req }}%.</strong> Lock in a number you know you can hit and the rest rebalance.</p>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isCalc }}" hint-placeholder-val="{{ false }}">
+        <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px; padding: 14px; border-radius: 14px; background: #16181C; border: 1px solid #3A404A">
+          <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E9E5DE" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><rect x="5" y="11" width="14" height="10" rx="2"></rect><path d="M8 11V7a4 4 0 0 1 8 0v4"></path></svg>
+          <p style="margin: 0; flex: 1 1 200px; font-size: 14px; line-height: 20px; color: #D9DDE3; text-wrap: pretty"><strong style="color: #F4F1EC">All four are your numbers.</strong> {{ calcLine }}</p>
+          <button class="rsr-btn" onClick="{{ unlockAll }}" style="height: 44px; padding: 0 16px; border-radius: 10px; border: 1px solid #E9E5DE; background: transparent; color: #F4F1EC; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.1em; text-transform: uppercase">Unlock all</button>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isImpossible }}" hint-placeholder-val="{{ false }}">
+        <div style="position: relative; display: flex; flex-direction: column; gap: 14px; padding: 18px 16px 16px; border-radius: 16px; background: #17140C; border: 1px solid rgba(247,185,64,0.55); overflow: hidden">
+          <div aria-hidden="true" style="position: absolute; top: 0; right: 0; width: 160px; height: 100%; background-image: repeating-linear-gradient(135deg, rgba(247,185,64,0.07) 0 3px, rgba(247,185,64,0) 3px 14px); pointer-events: none"></div>
+          <div style="position: relative; display: flex; flex-direction: column; gap: 6px">
+            <span style="font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: #F7B940">Out of reach with these locks</span>
+            <h2 style="margin: 0; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 800; font-style: italic; font-size: 30px; line-height: 1; text-transform: uppercase; color: #F4F1EC">Not this plan. Yet.</h2>
+            <p style="margin: 0; font-size: 14px; line-height: 20px; color: #D9DDE3; text-wrap: pretty">Even with {{ impo.autoNames }} maxed at 100, your best is <strong style="color: #F4F1EC">{{ impo.best }}</strong>{{ impo.bestNote }}</p>
+          </div>
+          <div style="position: relative; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px">
+            <div style="display: flex; flex-direction: column; gap: 2px; padding: 10px 12px; border-radius: 10px; background: rgba(0,0,0,0.3); border: 1px solid #3A3220">
+              <span style="font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #B4B9C2">Short by</span>
+              <span style="font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 800; font-size: 28px; line-height: 1; color: #F4F1EC">{{ impo.short }} <span style="font-size: 15px; color: #B4B9C2">PTS</span></span>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 2px; padding: 10px 12px; border-radius: 10px; background: rgba(0,0,0,0.3); border: 1px solid #3A3220">
+              <span style="font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #B4B9C2">Costing the most</span>
+              <span style="font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 800; font-size: 28px; line-height: 1; color: #F4F1EC">{{ impo.costShort }} <span style="font-size: 15px; color: #F7B940">{{ impo.costPts }} PTS</span></span>
+            </div>
+          </div>
+          <p style="position: relative; margin: 0; font-size: 14px; line-height: 20px; color: #D9DDE3; text-wrap: pretty">{{ impo.fix }}</p>
+          <div style="position: relative; display: flex; flex-wrap: wrap; gap: 8px">
+            <sc-if value="{{ impo.canFix }}" hint-placeholder-val="{{ true }}">
+              <button class="rsr-btn" onClick="{{ impo.applyFix }}" style="flex: 1 1 160px; height: 48px; padding: 0 16px; border-radius: 10px; border: 0; background: #DB222B; color: #FFFFFF; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 800; font-size: 17px; letter-spacing: 0.08em; text-transform: uppercase">{{ impo.fixLabel }}</button>
+            </sc-if>
+            <button class="rsr-btn" onClick="{{ impo.unlock }}" style="flex: 1 1 140px; height: 48px; padding: 0 16px; border-radius: 10px; border: 1px solid #E9E5DE; background: transparent; color: #F4F1EC; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 700; font-size: 17px; letter-spacing: 0.08em; text-transform: uppercase">{{ impo.unlockLabel }}</button>
+          </div>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isCovered }}" hint-placeholder-val="{{ false }}">
+        <div style="position: relative; display: flex; flex-direction: column; gap: 8px; padding: 20px 16px 18px; border-radius: 16px; background: #0D1A12; border: 1px solid rgba(54,209,126,0.55); overflow: hidden">
+          <div aria-hidden="true" class="rsr-burst" style="position: absolute; top: -30px; right: -30px; width: 190px; height: 190px; pointer-events: none">
+            <span style="position: absolute; left: 50%; top: 50%; width: 120px; height: 6px; margin: -3px 0 0 -60px; background: #DB222B; transform: rotate(-35deg)"></span>
+            <span style="position: absolute; left: 50%; top: 50%; width: 150px; height: 3px; margin: -1.5px 0 0 -75px; background: #F4F1EC; opacity: 0.7; transform: rotate(10deg)"></span>
+            <span style="position: absolute; left: 50%; top: 50%; width: 110px; height: 5px; margin: -2.5px 0 0 -55px; background: #36D17E; transform: rotate(55deg)"></span>
+            <span style="position: absolute; left: 50%; top: 50%; width: 90px; height: 3px; margin: -1.5px 0 0 -45px; background: #43D9F5; opacity: 0.8; transform: rotate(-80deg)"></span>
+            <span style="position: absolute; left: 50%; top: 50%; width: 46px; height: 46px; margin: -23px 0 0 -23px; border-radius: 50%; border: 3px solid #36D17E"></span>
+          </div>
+          <span style="position: relative; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: #36D17E">Already covered</span>
+          <h2 style="position: relative; margin: 0; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 800; font-style: italic; font-size: 34px; line-height: 1; text-transform: uppercase; color: #F4F1EC">You’re covered.</h2>
+          <p style="position: relative; margin: 0; max-width: 300px; font-size: 14px; line-height: 20px; color: #D9DDE3; text-wrap: pretty">Your locked numbers already clear {{ rank.req }}%, even with {{ cov.autoNames }} at the chart minimum. Anything more is a bonus.</p>
+          <span style="position: relative; align-self: flex-start; display: inline-flex; align-items: baseline; gap: 6px; margin-top: 4px; padding: 6px 12px; border-radius: 999px; background: rgba(54,209,126,0.16); color: #36D17E; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 800; font-size: 20px; letter-spacing: 0.04em; text-transform: uppercase"><span>{{ cov.spareText }}</span><span style="font-size: 14px; font-weight: 700; letter-spacing: 0.1em">pts to spare</span></span>
+        </div>
+      </sc-if>
+
+      <dc-import name="PointsSplit" split="{{ split }}" hint-size="100%,330px"></dc-import>
+    </div>
+
+    <section aria-label="The four events" style="display: flex; flex-direction: column; gap: 12px; min-width: 0">
+      <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 44px">
+        <h2 style="margin: 0; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 800; font-size: 24px; letter-spacing: 0.08em; text-transform: uppercase; color: #F4F1EC">The four events</h2>
+        <sc-if value="{{ anyLocked }}" hint-placeholder-val="{{ true }}">
+          <button class="rsr-btn" onClick="{{ unlockAll }}" style="display: inline-flex; align-items: center; gap: 6px; height: 44px; padding: 0 12px; border-radius: 10px; border: 1px solid #3A404A; background: transparent; color: #F4F1EC; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.1em; text-transform: uppercase">
+            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"></rect><path d="M8 11V7a4 4 0 0 1 7.6-1.7"></path></svg>
+            Unlock all
+          </button>
+        </sc-if>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; font-size: 13px; line-height: 18px; color: #B4B9C2">
+        <span style="display: inline-flex; align-items: center; gap: 6px"><span style="display: inline-flex; align-items: center; gap: 4px; height: 22px; padding: 0 8px; border-radius: 999px; border: 1.5px solid #43D9F5; color: #7FE6FA; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 800; font-size: 12px; letter-spacing: 0.14em"><svg aria-hidden="true" width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"></path></svg>AUTO</span>shows what you need</span>
+        <span style="display: inline-flex; align-items: center; gap: 6px"><span style="display: inline-flex; align-items: center; gap: 4px; height: 22px; padding: 0 8px; border-radius: 999px; background: #E9E5DE; color: #0A0B0D; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 800; font-size: 12px; letter-spacing: 0.14em"><svg aria-hidden="true" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"></rect><path d="M8 11V7a4 4 0 0 1 8 0v4"></path></svg>LOCKED</span>holds your number</span>
+        <span>Change a number to lock it. Tap the tag to switch.</span>
+      </div>
+      <div class="rsr-events">
+        <sc-for list="{{ events }}" as="ev" hint-placeholder-count="4">
+          <dc-import name="EventCard" ev="{{ ev }}" hint-size="100%,236px"></dc-import>
+        </sc-for>
+      </div>
+    </section>
+  </main>
+
+  <footer style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin: 24px 20px 0; padding-top: 16px; border-top: 1px solid #23272E">
+    <p style="margin: 0; font-size: 12px; line-height: 17px; color: #8A909B">Saved on this device. No account, no sign-in.</p>
+    <div style="display: flex; gap: 8px">
+      <button class="rsr-btn" onClick="{{ openRef }}" style="height: 44px; padding: 0 14px; border-radius: 10px; border: 1px solid #3A404A; background: transparent; color: #F4F1EC; font-size: 14px; font-weight: 600">Scoring chart</button>
+      <button class="rsr-btn" onClick="{{ openSettings }}" style="height: 44px; padding: 0 14px; border-radius: 10px; border: 1px solid #3A404A; background: transparent; color: #F4F1EC; font-size: 14px; font-weight: 600">Settings</button>
+    </div>
+  </footer>
+
+  <sc-if value="{{ sheetOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="position: absolute; inset: 0; z-index: 30">
+      <div aria-hidden="true" style="position: absolute; inset: 0; background: rgba(5,6,8,0.76); -webkit-backdrop-filter: blur(3px); backdrop-filter: blur(3px)"></div>
+
+      <sc-if value="{{ isOnboarding }}" hint-placeholder-val="{{ false }}">
+        <div class="rsr-modal-wrap">
+          <section role="dialog" aria-modal="true" aria-label="Set up your plan" class="rsr-modal" style="position: relative; box-sizing: border-box; overflow-y: auto; background: #0F1114; border: 1px solid #2C3139; box-shadow: 0 -24px 70px rgba(0,0,0,0.65); padding: 0 20px 22px; display: flex; flex-direction: column; gap: 18px">
+            <div aria-hidden="true" style="position: relative; height: 10px; margin: 0 -20px; background: linear-gradient(180deg, {{ rank.a }} 0 50%, {{ rank.b }} 50% 100%)">
+              <div style="position: absolute; top: 0; bottom: 0; right: 14%; width: 36px; background: #DB222B; box-shadow: -3px 0 0 #0A0B0D, 3px 0 0 #0A0B0D"></div>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 8px">
+              <span style="display: flex; align-items: center; gap: 6px; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 800; font-style: italic; font-size: 18px; letter-spacing: 0.02em; text-transform: uppercase; color: #F4F1EC">Red Stripe <span style="padding: 2px 9px 2px 7px; background: #DB222B; color: #FFFFFF; clip-path: polygon(6px 0, 100% 0, calc(100% - 6px) 100%, 0 100%)">Ready</span></span>
+              <h2 style="margin: 0; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 800; font-size: 38px; line-height: 0.95; text-transform: uppercase; color: #F4F1EC; text-wrap: balance">Let’s plan your red stripe.</h2>
+              <p style="margin: 0; font-size: 15px; line-height: 22px; color: #B4B9C2; text-wrap: pretty">Three quick answers pick your scoring charts. You can change them any time.</p>
+            </div>
+            <dc-import name="ProfilePicker" pp="{{ pp }}" hint-size="100%,560px"></dc-import>
+            <button class="rsr-btn" onClick="{{ closeSheet }}" style="display: flex; align-items: center; justify-content: center; gap: 10px; height: 56px; border-radius: 12px; border: 0; background: #DB222B; color: #FFFFFF; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 800; font-size: 21px; letter-spacing: 0.1em; text-transform: uppercase; box-shadow: 0 10px 30px -10px rgba(219,34,43,0.8)">
+              Build my plan
+              <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg>
+            </button>
+            <p style="margin: -6px 0 0; text-align: center; font-size: 12px; line-height: 17px; color: #8A909B">Saved on this device. No account, no sign-in.</p>
+          </section>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isReference }}" hint-placeholder-val="{{ false }}">
+        <section role="dialog" aria-modal="true" aria-label="Your scoring chart" class="rsr-sheet" style="box-sizing: border-box; background: #0F1114; border: 1px solid #2C3139; box-shadow: 0 -24px 70px rgba(0,0,0,0.65)">
+          <div style="flex: none; display: flex; flex-direction: column; gap: 6px; padding: 8px 16px 12px; border-bottom: 1px solid #23272E">
+            <span aria-hidden="true" class="rsr-narrow-only" style="align-self: center; width: 40px; height: 4px; border-radius: 2px; background: #3A404A"></span>
+            <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px">
+              <h2 style="margin: 0; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 800; font-size: 26px; letter-spacing: 0.06em; text-transform: uppercase; color: #F4F1EC">Your scoring chart</h2>
+              <button class="rsr-btn" onClick="{{ closeSheet }}" aria-label="Close scoring chart" style="display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 12px; border: 1px solid #3A404A; background: #1A1D22; color: #F4F1EC">
+                <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M18 6 6 18"></path><path d="M6 6l12 12"></path></svg>
+              </button>
+            </div>
+          </div>
+          <div style="flex: 1 1 auto; min-height: 0; overflow-y: auto; padding: 14px 16px 24px">
+            <dc-import name="ReferenceTable" rt="{{ rt }}" hint-size="100%,900px"></dc-import>
+          </div>
+        </section>
+      </sc-if>
+
+      <sc-if value="{{ isSettings }}" hint-placeholder-val="{{ false }}">
+        <section role="dialog" aria-modal="true" aria-label="Settings" class="rsr-sheet" style="box-sizing: border-box; background: #0F1114; border: 1px solid #2C3139; box-shadow: 0 -24px 70px rgba(0,0,0,0.65)">
+          <div style="flex: none; display: flex; flex-direction: column; gap: 6px; padding: 8px 16px 12px; border-bottom: 1px solid #23272E">
+            <span aria-hidden="true" class="rsr-narrow-only" style="align-self: center; width: 40px; height: 4px; border-radius: 2px; background: #3A404A"></span>
+            <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px">
+              <h2 style="margin: 0; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 800; font-size: 26px; letter-spacing: 0.06em; text-transform: uppercase; color: #F4F1EC">Settings</h2>
+              <button class="rsr-btn" onClick="{{ closeSheet }}" aria-label="Close settings" style="display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 12px; border: 1px solid #3A404A; background: #1A1D22; color: #F4F1EC">
+                <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M18 6 6 18"></path><path d="M6 6l12 12"></path></svg>
+              </button>
+            </div>
+          </div>
+          <div style="flex: 1 1 auto; min-height: 0; overflow-y: auto; padding: 16px 16px 28px; display: flex; flex-direction: column; gap: 22px">
+            <div style="display: flex; flex-direction: column; gap: 4px">
+              <h3 style="margin: 0; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: 0.12em; text-transform: uppercase; color: #F4F1EC">Profile</h3>
+              <p style="margin: 0; font-size: 13px; line-height: 18px; color: #8A909B">Changes re-score everything right away. Locked numbers stay put.</p>
+            </div>
+            <dc-import name="ProfilePicker" pp="{{ pp }}" hint-size="100%,560px"></dc-import>
+            <div style="height: 1px; background: #23272E"></div>
+            <div style="display: flex; flex-direction: column; gap: 10px">
+              <h3 style="margin: 0; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: 0.12em; text-transform: uppercase; color: #F4F1EC">Your numbers</h3>
+              <button class="rsr-btn" onClick="{{ unlockAll }}" disabled="{{ noneLocked }}" style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 56px; padding: 0 16px; border-radius: 12px; border: 1px solid #3A404A; background: #15171B; color: {{ unlockColor }}; text-align: left; font-size: 15px; font-weight: 600">
+                <span style="display: flex; flex-direction: column; gap: 2px"><span>Unlock all</span><span style="font-size: 12px; font-weight: 400; color: #8A909B">{{ unlockHint }}</span></span>
+                <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"></rect><path d="M8 11V7a4 4 0 0 1 7.6-1.7"></path></svg>
+              </button>
+              <sc-if value="{{ notConfirming }}" hint-placeholder-val="{{ true }}">
+                <button class="rsr-btn" onClick="{{ askReset }}" style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 56px; padding: 0 16px; border-radius: 12px; border: 1px solid #7A2A2E; background: #1A1012; color: #FF8A8F; text-align: left; font-size: 15px; font-weight: 600">
+                  <span style="display: flex; flex-direction: column; gap: 2px"><span>Reset everything</span><span style="font-size: 12px; font-weight: 400; color: #B4B9C2">Clears your profile and all four numbers from this device.</span></span>
+                  <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"></path><path d="M3 3v5h5"></path></svg>
+                </button>
+              </sc-if>
+              <sc-if value="{{ confirming }}" hint-placeholder-val="{{ false }}">
+                <div role="alertdialog" aria-label="Confirm reset" style="display: flex; flex-direction: column; gap: 12px; padding: 14px 16px; border-radius: 12px; border: 1.5px solid #FF6B6B; background: #1A1012">
+                  <p style="margin: 0; font-size: 14px; line-height: 20px; color: #F4F1EC"><strong>Reset everything?</strong> Your profile and numbers are cleared and you start from the first-visit setup. This can’t be undone.</p>
+                  <div style="display: flex; gap: 8px">
+                    <button class="rsr-btn" onClick="{{ cancelReset }}" style="flex: 1 1 0; height: 44px; border-radius: 10px; border: 1px solid #3A404A; background: #15171B; color: #F4F1EC; font-size: 14px; font-weight: 600">Keep my plan</button>
+                    <button class="rsr-btn" onClick="{{ doReset }}" style="flex: 1 1 0; height: 44px; border-radius: 10px; border: 0; background: #DB222B; color: #FFFFFF; font-size: 14px; font-weight: 700">Yes, reset</button>
+                  </div>
+                </div>
+              </sc-if>
+            </div>
+            <p style="margin: 0; font-size: 12px; line-height: 17px; color: #8A909B">Everything is saved on this device only. There is no account and nothing is sent anywhere.</p>
+          </div>
+        </section>
+      </sc-if>
+    </div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"scenario":{"editor":"enum","options":["firstVisit","allAuto","someLocked","allLocked","impossible","covered","reference","settings"],"default":"someLocked"},"frameHeight":{"editor":null},"$preview":{"width":390,"height":2600}}'>
+class Component extends DCLogic {
+  D() {
+    if (this._D) return this._D;
+    const EVENTS = ['mile', 'pushups', 'squats', 'plank'];
+    const META = {
+      mile: { n: '01', label: 'One-mile run', short: 'Mile', sub: 'm:ss · faster is better', isTime: true, endLo: 'Slower', endHi: 'Faster' },
+      pushups: { n: '02', label: 'Push-ups', short: 'Push-ups', sub: 'Reps in 2 min · more is better', isTime: false, endLo: 'Fewer', endHi: 'More', one: 'push-up' },
+      squats: { n: '03', label: 'Squats', short: 'Squats', sub: 'Reps in 2 min · more is better', isTime: false, endLo: 'Fewer', endHi: 'More', one: 'squat' },
+      plank: { n: '04', label: 'Plank', short: 'Plank', sub: 'Hold · m:ss · longer is better', isTime: true, endLo: 'Shorter', endHi: 'Longer' }
+    };
+    /* The school's charts are linear: value needed for P points = base + step × P (capped 0–100).
+       Rows are [max age, base, bracket label]; source: requirements/*.xlsx via src/data/charts.json. */
+    const MILE_L = ['30 and under', '31–35', '36–39', '40–45', '46–50', '51–55', '56–60', '61–65', '66+'];
+    const REP_L = ['25 and under', '26–30', '31–35', '36–40', '41–45', '46–50', '51+'];
+    const rows = (ages, bases, labels) => ages.map((a, i) => [a, bases[i], labels[i]]);
+    const MA = [30, 35, 39, 45, 50, 55, 60, 65, 999];
+    const RA = [25, 30, 35, 40, 45, 50, 999];
+    const CH = {
+      mile: { step: -4, male: rows(MA, [800, 808, 824, 832, 842, 850, 860, 870, 880], MILE_L), female: rows(MA, [882, 910, 922, 932, 944, 954, 964, 976, 986], MILE_L) },
+      pushups: { step: 1, male: rows(RA, [-25, -23, -25, -27, -34, -41, -47], REP_L), female: rows(RA, [-53, -50, -53, -56, -58, -60, -62], REP_L) },
+      squats: { step: 1, all: rows(RA, [-2, 0, -2, -4, -11, -18, -25], REP_L) },
+      plank: { step: 5, all: [[999, -240, 'everyone']] }
+    };
+    const RANKS = {
+      gb: { label: 'Green/Blue Belt', req: 65, a: '#2E9E4F', b: '#2F6BD8' },
+      b: { label: 'Blue Belt', req: 70, a: '#2F6BD8', b: '#2F6BD8' },
+      bb: { label: 'Blue/Brown Belt', req: 75, a: '#2F6BD8', b: '#7B4F2C' },
+      br: { label: 'Brown Belt', req: 80, a: '#7B4F2C', b: '#7B4F2C' }
+    };
+    const P = { age: 22, gender: 'male', rank: 'bb' };
+    const ALL = { mile: true, pushups: true, squats: true, plank: true };
+    const SC = {
+      firstVisit: { profile: P, values: {}, locked: {}, sheet: 'onboarding' },
+      allAuto: { profile: P, values: {}, locked: {} },
+      someLocked: { profile: P, values: { mile: 520, pushups: 65 }, locked: { mile: true, pushups: true }, moved: { squats: -5, plank: -5 } },
+      allLocked: { profile: P, values: { mile: 520, pushups: 55, squats: 74, plank: 135 }, locked: ALL },
+      impossible: { profile: P, values: { mile: 648, pushups: 35 }, locked: { mile: true, pushups: true } },
+      covered: { profile: P, values: { mile: 440, pushups: 70, squats: 90 }, locked: { mile: true, pushups: true, squats: true } },
+      reference: { profile: P, values: { mile: 520, pushups: 65 }, locked: { mile: true, pushups: true }, sheet: 'reference' },
+      settings: { profile: P, values: { mile: 520, pushups: 65 }, locked: { mile: true, pushups: true }, sheet: 'settings' }
+    };
+    this._D = { EVENTS, META, CH, RANKS, SC, P };
+    return this._D;
+  }
+
+  /* ---------- scoring ---------- */
+  chart(e, prof) {
+    const c = this.D().CH[e];
+    const list = c[prof.gender] || c.all;
+    const row = list.find((r) => prof.age <= r[0]) || list[list.length - 1];
+    return { base: row[1], step: c.step, label: row[2] };
+  }
+  score(e, v, ch) { return Math.max(0, Math.min(100, Math.floor((v - ch.base) / ch.step + 1e-9))); }
+  minPts(e, ch) { return e === 'mile' ? 0 : this.score(e, 0, ch); }
+  valueFor(e, p, ch) { const v = ch.base + ch.step * p; return e === 'mile' ? v : Math.max(0, v); }
+
+  solve(prof, values, locked) {
+    const D = this.D();
+    const req = D.RANKS[prof.rank].req;
+    const need = req * 4;
+    const ch = {}, pts = {}, vals = {};
+    const autos = [];
+    let lockedSum = 0;
+    D.EVENTS.forEach((e) => {
+      ch[e] = this.chart(e, prof);
+      if (locked[e] && values[e] != null) { vals[e] = values[e]; pts[e] = this.score(e, vals[e], ch[e]); lockedSum += pts[e]; }
+      else autos.push(e);
+    });
+    let mode = 'plan';
+    if (!autos.length) mode = 'calc';
+    else {
+      const mins = {};
+      let minSum = 0;
+      autos.forEach((e) => { mins[e] = this.minPts(e, ch[e]); minSum += mins[e]; });
+      const left0 = need - lockedSum;
+      if (left0 > autos.length * 100) { mode = 'impossible'; autos.forEach((e) => { pts[e] = 100; }); }
+      else if (left0 <= minSum) { mode = 'covered'; autos.forEach((e) => { pts[e] = mins[e]; }); }
+      else {
+        /* equal shares, but never below an event's chart minimum */
+        let pool = autos.slice();
+        let left = left0;
+        let again = true;
+        while (again && pool.length) {
+          again = false;
+          const share = left / pool.length;
+          const low = pool.find((e) => mins[e] > share);
+          if (low) { pts[low] = mins[low]; left -= mins[low]; pool = pool.filter((x) => x !== low); again = true; }
+        }
+        if (pool.length) {
+          const base = Math.floor(left / pool.length);
+          let extra = left - base * pool.length;
+          pool.forEach((e) => { pts[e] = base + (extra > 0 ? 1 : 0); if (extra > 0) extra -= 1; });
+        }
+      }
+      autos.forEach((e) => { vals[e] = this.valueFor(e, pts[e], ch[e]); });
+    }
+    const total = D.EVENTS.reduce((a, e) => a + pts[e], 0);
+    const avg = total / 4;
+    const outcome = avg >= req ? 'pass' : avg >= req - 5 ? 'conditional' : 'retest';
+    return { req, need, ch, pts, vals, mode, total, avg, outcome, autos, lockedSum };
+  }
+
+  /* ---------- formatting ---------- */
+  fmt(s) { s = Math.max(0, Math.round(s)); return Math.floor(s / 60) + ':' + String(s % 60).padStart(2, '0'); }
+  spokenTime(s) {
+    const m = Math.floor(s / 60), r = s % 60;
+    const parts = [];
+    if (m) parts.push(m + (m === 1 ? ' minute' : ' minutes'));
+    if (r || !m) parts.push(r + (r === 1 ? ' second' : ' seconds'));
+    return parts.join(' ');
+  }
+  spoken(e, v) { return this.D().META[e].isTime ? this.spokenTime(v) : v + ' reps'; }
+  names(list) {
+    const n = list.map((e) => this.D().META[e].short);
+    return n.length <= 1 ? (n[0] || '') : n.slice(0, -1).join(', ') + ' and ' + n[n.length - 1];
+  }
+
+  /* ---------- state ---------- */
+  view() {
+    const D = this.D();
+    const sc = D.SC[this.props.scenario] || D.SC.someLocked;
+    const st = this.state || {};
+    return {
+      profile: st.profile || sc.profile,
+      values: st.values || sc.values,
+      locked: st.locked || sc.locked,
+      sheet: st.sheet !== undefined ? st.sheet : (sc.sheet || null),
+      moved: st.moved || sc.moved || {},
+      live: !!st.live,
+      confirmReset: !!st.confirmReset,
+      announce: st.announce || ''
+    };
+  }
+  change(fn) {
+    const D = this.D();
+    const v = this.view();
+    const before = this.solve(v.profile, v.values, v.locked);
+    const next = fn({ profile: v.profile, values: Object.assign({}, before.vals), locked: Object.assign({}, v.locked) });
+    const after = this.solve(next.profile, next.values, next.locked);
+    const moved = {};
+    D.EVENTS.forEach((e) => { if (!next.locked[e] && after.pts[e] !== before.pts[e]) moved[e] = after.pts[e] - before.pts[e]; });
+    const said = Object.keys(moved).map((e) => D.META[e].short + ' now needs ' + this.spoken(e, after.vals[e]));
+    const LABEL = { pass: 'pass', conditional: 'conditional pass', retest: 'retest in one month' };
+    said.push('Average ' + after.avg.toFixed(2) + ' percent, ' + LABEL[after.outcome]);
+    this.setState({ profile: next.profile, values: next.values, locked: next.locked, moved, live: true, announce: said.join('. ') + '.' });
+    clearTimeout(this._t);
+    this._t = setTimeout(() => this.setState({ moved: {} }), 1400);
+  }
+  componentWillUnmount() { clearTimeout(this._t); }
+
+  /* ---------- view model ---------- */
+  renderVals() {
+    const D = this.D();
+    const v = this.view();
+    const sol = this.solve(v.profile, v.values, v.locked);
+    const rank = D.RANKS[v.profile.rank];
+    const req = sol.req;
+    const self = this;
+
+    const setVal = (e, val) => self.change((s) => { s.values[e] = Math.max(0, Math.round(val)); s.locked[e] = true; return s; });
+
+    const events = D.EVENTS.map((e) => {
+      const m = D.META[e];
+      const ch = sol.ch[e];
+      const val = sol.vals[e];
+      const p = sol.pts[e];
+      const locked = !!v.locked[e];
+      let min = 0, max, pos, reqPos;
+      if (e === 'mile') { max = 400; pos = Math.max(0, Math.min(400, ch.base - val)); reqPos = 4 * req; }
+      else { max = this.valueFor(e, 100, ch); pos = Math.max(0, Math.min(max, val)); reqPos = this.valueFor(e, req, ch); }
+      const valueText = m.isTime ? this.fmt(val) : String(val);
+      const mv = v.moved[e] || 0;
+      let note = '';
+      if (!locked && sol.mode === 'impossible') note = 'Maxed at 100, the most this event can give.';
+      else if (!locked && sol.mode === 'covered') note = 'You pass even at the chart minimum (' + p + ' pts here). Anything more is a bonus.';
+      else if (!locked && e !== 'mile' && val === 0) note = (m.isTime ? 'A 0:00 hold' : '0 reps') + ' still scores ' + p + ' on your chart.';
+      else if (locked && p === 100 && val !== this.valueFor(e, 100, ch)) note = 'Capped at 100. Going further doesn’t add points.';
+      else if (locked && p === 0) note = 'Below the chart, so this scores 0.';
+      const stepWord = e === 'mile' ? ['Mile 4 seconds slower', 'Mile 4 seconds faster'] : e === 'plank' ? ['Plank 5 seconds shorter', 'Plank 5 seconds longer'] : ['One ' + m.one + ' fewer', 'One ' + m.one + ' more'];
+      return {
+        key: e, n: m.n, label: m.label, sub: m.sub, isTime: m.isTime,
+        mode: locked ? 'locked' : 'auto',
+        tag: locked ? 'Locked' : (sol.mode === 'impossible' ? 'Maxed' : 'Auto'),
+        eyebrow: locked ? 'Your number' : sol.mode === 'impossible' ? 'Best case' : sol.mode === 'covered' ? 'Chart minimum' : 'You need',
+        valueText, unitText: m.isTime ? '' : 'reps', pts: p,
+        slider: { min, max, pos, pct: (pos - min) / (max - min) * 100, reqPct: (reqPos - min) / (max - min) * 100 },
+        endLo: m.endLo, endHi: m.endHi,
+        moved: mv, movedText: Math.abs(mv) + ' pts ' + (mv < 0 ? 'easier' : 'harder'),
+        flash: mv ? (v.live ? 'live' : 'hold') : '',
+        note,
+        ariaText: m.short + ', ' + this.spoken(e, val) + ', ' + p + ' points, ' + (locked ? 'locked' : 'auto'),
+        lockLabel: 'Lock ' + m.short.toLowerCase(),
+        editLabel: 'Type your ' + m.short.toLowerCase() + (m.isTime ? ' time' : ' reps') + '. Currently ' + valueText,
+        inputLabel: m.label + (m.isTime ? ', minutes and seconds' : ', reps'),
+        stepDownLabel: stepWord[0], stepUpLabel: stepWord[1],
+        onSet: (x) => setVal(e, x),
+        onSlide: (x) => setVal(e, e === 'mile' ? ch.base - x : x),
+        onStep: (dir) => setVal(e, e === 'mile' ? val - dir * 4 : e === 'plank' ? val + dir * 5 : val + dir),
+        onToggleLock: () => self.change((s) => { s.locked[e] = !s.locked[e]; return s; })
+      };
+    });
+
+    /* impossible: what is costing the most, and the smallest fix */
+    const lockedKeys = D.EVENTS.filter((e) => v.locked[e]);
+    let impo = { autoNames: '', best: '', bestNote: '', short: 0, costShort: '', costPts: 0, fix: '', canFix: false, fixLabel: '', unlockLabel: '', applyFix: null, unlock: null };
+    if (sol.mode === 'impossible' && lockedKeys.length) {
+      const cost = lockedKeys.slice().sort((a, b) => sol.pts[a] - sol.pts[b])[0];
+      const shortBy = sol.need - sol.total;
+      const target = sol.pts[cost] + shortBy;
+      const m = D.META[cost];
+      const ch = sol.ch[cost];
+      let fix = 'Even 100 on ' + m.short.toLowerCase() + ' wouldn’t close it alone. Unlock it and let the app spread the work across more events.';
+      let canFix = false, fixLabel = '', tv = 0;
+      if (target <= 100) {
+        tv = this.valueFor(cost, target, ch);
+        const diff = Math.abs(tv - sol.vals[cost]);
+        canFix = true;
+        if (cost === 'mile') fix = 'Shave ' + this.fmt(diff) + ' off your mile (' + this.fmt(tv) + ') and a full pass is back in reach.';
+        else if (cost === 'plank') fix = 'Hold the plank ' + this.fmt(diff) + ' longer (' + this.fmt(tv) + ') and a full pass is back in reach.';
+        else fix = 'Add ' + diff + ' ' + (diff === 1 ? m.one : m.short.toLowerCase()) + ' (' + tv + ') and a full pass is back in reach.';
+        fixLabel = 'Set ' + m.short.toLowerCase() + ' to ' + (m.isTime ? this.fmt(tv) : tv);
+      }
+      impo = {
+        autoNames: this.names(sol.autos),
+        best: sol.avg.toFixed(2) + '%',
+        bestNote: sol.outcome === 'conditional' ? ', still a conditional pass.' : sol.outcome === 'retest' ? '.' : '.',
+        short: shortBy,
+        costShort: m.short, costPts: sol.pts[cost],
+        fix, canFix, fixLabel,
+        unlockLabel: 'Unlock ' + m.short.toLowerCase(),
+        applyFix: () => setVal(cost, tv),
+        unlock: () => self.change((s) => { s.locked[cost] = false; return s; })
+      };
+    }
+
+    const cov = { autoNames: this.names(sol.autos), spare: sol.total - sol.need, spareText: '+' + (sol.total - sol.need) };
+    const BUG = {
+      plan: { text: 'Live plan', dot: '#43D9F5' },
+      calc: { text: 'Your score', dot: '#E9E5DE' },
+      impossible: { text: 'Best case', dot: '#F7B940' },
+      covered: { text: 'Covered', dot: '#36D17E' }
+    };
+    const diff = sol.total - sol.need;
+    const calcLine = sol.outcome === 'pass'
+      ? (diff === 0 ? 'You land exactly on ' + req + '%.' : 'You clear ' + req + '% by ' + diff + (diff === 1 ? ' pt.' : ' pts.'))
+      : sol.outcome === 'conditional'
+        ? (-diff) + ' pts short of ' + req + '%, which is a conditional pass.'
+        : (-diff) + ' pts short of ' + req + '%. Retest in one month.';
+
+    const genderLabel = v.profile.gender === 'female' ? 'Female' : 'Male';
+    const cm = sol.ch.mile.label, cp = sol.ch.pushups.label;
+    const anyLocked = lockedKeys.length > 0;
+    const fh = this.props.frameHeight ? Number(this.props.frameHeight) : 0;
+
+    return {
+      rootMinH: fh ? fh + 'px' : '100vh',
+      rootH: fh ? fh + 'px' : 'auto',
+      rootOverflow: fh ? 'hidden' : 'visible',
+      announce: v.announce,
+      profile: v.profile, genderLabel, ageText: 'Age ' + v.profile.age,
+      rank: { label: rank.label, req: rank.req, a: rank.a, b: rank.b },
+      profileLabel: 'Change profile. Age ' + v.profile.age + ', ' + genderLabel.toLowerCase() + ', testing at ' + rank.label + '.',
+      bug: BUG[sol.mode],
+      gauge: { avg: sol.avg, req, total: sol.total, need: sol.need, outcome: sol.outcome, caption: sol.mode === 'impossible' ? 'Best possible' : 'Average', flash: false, maxW: '340px' },
+      isPlan: sol.mode === 'plan', isCalc: sol.mode === 'calc', isImpossible: sol.mode === 'impossible', isCovered: sol.mode === 'covered',
+      calcLine, impo, cov,
+      split: {
+        req, total: sol.total, need: sol.need,
+        items: D.EVENTS.map((e) => ({ key: e, short: D.META[e].short, pts: sol.pts[e], mode: v.locked[e] ? 'locked' : 'auto', flash: v.live && !!v.moved[e] }))
+      },
+      events,
+      anyLocked, noneLocked: !anyLocked,
+      unlockColor: anyLocked ? '#F4F1EC' : '#5D6470',
+      unlockHint: anyLocked ? 'Every event goes back to Auto.' : 'Nothing is locked right now.',
+      rt: {
+        profileText: 'Age ' + v.profile.age + ' · ' + genderLabel + ' · mile chart ' + cm + ' · push-ups and squats ' + cp,
+        req,
+        charts: { mile: { base: sol.ch.mile.base, step: -4 }, pushups: { base: sol.ch.pushups.base, step: 1 }, squats: { base: sol.ch.squats.base, step: 1 }, plank: { base: sol.ch.plank.base, step: 5 } },
+        current: D.EVENTS.reduce((o, e) => { o[e] = { pts: sol.pts[e], mode: v.locked[e] ? 'locked' : 'auto' }; return o; }, {})
+      },
+      pp: { profile: v.profile, onChange: (p) => self.change((s) => { s.profile = p; return s; }) },
+      sheetOpen: !!v.sheet,
+      isOnboarding: v.sheet === 'onboarding', isReference: v.sheet === 'reference', isSettings: v.sheet === 'settings',
+      confirming: v.confirmReset, notConfirming: !v.confirmReset,
+      openRef: () => self.setState({ sheet: 'reference' }),
+      openSettings: () => self.setState({ sheet: 'settings', confirmReset: false }),
+      closeSheet: () => self.setState({ sheet: null, confirmReset: false }),
+      unlockAll: () => self.change((s) => { s.locked = {}; return s; }),
+      askReset: () => self.setState({ confirmReset: true }),
+      cancelReset: () => self.setState({ confirmReset: false }),
+      doReset: () => self.setState({ profile: D.P, values: {}, locked: {}, moved: {}, live: false, sheet: 'onboarding', confirmReset: false, announce: 'Everything was reset.' })
+    };
+  }
+}
+</script>
+</body>
+</html>

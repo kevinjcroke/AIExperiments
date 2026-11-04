@@ -7,6 +7,7 @@ A collection of independent side-project experiments. Each lives in its own fold
 | Experiment | Description |
 | --- | --- |
 | [`stl-food-wheel/`](stl-food-wheel/) | St. Louis World Food Wheel — spin a 3D game-show wheel of countries and get verified local restaurants for the winner. [Play it](https://kevinjcroke.github.io/AIExperiments/stl-food-wheel/) |
+| [`KravMagaPhysical/`](KravMagaPhysical/) | Red Stripe Ready: plan the Krav Maga red-stripe physical test. Lock in what you can do, and the other events rebalance to what you need to pass. |
 
 ## Adding an experiment to the site
 

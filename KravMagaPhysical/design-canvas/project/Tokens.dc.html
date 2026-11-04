@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Design tokens</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="/_blob/a8bd2502b3f6f5657f47b6f7c62cb886">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,500;0,600;0,700;0,800;1,700;1,800&amp;family=Inter:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:#0A0B0D}
+a{color:#FF5C63}a:hover{color:#FF8A8F}
+</style>
+</helmet>
+<div class="rsr-root" style="box-sizing: border-box; width: 1440px; min-height: 2480px; padding: 64px; background-color: #0A0B0D; background-image: linear-gradient(rgba(255,255,255,0.022) 1px, rgba(255,255,255,0) 1px), linear-gradient(90deg, rgba(255,255,255,0.022) 1px, rgba(255,255,255,0) 1px); background-size: 32px 32px; display: flex; flex-direction: column; gap: 52px; font-family: Inter, system-ui, sans-serif; color: #F4F1EC">
+
+  <div style="display: flex; flex-direction: column; gap: 10px">
+    <span style="display: flex; align-items: center; gap: 8px; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 800; font-style: italic; font-size: 20px; text-transform: uppercase">Red Stripe <span style="padding: 2px 10px 2px 8px; background: #DB222B; color: #FFFFFF; clip-path: polygon(6px 0, 100% 0, calc(100% - 6px) 100%, 0 100%)">Ready</span></span>
+    <h1 style="margin: 0; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 800; font-size: 64px; line-height: 0.95; text-transform: uppercase">Design tokens</h1>
+    <p style="margin: 0; max-width: 820px; font-size: 16px; line-height: 24px; color: #B4B9C2">Dark by default. The red stripe is the one loud colour: primary actions and the required marker. Belt colours only appear where they mean the rank. Contrast ratios are measured against the surface each colour sits on.</p>
+  </div>
+
+  <section style="display: flex; flex-direction: column; gap: 18px">
+    <h2 style="margin: 0; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 800; font-size: 30px; letter-spacing: 0.08em; text-transform: uppercase">Colour</h2>
+    <div style="display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 24px">
+      <sc-for list="{{ colorGroups }}" as="grp" hint-placeholder-count="5">
+        <div style="display: flex; flex-direction: column; gap: 10px; min-width: 0">
+          <h3 style="margin: 0; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.16em; text-transform: uppercase; color: #B4B9C2">{{ grp.name }}</h3>
+          <sc-for list="{{ grp.items }}" as="c" hint-placeholder-count="4">
+            <div style="display: flex; gap: 12px; align-items: center; padding: 8px; border-radius: 12px; background: #121418; border: 1px solid #23272E">
+              <span aria-hidden="true" style="flex: none; width: 52px; height: 52px; border-radius: 8px; background: {{ c.hex }}; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.12)"></span>
+              <span style="display: flex; flex-direction: column; gap: 1px; min-width: 0">
+                <span style="font-size: 13px; font-weight: 600; color: #F4F1EC">{{ c.name }}</span>
+                <span style="font-family: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace; font-size: 12px; color: #B4B9C2">{{ c.hex }}</span>
+                <span style="font-size: 12px; line-height: 16px; color: #8A909B">{{ c.use }}</span>
+              </span>
+            </div>
+          </sc-for>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <div style="display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 48px">
+    <section style="display: flex; flex-direction: column; gap: 18px; min-width: 0">
+      <h2 style="margin: 0; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 800; font-size: 30px; letter-spacing: 0.08em; text-transform: uppercase">Type</h2>
+      <p style="margin: 0; font-size: 14px; line-height: 21px; color: #B4B9C2">Barlow Condensed for numbers and headings, always tabular. Inter for body text. Both load from Google Fonts and are already in package.json.</p>
+      <div style="display: flex; flex-direction: column; border-radius: 14px; border: 1px solid #23272E; background: #101215; overflow: hidden">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding: 16px 20px; border-bottom: 1px solid #23272E">
+          <span style="font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 800; font-size: 96px; line-height: 0.9; font-variant-numeric: tabular-nums">75.25</span>
+          <span style="font-size: 12px; line-height: 17px; color: #8A909B; text-align: right">display-xl · 96 / 0.9 · 800<br>gauge average (25cqi on phone)</span>
+        </div>
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding: 14px 20px; border-bottom: 1px solid #23272E">
+          <span style="font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 800; font-size: 58px; line-height: 0.95; font-variant-numeric: tabular-nums">8:40 <span style="font-size: 46px; color: #7FE6FA">70</span></span>
+          <span style="font-size: 12px; line-height: 17px; color: #8A909B; text-align: right">display-l 58 · display-m 46 · 800<br>event value · event points</span>
+        </div>
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding: 14px 20px; border-bottom: 1px solid #23272E">
+          <span style="font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 800; font-style: italic; font-size: 34px; line-height: 1; text-transform: uppercase">You’re covered.</span>
+          <span style="font-size: 12px; line-height: 17px; color: #8A909B; text-align: right">headline · 30–38 / 1 · 800 italic<br>state banners, onboarding</span>
+        </div>
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding: 14px 20px; border-bottom: 1px solid #23272E">
+          <span style="font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 700; font-size: 21px; letter-spacing: 0.05em; text-transform: uppercase">One-mile run</span>
+          <span style="font-size: 12px; line-height: 17px; color: #8A909B; text-align: right">title · 21 · 700 · +0.05em caps</span>
+        </div>
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding: 14px 20px; border-bottom: 1px solid #23272E">
+          <span style="font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; color: #43D9F5">You need</span>
+          <span style="font-size: 12px; line-height: 17px; color: #8A909B; text-align: right">label · 12–15 · 700 · +0.14–0.2em caps</span>
+        </div>
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding: 14px 20px; border-bottom: 1px solid #23272E">
+          <span style="font-size: 15px; line-height: 22px">Three quick answers pick your scoring charts.</span>
+          <span style="font-size: 12px; line-height: 17px; color: #8A909B; text-align: right">body · Inter 14–15 / 20–22 · 400</span>
+        </div>
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding: 14px 20px">
+          <span style="font-size: 12px; line-height: 17px; color: #8A909B">Saved on this device. No account, no sign-in.</span>
+          <span style="font-size: 12px; line-height: 17px; color: #8A909B; text-align: right">small · Inter 12 / 17 · 400</span>
+        </div>
+      </div>
+    </section>
+
+    <section style="display: flex; flex-direction: column; gap: 18px; min-width: 0">
+      <h2 style="margin: 0; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 800; font-size: 30px; letter-spacing: 0.08em; text-transform: uppercase">Spacing and radii</h2>
+      <div style="display: flex; flex-direction: column; gap: 8px; padding: 16px 20px; border-radius: 14px; border: 1px solid #23272E; background: #101215">
+        <sc-for list="{{ spacing }}" as="s" hint-placeholder-count="9">
+          <div style="display: grid; grid-template-columns: 64px minmax(0, 1fr) 140px; align-items: center; gap: 12px">
+            <span style="font-family: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace; font-size: 12px; color: #B4B9C2">{{ s.name }}</span>
+            <span aria-hidden="true" style="display: block; height: 10px; width: {{ s.w }}; border-radius: 2px; background: #DB222B"></span>
+            <span style="font-size: 12px; color: #8A909B">{{ s.use }}</span>
+          </div>
+        </sc-for>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px">
+        <sc-for list="{{ radii }}" as="r" hint-placeholder-count="6">
+          <div style="display: flex; flex-direction: column; gap: 6px; padding: 12px; border-radius: 12px; border: 1px solid #23272E; background: #101215">
+            <span aria-hidden="true" style="display: block; height: 44px; border: 2px solid #E9E5DE; border-radius: {{ r.r }}; border-right-color: rgba(0,0,0,0); border-bottom-color: rgba(0,0,0,0)"></span>
+            <span style="font-family: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace; font-size: 12px; color: #F4F1EC">{{ r.name }}</span>
+            <span style="font-size: 12px; color: #8A909B">{{ r.use }}</span>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+  </div>
+
+  <div style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 48px">
+    <section style="display: flex; flex-direction: column; gap: 18px; min-width: 0">
+      <h2 style="margin: 0; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 800; font-size: 30px; letter-spacing: 0.08em; text-transform: uppercase">Motion</h2>
+      <div style="display: flex; flex-direction: column; border-radius: 14px; border: 1px solid #23272E; background: #101215; overflow: hidden">
+        <sc-for list="{{ motion }}" as="m" hint-placeholder-count="7">
+          <div style="display: grid; grid-template-columns: 150px 120px minmax(0, 1fr); gap: 12px; align-items: baseline; padding: 12px 18px; border-top: 1px solid #1C1F24">
+            <span style="font-family: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace; font-size: 12px; color: #F4F1EC">{{ m.name }}</span>
+            <span style="font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 700; font-size: 18px; color: #7FE6FA; font-variant-numeric: tabular-nums">{{ m.value }}</span>
+            <span style="font-size: 13px; line-height: 19px; color: #B4B9C2">{{ m.use }}</span>
+          </div>
+        </sc-for>
+      </div>
+      <p style="margin: 0; font-size: 13px; line-height: 19px; color: #B4B9C2">With prefers-reduced-motion, springs, ticks and the Auto pulse turn off: Auto gets a steady glow, values change in place, and the rebalance wash fades without moving.</p>
+    </section>
+
+    <section style="display: flex; flex-direction: column; gap: 18px; min-width: 0">
+      <h2 style="margin: 0; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 800; font-size: 30px; letter-spacing: 0.08em; text-transform: uppercase">Tailwind v4 handoff</h2>
+      <pre style="margin: 0; padding: 18px 20px; border-radius: 14px; border: 1px solid #23272E; background: #0E1013; color: #D9DDE3; font-family: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace; font-size: 12.5px; line-height: 19px; white-space: pre-wrap; overflow-x: auto">{{ theme }}</pre>
+    </section>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":2480}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const colorGroups = [
+      { name: 'Ground', items: [
+        { name: 'bg', hex: '#0A0B0D', use: 'Canvas, with a faint 32 px mat grid' },
+        { name: 'surface', hex: '#131519', use: 'Cards, strips' },
+        { name: 'surface-2', hex: '#1A1D22', use: 'Raised controls' },
+        { name: 'surface-3', hex: '#23272E', use: 'Dividers on cards' },
+        { name: 'line', hex: '#2C3139', use: 'Borders' },
+        { name: 'line-strong', hex: '#3A404A', use: 'Button borders' }] },
+      { name: 'Text', items: [
+        { name: 'text', hex: '#F4F1EC', use: '17.5:1 on bg' },
+        { name: 'text-2', hex: '#B4B9C2', use: '9.3:1 on surface' },
+        { name: 'text-3', hex: '#8A909B', use: '5.5:1 on surface, smallest text' }] },
+      { name: 'Red stripe', items: [
+        { name: 'red', hex: '#DB222B', use: 'Primary buttons. White text 4.9:1' },
+        { name: 'red-hot', hex: '#FF3B44', use: 'Required marker, 5.3:1 on surface' },
+        { name: 'red-text', hex: '#FF5C63', use: 'Red as text, 6.1:1' }] },
+      { name: 'Auto / Locked', items: [
+        { name: 'auto', hex: '#43D9F5', use: 'Dashed outline, glow, AUTO tag. 11:1' },
+        { name: 'auto-text', hex: '#7FE6FA', use: 'Needed values, 12.9:1' },
+        { name: 'locked', hex: '#E9E5DE', use: 'Solid LOCKED tag, dark text 15.7:1' }] },
+      { name: 'Outcome and belts', items: [
+        { name: 'pass', hex: '#36D17E', use: 'Badge, dark text 9.3:1' },
+        { name: 'conditional', hex: '#F7B940', use: 'Badge and 5-pt zone, 10.5:1' },
+        { name: 'retest', hex: '#FF6B6B', use: 'Badge, dark text 7:1' },
+        { name: 'belt-green', hex: '#2E9E4F', use: 'Green/Blue rank' },
+        { name: 'belt-blue', hex: '#2F6BD8', use: 'Blue ranks' },
+        { name: 'belt-brown', hex: '#7B4F2C', use: 'Brown ranks' }] }
+    ];
+    const spacing = [
+      { name: 'space-1', w: '4px', use: '4 · icon gaps' },
+      { name: 'space-2', w: '8px', use: '8 · chip gaps' },
+      { name: 'space-3', w: '12px', use: '12 · card stack' },
+      { name: 'space-4', w: '16px', use: '16 · card padding' },
+      { name: 'space-5', w: '20px', use: '20 · page gutter' },
+      { name: 'space-6', w: '24px', use: '24 · sections' },
+      { name: 'space-8', w: '32px', use: '32 · desktop columns' },
+      { name: 'space-12', w: '48px', use: '48 · large gaps' },
+      { name: 'touch', w: '44px', use: '44 · minimum target' }
+    ];
+    const radii = [
+      { name: 'radius-xs 4', r: '4px', use: 'Tags, broadcast bug' },
+      { name: 'radius-sm 10', r: '10px', use: 'Buttons, steppers' },
+      { name: 'radius-md 14', r: '14px', use: 'Event cards, panels' },
+      { name: 'radius-lg 18', r: '18px', use: 'Score hero' },
+      { name: 'radius-xl 20', r: '20px', use: 'Sheets, modals' },
+      { name: 'radius-pill', r: '22px', use: 'Mode tags, chips' }
+    ];
+    const motion = [
+      { name: 'dur-fast', value: '150 ms', use: 'Press scale and hover' },
+      { name: 'dur-base', value: '240 ms', use: 'Fades, colour changes' },
+      { name: 'dur-spring', value: '320–340 ms', use: 'Bars, slider fill and thumb, gauge arc' },
+      { name: 'dur-roll', value: '350 ms', use: 'Number tick on changed values' },
+      { name: 'wash', value: '1.1 s', use: 'Cyan highlight on cards that rebalanced' },
+      { name: 'pulse', value: '2.4 s loop', use: 'Auto card breathing glow' },
+      { name: 'ease-spring', value: '.34 1.56 .64 1', use: 'cubic-bezier with a little overshoot' },
+      { name: 'ease-out', value: '.2 .8 .2 1', use: 'Fades and the wash' }
+    ];
+    const theme = [
+      '@import "tailwindcss";',
+      '',
+      '@theme {',
+      '  --color-bg: #0A0B0D;',
+      '  --color-surface: #131519;',
+      '  --color-surface-2: #1A1D22;',
+      '  --color-surface-3: #23272E;',
+      '  --color-line: #2C3139;',
+      '  --color-line-strong: #3A404A;',
+      '  --color-ink: #F4F1EC;',
+      '  --color-ink-2: #B4B9C2;',
+      '  --color-ink-3: #8A909B;',
+      '  --color-stripe: #DB222B;',
+      '  --color-stripe-hot: #FF3B44;',
+      '  --color-stripe-text: #FF5C63;',
+      '  --color-auto: #43D9F5;',
+      '  --color-auto-text: #7FE6FA;',
+      '  --color-locked: #E9E5DE;',
+      '  --color-pass: #36D17E;',
+      '  --color-conditional: #F7B940;',
+      '  --color-retest: #FF6B6B;',
+      '  --color-belt-green: #2E9E4F;',
+      '  --color-belt-blue: #2F6BD8;',
+      '  --color-belt-brown: #7B4F2C;',
+      '',
+      '  --font-display: "Barlow Condensed", "Arial Narrow", sans-serif;',
+      '  --font-sans: "Inter Variable", Inter, system-ui, sans-serif;',
+      '',
+      '  --radius-xs: 4px;  --radius-sm: 10px;  --radius-md: 14px;',
+      '  --radius-lg: 18px; --radius-xl: 20px;',
+      '',
+      '  --ease-spring: cubic-bezier(.34, 1.56, .64, 1);',
+      '  --ease-out-soft: cubic-bezier(.2, .8, .2, 1);',
+      '  --animate-auto-pulse: auto-pulse 2.4s ease-in-out infinite;',
+      '}'
+    ].join('\n');
+    return { colorGroups, spacing, radii, motion, theme };
+  }
+}
+</script>
+</body>
+</html>
