@@ -1,0 +1,96 @@
+{
+  "id": "mcas-2005-g10-macbeth",
+  "test": "MCAS",
+  "year": 2005,
+  "grade": 10,
+  "pdf": "pioneer_2005.pdf",
+  "pdfPages": "115-116",
+  "printedPages": "109-110",
+  "title": "Macbeth",
+  "author": "William Shakespeare",
+  "genre": "drama",
+  "intro": "William Shakespeare’s The Tragedy of Macbeth is a story of greed and dangerous ambition. In this soliloquy—one of the most famous passages in English literature—Macbeth, the king of Scotland, has just learned of the death of his wife Lady Macbeth, who had encouraged him in his deadly quest for power. Read the soliloquy and use the information to answer the questions that follow.",
+  "lineNumbered": true,
+  "lines": [
+    "To-morrow, and to-morrow, and to-morrow,",
+    "Creeps in this petty pace from day to day,",
+    "To the last syllable of recorded time;",
+    "And all our yesterdays have lighted fools",
+    "The way to dusty death. Out, out, brief candle!",
+    "Life’s but a walking shadow, a poor player",
+    "That struts and frets his hour upon the stage",
+    "And then is heard no more: it is a tale",
+    "Told by an idiot, full of sound and fury,",
+    "Signifying nothing."
+  ],
+  "stanzaBreaksAfter": [],
+  "indent": {},
+  "footnotes": [],
+  "credit": "In the public domain.",
+  "questions": [
+    {
+      "num": 10,
+      "itemCode": "3016361-Macbeth1003L",
+      "stem": "What is the effect of the repetition in line 1?",
+      "boxed": null,
+      "choices": {
+        "A": "It shows that the speaker looks forward to the future.",
+        "B": "It emphasizes that each day is the same as the next.",
+        "C": "It reminds the audience that time passes without notice.",
+        "D": "It expresses curiosity about what the next day will bring."
+      },
+      "answer": "B",
+      "answerCheck": "agree",
+      "note": ""
+    },
+    {
+      "num": 11,
+      "itemCode": "3016362-Macbeth1003L",
+      "stem": "In line 5, what does the metaphor “brief candle” suggest?",
+      "boxed": null,
+      "choices": {
+        "A": "The speaker is on his deathbed.",
+        "B": "The speaker fears being alone.",
+        "C": "The speaker believes life is short.",
+        "D": "The speaker prefers darkness to light."
+      },
+      "answer": "C",
+      "answerCheck": "agree",
+      "note": ""
+    },
+    {
+      "num": 12,
+      "itemCode": "3016365-Macbeth1003L",
+      "leadIn": "Read the lines from the soliloquy in the box below.",
+      "stem": "What does Macbeth mean in these lines?",
+      "boxed": ". . . it is a tale\nTold by an idiot, full of sound and fury,\nSignifying nothing.",
+      "choices": {
+        "A": "He believes people should be humble.",
+        "B": "He is retelling stories of others.",
+        "C": "He believes life has no meaning.",
+        "D": "He is surprised that he is still alive."
+      },
+      "answer": "C",
+      "answerCheck": "agree",
+      "note": ""
+    },
+    {
+      "num": 13,
+      "itemCode": "3016367-Macbeth1003L",
+      "stem": "Which of the following is closest in meaning to the word syllable as it is used in line 3?",
+      "boxed": null,
+      "choices": {
+        "A": "song",
+        "B": "speech",
+        "C": "motion",
+        "D": "moment"
+      },
+      "answer": "D",
+      "answerCheck": "agree",
+      "note": "Vocabulary in context (figurative sense; “syllable” is italicized in print). No dictionary entry needed."
+    }
+  ],
+  "skipped": [],
+  "exclude": true,
+  "excludeReason": "Balance: keeps one Shakespeare drama set (Seven Ages of Man)."
+}

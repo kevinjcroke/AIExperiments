@@ -1,0 +1,11 @@
+node_modules
+dist
+*.local
+scripts/.cache
+
+# Private question packs: copyrighted practice tests, never committed or deployed
+moreanswers/
+private/
+
+# Python bytecode
+__pycache__/

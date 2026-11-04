@@ -1,0 +1,120 @@
+{
+  "id": "mcas-2007-g10-learnd-astronomer",
+  "test": "MCAS",
+  "year": 2007,
+  "grade": 10,
+  "pdf": "pioneer_2007.pdf",
+  "pdfPages": "215-216",
+  "title": "When I Heard the Learn’d Astronomer",
+  "author": "Walt Whitman",
+  "genre": "poetry",
+  "intro": "How much of what we learn adequately explains the world around us? Read the poem “When I Heard the Learn’d Astronomer” to learn what the poet has to say about this question. Answer the questions that follow.",
+  "lineNumbered": true,
+  "lines": [
+    "When I heard the learn’d astronomer,",
+    "When the proofs, the figures, were ranged in columns before me,",
+    "When I was shown the charts and diagrams, to add, divide, and measure them,",
+    "When I, sitting, heard the astronomer where he lectured with much applause in the lecture room,",
+    "How soon unaccountable I became tired and sick,",
+    "Till rising and gliding out I wander’d off by myself,",
+    "In the mystical* moist night air, and from time to time,",
+    "Look’d up in perfect silence at the stars."
+  ],
+  "stanzaBreaksAfter": [],
+  "indent": {},
+  "turnoversMerged": [
+    2,
+    3,
+    4
+  ],
+  "footnotes": [
+    {
+      "mark": "*",
+      "text": "mystical -- mysterious"
+    }
+  ],
+  "credit": "In the public domain.",
+  "questions": [
+    {
+      "num": 14,
+      "itemCode": "235362",
+      "stem": "Which of the following statements represents the main theme of the poem?",
+      "boxed": null,
+      "choices": {
+        "A": "Science cannot fully express the wonder of the world.",
+        "B": "Nature is one’s best source of recreation.",
+        "C": "Technology causes more problems than it solves.",
+        "D": "Learning causes one to become ill and fatigued."
+      },
+      "answer": "A",
+      "answerCheck": "agree",
+      "note": ""
+    },
+    {
+      "num": 15,
+      "itemCode": "264193",
+      "stem": "In line 5, what is conveyed by the phrase “tired and sick”?",
+      "boxed": null,
+      "choices": {
+        "A": "the speaker’s sorrow and loss experienced in his life",
+        "B": "a sense of approaching danger",
+        "C": "a sense of the speaker’s poor health",
+        "D": "the speaker’s boredom and disappointment with the lecture"
+      },
+      "answer": "D",
+      "answerCheck": "agree",
+      "note": ""
+    },
+    {
+      "num": 16,
+      "itemCode": "264194",
+      "stem": "What is the main purpose of the phrase “perfect silence” in the last line of the poem?",
+      "boxed": null,
+      "choices": {
+        "A": "to explain why he has to leave the lecture room",
+        "B": "to convey a sense of loneliness and sorrow",
+        "C": "to contrast with the sounds in the lecture room",
+        "D": "to highlight the pleasure of science and learning"
+      },
+      "answer": "C",
+      "answerCheck": "agree",
+      "note": ""
+    },
+    {
+      "num": 17,
+      "itemCode": "264195",
+      "stem": "What do the last three lines of the poem suggest?",
+      "boxed": null,
+      "choices": {
+        "A": "the importance of personal experience with nature",
+        "B": "the dangers of losing track of time",
+        "C": "the importance of learning about astronomy",
+        "D": "the dangers of wandering off alone"
+      },
+      "answer": "A",
+      "answerCheck": "agree",
+      "note": ""
+    },
+    {
+      "num": 18,
+      "itemCode": "235365",
+      "stem": "Which of the following is the best synonym for the word learn’d as it is used in line 1?",
+      "boxed": null,
+      "choices": {
+        "A": "aware",
+        "B": "remembered",
+        "C": "knowledgeable",
+        "D": "invented"
+      },
+      "answer": "C",
+      "answerCheck": "agree",
+      "note": "Vocabulary (synonym-in-context) item; MCAS reporting category 'Language'."
+    }
+  ],
+  "skipped": [
+    {
+      "num": 19,
+      "reason": "open-response"
+    }
+  ]
+}

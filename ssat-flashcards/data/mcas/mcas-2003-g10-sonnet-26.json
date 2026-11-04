@@ -1,0 +1,119 @@
+{
+  "id": "mcas-2003-g10-sonnet-26",
+  "test": "MCAS",
+  "year": 2003,
+  "grade": 10,
+  "pdf": "pioneer_2003.pdf",
+  "pdfPages": "105-106",
+  "printedPages": "101-102",
+  "title": "Sonnet 26",
+  "author": "Edmund Spenser",
+  "genre": "poetry",
+  "intro": "English poet Edmund Spenser lived from 1552-1599. Read his poem “Sonnet 26” below. Use the information from the poem to answer the questions that follow.",
+  "lineNumbered": true,
+  "lines": [
+    "Sweet is the rose, but grows upon a briar;",
+    "Sweet is the juniper, but sharp his bough,",
+    "Sweet is the eglantine,¹ but pricketh near;",
+    "Sweet is the fir bloom, but his branch is rough;",
+    "Sweet is the cypress, but his rind is tough;",
+    "Sweet is the nut, but bitter is his pill;",
+    "Sweet is the broom flower, but yet sour enough;",
+    "And sweet is moly,² but his root is ill.",
+    "So every sweet with sour is tempered still,",
+    "That maketh it be coveted the more:",
+    "For easy things, that may be got at will,",
+    "Most sorts of men do set but little store.",
+    "Why then should I account of little pain,",
+    "That endless pleasure shall unto me gain!"
+  ],
+  "stanzaBreaksAfter": [],
+  "indent": {
+    "2": 1,
+    "3": 1,
+    "4": 1,
+    "13": 1,
+    "14": 1
+  },
+  "footnotes": [
+    {
+      "mark": "1",
+      "text": "eglantine -- a trailing rose with thorny stems and fragrant leaves"
+    },
+    {
+      "mark": "2",
+      "text": "moly -- European or wild garlic"
+    }
+  ],
+  "credit": "In the public domain.",
+  "questions": [
+    {
+      "num": 14,
+      "itemCode": "2095082-10R01010P",
+      "stem": "What contrast is established by the use of the word but in the first eight lines of the poem?",
+      "boxed": null,
+      "choices": {
+        "A": "good versus evil",
+        "B": "life versus death",
+        "C": "pleasure versus pain",
+        "D": "knowledge versus ignorance"
+      },
+      "answer": "C",
+      "answerCheck": "agree",
+      "note": ""
+    },
+    {
+      "num": 15,
+      "itemCode": "2095085-10R01010P",
+      "stem": "Edmund Spenser’s use of the words pricketh and maketh",
+      "boxed": null,
+      "choices": {
+        "A": "reflects poetic language of his time.",
+        "B": "introduces rhyme into the poem.",
+        "C": "emphasizes the actions of the speaker.",
+        "D": "suggests the disbelief of the speaker."
+      },
+      "answer": "A",
+      "answerCheck": "agree",
+      "note": "FLAG: language/word-form item (archaic -eth verb endings) rather than comprehension."
+    },
+    {
+      "num": 16,
+      "itemCode": "2095084-10R01010P",
+      "stem": "What does the poet suggest in lines 11–12?",
+      "boxed": null,
+      "choices": {
+        "A": "People easily take the things they want.",
+        "B": "People desire more than they can have.",
+        "C": "People do not value things that come easily.",
+        "D": "People should be satisfied with who they are."
+      },
+      "answer": "C",
+      "answerCheck": "agree",
+      "note": ""
+    },
+    {
+      "num": 17,
+      "itemCode": "2095083-10R01010P",
+      "stem": "What is the purpose of the last two lines of the poem?",
+      "boxed": null,
+      "choices": {
+        "A": "to add humor to the poem",
+        "B": "to reassert the speaker’s anger",
+        "C": "to summarize the poem’s meaning",
+        "D": "to repeat the poem’s visual imagery"
+      },
+      "answer": "C",
+      "answerCheck": "agree",
+      "note": ""
+    }
+  ],
+  "skipped": [
+    {
+      "num": 18,
+      "reason": "open-response"
+    }
+  ],
+  "exclude": true,
+  "excludeReason": "Balance: poetry-heavy pool; archaic Spenser and a word-form item."
+}

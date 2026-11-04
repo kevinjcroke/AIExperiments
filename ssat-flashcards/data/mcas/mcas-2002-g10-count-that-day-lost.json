@@ -1,0 +1,108 @@
+{
+  "id": "mcas-2002-g10-count-that-day-lost",
+  "test": "MCAS",
+  "year": 2002,
+  "grade": 10,
+  "pdf": "pioneer_2002.pdf",
+  "pdfPages": "136-138",
+  "printedPages": "130-132",
+  "title": "Count That Day Lost",
+  "author": "George Eliot",
+  "genre": "poetry",
+  "intro": "Mary Ann Evans, better known by her pen name George Eliot, tells readers how to decide whether or not a day is well spent. Read the poem below. Use information from the poem to answer the questions that follow.",
+  "lineNumbered": true,
+  "lines": [
+    "If you sit down at set of sun",
+    "And count the acts that you have done,",
+    "And, counting, find",
+    "One self-denying deed, one word",
+    "That eased the heart of him who heard,",
+    "One glance most kind",
+    "That fell like sunshine where it went—",
+    "Then you may count that day well spent.",
+    "But if, through all the livelong day,",
+    "You’ve cheered no heart, by yea or nay—",
+    "If, through it all",
+    "You’ve nothing done that you can trace",
+    "That brought the sunshine to one face—",
+    "No act most small",
+    "That helped some soul and nothing cost—",
+    "Then count that day as worse than lost."
+  ],
+  "stanzaBreaksAfter": [
+    8
+  ],
+  "indent": {
+    "3": 1,
+    "6": 1,
+    "11": 1,
+    "14": 1
+  },
+  "footnotes": [],
+  "credit": "In the public domain.",
+  "questions": [
+    {
+      "num": 10,
+      "itemCode": "91163-10R01020P",
+      "stem": "According to the poem, a “day well spent” is one in which a person shows",
+      "boxed": null,
+      "choices": {
+        "A": "courage.",
+        "B": "compassion.",
+        "C": "persistence.",
+        "D": "selfishness."
+      },
+      "answer": "B",
+      "answerCheck": "agree",
+      "note": ""
+    },
+    {
+      "num": 11,
+      "itemCode": "91170-10R01020P",
+      "stem": "In the last line, the phrase “worse than lost” implies that",
+      "boxed": null,
+      "choices": {
+        "A": "few things are worse than feeling lost.",
+        "B": "some people are incapable of kind acts.",
+        "C": "a missed opportunity will never come again.",
+        "D": "nothing of value can be gained from the past."
+      },
+      "answer": "C",
+      "answerCheck": "agree",
+      "note": ""
+    },
+    {
+      "num": 12,
+      "itemCode": "91166-10R01020P",
+      "stem": "A main idea expressed in the poem is that",
+      "boxed": null,
+      "choices": {
+        "A": "sunny days can inspire acts of generosity.",
+        "B": "people sometimes lash out at the ones they love.",
+        "C": "morning is the perfect time for reflection.",
+        "D": "small acts may have a positive effect on others."
+      },
+      "answer": "D",
+      "answerCheck": "agree",
+      "note": ""
+    },
+    {
+      "num": 13,
+      "itemCode": "91162-10R01020P",
+      "stem": "According to this dictionary entry, which definition best fits the word trace as it is used in line 12 of the poem?",
+      "boxed": "trace (tras) v. 1. to painstakingly form\nletters or figures. 2. to copy by following\nan outline seen through a transparent\nsuperimposed sheet. 3. to follow footprints\nof. 4. to discover by going back over\ninformation step by step.",
+      "choices": {
+        "A": "definition 1",
+        "B": "definition 2",
+        "C": "definition 3",
+        "D": "definition 4"
+      },
+      "answer": "D",
+      "answerCheck": "agree",
+      "note": "FLAG: needs the printed dictionary entry (less SSAT-like). The entry is printed below the stem without a box; stored in boxed with its printed line breaks."
+    }
+  ],
+  "skipped": [],
+  "exclude": true,
+  "excludeReason": "Balance: poetry-heavy pool; one of its four questions needs a printed dictionary entry."
+}

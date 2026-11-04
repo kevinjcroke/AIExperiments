@@ -1,0 +1,189 @@
+{
+  "id": "mcas-2024-g10-song-of-the-open-road",
+  "test": "MCAS",
+  "year": 2024,
+  "grade": 10,
+  "pdf": "g10_ela_2024.pdf",
+  "pdfPages": "23-26",
+  "title": "from “Song of the Open Road”",
+  "author": "Walt Whitman",
+  "genre": "poetry",
+  "intro": "In this excerpt from a poem, the speaker addresses the open road upon which he travels. Read the poem and then answer the questions that follow.",
+  "lineNumbered": true,
+  "lines": [
+    "The earth expanding right hand and left hand,",
+    "The picture alive, every part in its best light,",
+    "The music falling in where it is wanted, and",
+    "stopping where it is not wanted,",
+    "The cheerful voice of the public road, the gay¹",
+    "fresh sentiment of the road.",
+    "O highway I travel, do you say to me Do not",
+    "leave me?",
+    "Do you say Venture not—if you leave me you",
+    "are lost?",
+    "Do you say I am already prepared, I am",
+    "well-beaten and undenied, adhere to me?",
+    "O public road, I say back I am not afraid to",
+    "leave you, yet I love you,",
+    "You express me better than I can express",
+    "myself,",
+    "You shall be more to me than my poem.",
+    "I think heroic deeds were all conceiv’d² in the",
+    "open air, and all free poems also,",
+    "I think I could stop here myself and do miracles,",
+    "I think whatever I shall meet on the road I",
+    "shall like, and whoever beholds me shall",
+    "like me,",
+    "I think whoever I see must be happy.",
+    "From this hour I ordain³ myself loos’d⁴ of limits",
+    "and imaginary lines,",
+    "Going where I list,⁵ my own master total and",
+    "absolute,",
+    "Listening to others, considering well what",
+    "they say,",
+    "Pausing, searching, receiving, contemplating,",
+    "Gently, but with undeniable will, divesting",
+    "myself of the holds that would hold me.",
+    "I inhale great draughts⁶ of space,",
+    "The east and the west are mine, and the",
+    "north and the south are mine.",
+    "I am larger, better than I thought,",
+    "I did not know I held so much goodness.",
+    "All seems beautiful to me,",
+    "I can repeat over to men and women You have",
+    "done such good to me I would do the same",
+    "to you,",
+    "I will recruit for myself and you as I go,",
+    "I will scatter myself among men and women as",
+    "I go,",
+    "I will toss a new gladness and roughness among",
+    "them,",
+    "Whoever denies me it shall not trouble me,",
+    "Whoever accepts me he or she shall be blessed",
+    "and shall bless me.",
+    "Now if a thousand perfect men were to appear",
+    "it would not amaze me,",
+    "Now if a thousand beautiful forms of women",
+    "appear’d it would not astonish me.",
+    "Now I see the secret of the making of the best",
+    "persons,",
+    "It is to grow in the open air and to eat and sleep",
+    "with the earth."
+  ],
+  "stanzaBreaksAfter": [
+    6,
+    12,
+    17,
+    24,
+    36,
+    38,
+    50,
+    54
+  ],
+  "indent": {
+    "4": 1,
+    "6": 1,
+    "8": 1,
+    "10": 1,
+    "12": 1,
+    "14": 1,
+    "16": 1,
+    "19": 1,
+    "22": 1,
+    "23": 1,
+    "26": 1,
+    "28": 1,
+    "30": 1,
+    "33": 1,
+    "36": 1,
+    "41": 1,
+    "42": 1,
+    "45": 1,
+    "47": 1,
+    "50": 1,
+    "52": 1,
+    "54": 1,
+    "56": 1,
+    "58": 1
+  },
+  "footnotes": [
+    {
+      "mark": "1",
+      "text": "gay -- lighthearted and carefree"
+    },
+    {
+      "mark": "2",
+      "text": "conceiv’d -- conceived"
+    },
+    {
+      "mark": "3",
+      "text": "ordain -- order officially"
+    },
+    {
+      "mark": "4",
+      "text": "loos’d -- loosed"
+    },
+    {
+      "mark": "5",
+      "text": "list -- desire or please"
+    },
+    {
+      "mark": "6",
+      "text": "draughts -- amounts swallowed or breathed in"
+    }
+  ],
+  "credit": "“Song of the Open Road” by Walt Whitman. In the public domain.",
+  "questions": [
+    {
+      "num": 10,
+      "itemCode": null,
+      "stem": "What do lines 7–17 most clearly reveal about the speaker?",
+      "boxed": null,
+      "choices": {
+        "A": "He is desperate to share what the road has taught him.",
+        "B": "He is willing to risk leaving the familiar for something greater.",
+        "C": "He wonders if he will still be welcome when he returns home.",
+        "D": "He fears he will be unable to find the road once he goes away from it."
+      },
+      "answer": "B",
+      "answerCheck": "agree",
+      "note": ""
+    },
+    {
+      "num": 11,
+      "itemCode": null,
+      "stem": "What is the main effect of the speaker’s transition from the phrase “I think” in lines 18–24 to “I will” in lines 43–47 of the poem?",
+      "boxed": null,
+      "choices": {
+        "A": "It suggests his indecision about what he should do.",
+        "B": "It emphasizes his growing commitment to his feelings.",
+        "C": "It reinforces his ability to complete the plans that he makes.",
+        "D": "It highlights the numerous differences between himself and others."
+      },
+      "answer": "B",
+      "answerCheck": "agree",
+      "note": ""
+    },
+    {
+      "num": 12,
+      "itemCode": null,
+      "stem": "Read lines 55–58 in the box.\nBased on the poem, which sentence best describes the main idea expressed in the lines?",
+      "boxed": "Now I see the secret of the making of the best / persons, / It is to grow in the open air and to eat and sleep / with the earth.",
+      "choices": {
+        "A": "People can only improve themselves if they seek the wisdom of others.",
+        "B": "People are most confident in themselves when they achieve independence.",
+        "C": "People can discover their inner selves when they immerse themselves in the natural world.",
+        "D": "People are happiest when they envision themselves as explorers of the world around them."
+      },
+      "answer": "C",
+      "answerCheck": "agree",
+      "note": ""
+    }
+  ],
+  "skipped": [
+    {
+      "num": 13,
+      "reason": "multiple-select (select three; key C;D;F)"
+    }
+  ]
+}

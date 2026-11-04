@@ -1,0 +1,111 @@
+{
+  "id": "mcas-2005-g10-many-deaths-of-winter",
+  "test": "MCAS",
+  "year": 2005,
+  "grade": 10,
+  "pdf": "pioneer_2005.pdf",
+  "pdfPages": "130-131",
+  "printedPages": "124-125",
+  "title": "The Many Deaths of Winter",
+  "author": "James Baldwin",
+  "byline": "From the Norse myth / Retold by James Baldwin",
+  "genre": "fiction",
+  "intro": "May Day, the first day of May, is a traditional celebration of springtime that marks the passing of winter. Many cultures mark this occasion with elaborately organized festivities. To learn how the Norsemen of a thousand years ago celebrated May Day, read the Norse myth “The Many Deaths of Winter.” Answer the questions that follow.",
+  "lineNumbered": false,
+  "paragraphs": [
+    "Siegfried, when he came to Gunther’s castle, thought of staying there but a few days only. But the king and his brothers made everything so pleasant for their honored guest that weeks slipped by unnoticed, and still the hero remained in Burgundy.",
+    "Spring had fairly come, and the weeping April clouds had given place to the balmy skies of May. The young men and maidens, as was their custom, made ready for the May-day games; and Siegfried and his knights were asked to take part in the sport.",
+    "On the smooth greensward, which they called Nanna’s carpet, beneath the shade of ash trees and elms, he who played Old Winter’s part lingered with his few attendants. These were clad in the dull gray garb which becomes the sober season of the year, and were decked with yellow straw, and dead, brown leaves. Out of the wood came the May king and his followers, clad in the gayest raiment, and decked with evergreens and flowers. With staves¹ and willow withes² they fell upon Old Winter’s champions and tried to drive them from the sward. In friendly fray they fought, and many mishaps fell to both parties. But at length the May king won; and grave Winter, battered and bruised, was made prisoner, and his followers were driven from the field. Then, in merry sport, sentence was passed on the luckless fellow, for he was found guilty of killing the flowers and of covering the earth with hoar frost;³ and he was doomed to a long banishment from music and the sunlight. The laughing party then set up a wooden likeness of the worsted⁴ winter king, and pelted it with stones and turf; and when they were tired they threw it down and put out its eyes and cast it into the river. And then a pole, decked with wild flowers and fresh green leaves, was planted in the midst of the sward, and all joined in merry dance around it. And they chose the most beautiful of all the maidens to be the Queen of May, and they crowned her with a wreath of violets and yellow buttercups; and for a whole day all yielded fealty⁵ to her and did her bidding.⁶",
+    "It was thus that May Day came in Burgundy."
+  ],
+  "footnotes": [
+    {
+      "mark": "1",
+      "text": "staves -- narrow strips of wood that form the side of a barrel or tub"
+    },
+    {
+      "mark": "2",
+      "text": "withes -- tough, supple twigs used for binding things together"
+    },
+    {
+      "mark": "3",
+      "text": "hoar frost -- frozen dew that forms a white coating on a surface"
+    },
+    {
+      "mark": "4",
+      "text": "worsted -- defeated"
+    },
+    {
+      "mark": "5",
+      "text": "fealty -- allegiance"
+    },
+    {
+      "mark": "6",
+      "text": "bidding -- a demand that something be done"
+    }
+  ],
+  "credit": "In the public domain.",
+  "questions": [
+    {
+      "num": 37,
+      "itemCode": "3066741-Winter1004L",
+      "stem": "Which of the following phrases from the myth tells the reader that the games have taken place each year for many years?",
+      "boxed": null,
+      "choices": {
+        "A": "“weeks slipped by unnoticed” (paragraph 1)",
+        "B": "“weeping April clouds” (paragraph 2)",
+        "C": "“as was their custom” (paragraph 2)",
+        "D": "“the sober season of the year” (paragraph 3)"
+      },
+      "answer": "C",
+      "answerCheck": "agree",
+      "note": ""
+    },
+    {
+      "num": 38,
+      "itemCode": "3066754-Winter1004L",
+      "stem": "In the myth, what do the flowers symbolize?",
+      "boxed": null,
+      "choices": {
+        "A": "items of clothing",
+        "B": "the return of spring",
+        "C": "items for decoration",
+        "D": "the return of Siegfried"
+      },
+      "answer": "B",
+      "answerCheck": "agree",
+      "note": ""
+    },
+    {
+      "num": 39,
+      "itemCode": "3066746-Winter1004L",
+      "stem": "Which of the following best explains why the battle in the myth is called a “friendly fray”?",
+      "boxed": null,
+      "choices": {
+        "A": "Gunther invites Siegfried to take part.",
+        "B": "The fighting is not meant to hurt anyone.",
+        "C": "People who know one another have gone to war.",
+        "D": "Old Winter and the May king know each other well."
+      },
+      "answer": "B",
+      "answerCheck": "agree",
+      "note": ""
+    },
+    {
+      "num": 40,
+      "itemCode": "3066744-Winter1004L",
+      "stem": "In the myth, what does the destruction of the wooden likeness of the king symbolize?",
+      "boxed": null,
+      "choices": {
+        "A": "the death of winter",
+        "B": "the killing of the flowers",
+        "C": "the unluckiness of winter",
+        "D": "the battle between Siegfried and Gunther"
+      },
+      "answer": "A",
+      "answerCheck": "agree",
+      "note": ""
+    }
+  ],
+  "skipped": []
+}

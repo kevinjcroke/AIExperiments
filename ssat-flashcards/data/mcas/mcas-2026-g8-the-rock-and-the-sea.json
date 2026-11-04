@@ -1,0 +1,167 @@
+{
+  "id": "mcas-2026-g8-the-rock-and-the-sea",
+  "test": "MCAS",
+  "year": 2026,
+  "grade": 8,
+  "pdf": "g8_ela_2026.pdf",
+  "pdfPages": "24-28",
+  "title": "The Rock and the Sea",
+  "author": "Charlotte Perkins Gilman",
+  "genre": "poetry",
+  "intro": "Read the poem published in 1893. Then answer the questions that follow.",
+  "lineNumbered": true,
+  "sectionHeadings": [
+    {
+      "beforeLine": 1,
+      "text": "THE ROCK"
+    },
+    {
+      "beforeLine": 31,
+      "text": "THE SEA"
+    }
+  ],
+  "lines": [
+    "I am the Rock, presumptuous¹ Sea!",
+    "I am set to encounter thee.",
+    "Angry and loud or gentle and still,",
+    "I am set here to limit thy power, and I will!",
+    "I am the Rock!",
+    "I am the Rock. From age to age",
+    "I scorn thy fury and dare thy rage.",
+    "Scarred by frost and worn by time,",
+    "Brown with weed and green with slime,",
+    "Thou may’st drench and defile me and spit in my face,",
+    "But while I am here thou keep’st thy place!",
+    "I am the Rock!",
+    "I am the Rock, beguiling² Sea!",
+    "I know thou art fair as fair can be,",
+    "With golden glitter and silver sheen,",
+    "And bosom of blue and garments of green.",
+    "Thou may’st pat my cheek with baby hands,",
+    "And lap my feet in diamond sands,",
+    "And play before me as children play;",
+    "But plead as thou wilt, I bar the way!",
+    "I am the Rock!",
+    "I am the Rock. Black midnight falls;",
+    "The terrible breakers rise like walls;",
+    "With curling lips and gleaming teeth",
+    "They plunge and tear at my bones beneath.",
+    "Year upon year they grind and beat",
+    "In storms of thunder and storms of sleet,—",
+    "Grind and beat and wrestle and tear,",
+    "But the rock they beat on is always there",
+    "I am the Rock!",
+    "I am the Sea. I hold the land",
+    "As one holds an apple in his hand,",
+    "Hold it fast with sleepless eyes,",
+    "Watching the continents sink and rise.",
+    "Out of my bosom the mountains grow,",
+    "Back to its depths they crumble slow;",
+    "The earth is a helpless child to me.",
+    "I am the Sea!",
+    "I am the Sea. When I draw back",
+    "Blossom and verdure³ follow my track,",
+    "And the land I leave grows proud and fair,",
+    "For the wonderful race of man is there;",
+    "And the winds of heaven wail and cry",
+    "While the nations rise and reign and die,",
+    "Living and dying in folly and pain,",
+    "While the laws of the universe thunder in vain.",
+    "What is the folly of man to me?",
+    "I am the Sea.",
+    "I am the Sea. The earth I sway;",
+    "Granite to me is potter’s clay;",
+    "Under the touch of my careless waves",
+    "It rises in turrets and sinks in caves;",
+    "The iron cliffs that edge the land",
+    "I grind to pebbles and sift to sand,",
+    "And beach-grass bloweth and children play",
+    "In what were the rocks of yesterday.",
+    "It is but a moment of sport to me.",
+    "I am the Sea!",
+    "I am the Sea. In my bosom deep",
+    "Wealth and Wonder and Beauty sleep;",
+    "Wealth and Wonder and Beauty rise",
+    "In changing splendor of sunset skies,",
+    "And comfort the earth with rains and snows",
+    "Till waves the harvest and laughs the rose.",
+    "Flower and forest and child of breath",
+    "With me have life—without me, death.",
+    "What if the ships go down in me?",
+    "I am the Sea!"
+  ],
+  "stanzaBreaksAfter": [
+    5,
+    12,
+    21,
+    30,
+    38,
+    48,
+    58
+  ],
+  "indent": {
+    "5": 3,
+    "12": 3,
+    "21": 3,
+    "30": 3,
+    "38": 3,
+    "48": 3,
+    "58": 3,
+    "68": 3
+  },
+  "footnotes": [
+    {
+      "mark": "1",
+      "text": "presumptuous -- doing something without the right or authority to do so"
+    },
+    {
+      "mark": "2",
+      "text": "beguiling -- charmingly attractive or pleasing"
+    },
+    {
+      "mark": "3",
+      "text": "verdure -- lush green vegetation"
+    }
+  ],
+  "credit": "“The Rock and the Sea” by Charlotte Perkins Gilman, from In This Our World. In the public domain.",
+  "questions": [
+    {
+      "num": 17,
+      "itemCode": null,
+      "stem": "How is the poem mainly structured?",
+      "boxed": null,
+      "choices": {
+        "A": "as a dialogue between two strong natural forces",
+        "B": "as a sequence of events that resolves a conflict in nature",
+        "C": "as a flashback portraying the origins of two natural forces",
+        "D": "as a series of observations about the role of nature in human life"
+      },
+      "answer": "A",
+      "answerCheck": "agree",
+      "note": "Key A; the poem is really two alternating monologues (Rock, then Sea), but A is clearly the best of the four options."
+    },
+    {
+      "num": 18,
+      "itemCode": null,
+      "stem": "Read the lines from the poem in the box.\nWhat idea in the poem do the lines mainly suggest?",
+      "boxed": "• . . . From age to age / I scorn thy fury and dare thy rage. (lines 6 and 7)\n• While the nations rise and reign and die, (line 44)",
+      "choices": {
+        "A": "Both the Rock and the Sea are ancient and long-lasting.",
+        "B": "Both the Rock and the Sea are ambitious and successful.",
+        "C": "Both the Rock and the Sea are competitive and insecure.",
+        "D": "Both the Rock and the Sea are resourceful and self-reliant."
+      },
+      "answer": "A",
+      "answerCheck": "agree",
+      "note": ""
+    }
+  ],
+  "skipped": [
+    {
+      "num": 19,
+      "reason": "multi-part sentence-completion item (two blanks, key B;B); not a Part A/Part B pair"
+    }
+  ],
+  "exclude": true,
+  "excludeReason": "Balance: poetry-heavy pool; only two usable questions."
+}

@@ -1,0 +1,114 @@
+{
+  "_comment": "NAEP Questions Tool items used in the deck. Math entries are NQT table IDs (itemTableID). Reading blocks list the NQT table IDs of the multiple-choice items that go with one public-domain passage. See README for how these were chosen.",
+  "math": [
+    "6284",
+    "6355",
+    "6769",
+    "6764",
+    "6334",
+    "6492",
+    "7277",
+    "6583",
+    "6844",
+    "7011",
+    "7374",
+    "11547",
+    "11542",
+    "6843",
+    "6287",
+    "6288",
+    "6745",
+    "6279",
+    "7124",
+    "6822",
+    "6826",
+    "6837",
+    "6839",
+    "7007",
+    "10841",
+    "10844",
+    "10846",
+    "11580",
+    "7118",
+    "6283",
+    "6285",
+    "6335",
+    "7283",
+    "7115",
+    "6841",
+    "10837",
+    "11549",
+    "6338",
+    "6353",
+    "10127",
+    "6811",
+    "6909",
+    "6915",
+    "6336",
+    "6746",
+    "6744",
+    "6290",
+    "6489",
+    "7008",
+    "11576"
+  ],
+  "reading": [
+    {
+      "passageId": "naep-2009-12r6-open-window",
+      "genre": "fiction",
+      "items": [
+        "8054",
+        "8055",
+        "8056",
+        "8061",
+        "8064"
+      ],
+      "title": "The Open Window",
+      "author": "Saki (H. H. Munro), 1870–1916",
+      "drop": [
+        "The Open Window",
+        "by Saki (H. H. Munro) (1870–1916)"
+      ],
+      "credit": "\"The Open Window\" by Saki, first published in 1914. In the public domain."
+    },
+    {
+      "passageId": "naep-2013-12r11-roosevelt-inaugural",
+      "genre": "nonfiction",
+      "items": [
+        "11764",
+        "11767",
+        "11768",
+        "11770",
+        "11771",
+        "11773"
+      ],
+      "title": "Inaugural Address, March 4, 1905",
+      "author": "Theodore Roosevelt, President of the United States (1901–1909)",
+      "drop": [
+        "Theodore Roosevelt",
+        "United States President (1901-1909)",
+        "Inaugural Address",
+        "Saturday, March 4, 1905",
+        "Text courtesy of Bartleby Library.",
+        "Photograph courtesy of Library of",
+        "Congress #LC-D429-29129."
+      ],
+      "introFromFirst": true,
+      "credit": "Theodore Roosevelt's inaugural address (1905), as reprinted by NAEP from Bartleby.com. The address is in the public domain."
+    },
+    {
+      "passageId": "naep-1992-12r5-hired-man",
+      "genre": "poetry",
+      "passageFile": "passages/frost-death-of-the-hired-man.json",
+      "items": [
+        "4803",
+        "4805",
+        "4808",
+        "4810",
+        "4814"
+      ],
+      "title": "The Death of the Hired Man",
+      "author": "Robert Frost"
+    }
+  ]
+}

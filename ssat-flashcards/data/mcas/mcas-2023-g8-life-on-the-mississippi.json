@@ -1,0 +1,94 @@
+{
+  "id": "mcas-2023-g8-life-on-the-mississippi",
+  "test": "MCAS",
+  "year": 2023,
+  "grade": 8,
+  "pdf": "g8_ela_2023.pdf",
+  "pdfPages": "21-24",
+  "title": "from Life on the Mississippi",
+  "author": "Mark Twain",
+  "genre": "nonfiction",
+  "intro": "In this passage from Life on the Mississippi, the author, Mark Twain, recalls his days growing up along the Mississippi River in the mid-1800s and his admiration of the riverboats and those who worked on them. Read the passage and then answer the questions that follow.",
+  "lineNumbered": false,
+  "paragraphNumbered": true,
+  "paragraphs": [
+    "Boy after boy managed to get on the river. The minister’s son became an engineer. The doctor’s and the post-master’s sons became “mud clerks”;¹ the wholesale liquor dealer’s son became a barkeeper on a boat; four sons of the chief merchant, and two sons of the county judge, became pilots.² Pilot was the grandest position of all. The pilot, even in those days of trivial wages, had a princely salary—from a hundred and fifty to two hundred and fifty dollars a month, and no board to pay. Two months of his wages would pay a preacher’s salary for a year. Now some of us were left disconsolate.³ We could not get on the river—at least our parents would not let us.",
+    "So by and by I ran away. I said I never would come home again till I was a pilot and could come in glory. But somehow I could not manage it. I went meekly aboard a few of the boats that lay packed together like sardines at the long St. Louis wharf, and very humbly inquired for the pilots, but got only a cold shoulder⁴ and short words from mates and clerks. I had to make the best of this sort of treatment for the time being, but I had comforting daydreams of a future when I should be a great and honored pilot, with plenty of money. . . .",
+    "Months afterward the hope within me struggled to a reluctant death, and I found myself without an ambition. But I was ashamed to go home. I was in Cincinnati, and I set to work to map out a new career. I had been reading about the recent exploration of the river Amazon by an expedition sent out by our government. It was said that the expedition, owing to difficulties, had not thoroughly explored a part of the country lying about the head-waters,⁵ some four thousand miles from the mouth of the river. It was only about fifteen hundred miles from Cincinnati to New Orleans, where I could doubtless get a ship. I had thirty dollars left; I would go and complete the exploration of the Amazon. This was all the thought I gave to the subject. I never was great in matters of detail. I packed my valise, and took passage on an ancient tub called the “Paul Jones,” for New Orleans. . . .",
+    "When we presently got under way and went poking down the broad Ohio, I became a new being, and the subject of my own admiration. I was a traveler! A word never had tasted so good in my mouth before. I had an exultant⁶ sense of being bound for mysterious lands and distant climes⁷ which I never have felt in so uplifting a degree since. I was in such a glorified condition that all ignoble⁸ feelings departed out of me, and I was able to look down and pity the untraveled with a compassion that had hardly a trace of contempt in it. Still, when we stopped at villages and wood-yards, I could not help lolling carelessly upon the railings of the boiler deck to enjoy the envy of the country boys on the bank. If they did not seem to discover me, I presently sneezed to attract their attention, or moved to a position where they could not help seeing me. And as soon as I knew they saw me I gaped and stretched, and gave other signs of being mightily bored with traveling.",
+    "I kept my hat off all the time, and stayed where the wind and the sun could strike me, because I wanted to get the bronzed and weather-beaten look of an old traveler. Before the second day was half gone I experienced a joy which filled me with the purest gratitude; for I saw that the skin had begun to blister and peel off my face and neck. I wished that the boys and girls at home could see me now."
+  ],
+  "footnotes": [
+    {
+      "mark": "1",
+      "text": "mud clerks -- helpers on a steamboat"
+    },
+    {
+      "mark": "2",
+      "text": "pilots -- the workers on riverboats who guided the boats around hazards in the water"
+    },
+    {
+      "mark": "3",
+      "text": "disconsolate -- unhappy"
+    },
+    {
+      "mark": "4",
+      "text": "a cold shoulder -- an unfriendly attitude"
+    },
+    {
+      "mark": "5",
+      "text": "head-waters -- streams that form the source of a river"
+    },
+    {
+      "mark": "6",
+      "text": "exultant -- joyous"
+    },
+    {
+      "mark": "7",
+      "text": "climes -- places with distinct climates"
+    },
+    {
+      "mark": "8",
+      "text": "ignoble -- not honorable"
+    }
+  ],
+  "credit": "Life on the Mississippi by Mark Twain. In the public domain.",
+  "questions": [
+    {
+      "num": 13,
+      "itemCode": "EL009737508",
+      "stem": "Which sentence best expresses the irony in paragraph 5?",
+      "boxed": null,
+      "choices": {
+        "A": "The narrator is near a place he had been unable to find.",
+        "B": "The narrator is far from those who had once misjudged him.",
+        "C": "The narrator is delighted by a situation that sounds unpleasant.",
+        "D": "The narrator is appreciated by those he had been too timid to ask for a job."
+      },
+      "answer": "C",
+      "answerCheck": "agree",
+      "note": ""
+    },
+    {
+      "num": 14,
+      "itemCode": "EL006655733",
+      "stem": "Which statement best expresses a theme of the passage?",
+      "boxed": null,
+      "choices": {
+        "A": "Confronting serious challenges can change one’s personal beliefs.",
+        "B": "People who defy authority can experience unexpected hardships in life.",
+        "C": "Being too boastful about one’s accomplishments can result in embarrassment.",
+        "D": "People often find satisfaction even when failing to fulfill their original ambitions."
+      },
+      "answer": "D",
+      "answerCheck": "agree",
+      "note": ""
+    }
+  ],
+  "skipped": [
+    {
+      "num": 15,
+      "reason": "multiple-select (select two; key C,F)"
+    }
+  ]
+}
