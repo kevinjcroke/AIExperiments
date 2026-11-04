@@ -150,7 +150,8 @@ function Planner({ profile }: { profile: Profile }) {
               </span>
               <span>Change a number to lock it. Tap the tag to switch.</span>
             </div>
-            <div className="grid grid-cols-1 gap-3 min-[960px]:grid-cols-2 min-[960px]:gap-4">
+            {/* Two card columns only when each card gets ~390px; below that the value and points collide. */}
+            <div className="grid grid-cols-1 gap-3 min-[960px]:gap-4 min-[1280px]:grid-cols-2">
               {EVENT_IDS.map((id) => (
                 <EventCard
                   key={id}
