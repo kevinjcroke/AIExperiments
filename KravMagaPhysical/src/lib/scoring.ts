@@ -226,6 +226,28 @@ export function impossibleFix(plan: Plan): ImpossibleFix | null {
   };
 }
 
+export interface PassOption {
+  event: EventId;
+  /** Points / raw value that event needs on its own for a full pass. */
+  targetPoints: number;
+  targetValue: number;
+}
+
+/**
+ * All four locked and short of the requirement: for each event, the value that would close the gap by
+ * itself (events that would need more than 100 are left out).
+ */
+export function passOptions(plan: Plan): PassOption[] {
+  if (plan.status !== "calculator") return [];
+  const short = plan.requiredTotal - plan.totalPoints;
+  if (short <= 0) return [];
+  return EVENT_IDS.flatMap((event) => {
+    const e = plan.events[event];
+    const targetPoints = e.points + short;
+    return targetPoints > MAX_POINTS ? [] : [{ event, targetPoints, targetValue: valueFor(e.table, targetPoints) }];
+  });
+}
+
 /** The locked event that is furthest below the required average (for "what's costing you" copy). */
 export function weakestLocked(plan: Plan): EventPlan | null {
   let worst: EventPlan | null = null;

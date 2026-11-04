@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import { ageBracketLabels, CHARTS, tableFor } from "./charts";
 import { parseValue, formatTime } from "./format";
 import { EVENT_IDS, NO_LOCKS, outcomeFor, type LockedValues, type Profile } from "./model";
-import { distribute, floorPoints, impossibleFix, nudge, scoreFor, solve, valueFor, weakestLocked } from "./scoring";
+import { distribute, floorPoints, impossibleFix, nudge, passOptions, scoreFor, solve, valueFor, weakestLocked } from "./scoring";
 import { sanitizeLocked, sanitizeProfile } from "../store/plannerStore";
 
 // "Joe" from the school's email: 22-year-old man testing at Blue/Brown (needs 75%).
@@ -150,6 +150,29 @@ describe("planner", () => {
     // A 95-point gap on a 0-point mile is still fixable: a 7:00 mile.
     expect(impossibleFix(solve({ ...joe, rank: "brown" }, lock({ mile: 900, pushups: 0 })))).toMatchObject({ targetPoints: 95, targetValue: 420 });
     expect(impossibleFix(solve(joe, NO_LOCKS))).toBeNull();
+  });
+
+  it("lists what one event alone would need when all four are locked and short", () => {
+    // Joe with a 9:20 mile: 60 + 80 + 76 + 75 = 291, 9 short of 300.
+    const plan = solve(joe, lock({ mile: 560, pushups: 55, squats: 74, plank: 135 }));
+    expect(plan.outcome).toBe("conditional");
+    expect(passOptions(plan)).toEqual([
+      { event: "mile", targetPoints: 69, targetValue: 524 }, // 8:44
+      { event: "pushups", targetPoints: 89, targetValue: 64 },
+      { event: "squats", targetPoints: 85, targetValue: 83 },
+      { event: "plank", targetPoints: 84, targetValue: 180 }, // 3:00
+    ]);
+    for (const o of passOptions(plan)) {
+      const fixed = solve(joe, { ...lock({ mile: 560, pushups: 55, squats: 74, plank: 135 }), [o.event]: o.targetValue });
+      expect(fixed.totalPoints).toBe(300);
+      expect(fixed.outcome).toBe("pass");
+    }
+    // An event that would need more than 100 is left out; passing or partly-auto plans get no options.
+    // 15:00 mile = 0 pts, so 69 short: only the mile can cover that alone (80/76/75 + 69 > 100).
+    const far = solve(joe, lock({ mile: 900, pushups: 55, squats: 74, plank: 135 }));
+    expect(passOptions(far).map((o) => o.event)).toEqual(["mile"]);
+    expect(passOptions(solve(joe, lock({ mile: 520, pushups: 55, squats: 74, plank: 135 })))).toEqual([]);
+    expect(passOptions(solve(joe, lock({ mile: 560 })))).toEqual([]);
   });
 
   it("drops auto events to the chart floor when locked events carry the test", () => {

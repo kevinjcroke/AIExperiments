@@ -41,7 +41,23 @@ export function Header({ profile, onOpenChart, onOpenSettings }: { profile: Prof
         </div>
       </div>
 
-      <div className="mx-5 flex flex-wrap items-center gap-x-[18px] gap-y-3 rounded-md border border-line bg-panel px-3.5 py-3">
+      {/* Phones: one compact row that opens Settings. */}
+      <button
+        type="button"
+        onClick={onOpenSettings}
+        aria-label={`Change profile. Age ${profile.age}, ${chart}, testing at ${rank.label}, ${rank.required}% average needed.`}
+        className="btn mx-5 flex min-h-12 items-center gap-2 rounded-md border border-line bg-panel px-3 py-2 text-left min-[960px]:hidden"
+      >
+        <Belt rank={profile.rank} className="h-3.5 w-6 flex-none" />
+        <span className="font-display text-lg leading-none font-bold tracking-[0.04em] whitespace-nowrap uppercase">{rank.short}</span>
+        <span className="font-display text-lg leading-none font-extrabold whitespace-nowrap text-stripe-text tabular">{rank.required}%</span>
+        <span className="min-w-0 truncate text-xs text-ink-2">
+          Age {profile.age} &middot; {CHART_LABEL[profile.gender]}
+        </span>
+        <Pencil className="ml-auto size-4 flex-none text-[#ff8a8f]" strokeWidth={2.4} aria-hidden="true" />
+      </button>
+
+      <div className="mx-5 hidden flex-wrap items-center gap-x-[18px] gap-y-3 rounded-md border border-line bg-panel px-3.5 py-3 min-[960px]:flex">
         <div className="flex min-w-0 flex-[1_1_190px] items-center gap-3">
           <Belt rank={profile.rank} className="h-4 w-[46px] flex-none" />
           <div className="flex min-w-0 flex-col gap-0.5">

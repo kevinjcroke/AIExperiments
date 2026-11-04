@@ -1,7 +1,16 @@
 import { Lock, Zap } from "lucide-react";
 import { formatTime, formatValue } from "../lib/format";
 import { EVENT_IDS, EVENTS, type EventId } from "../lib/model";
-import { impossibleFix, type Plan } from "../lib/scoring";
+import { impossibleFix, passOptions, type PassOption, type Plan } from "../lib/scoring";
+
+/** "8 sec faster mile (8:44)", "+9 push-ups (64)", "0:45 longer plank (3:00)". */
+function optionText(o: PassOption, current: number): string {
+  const gap = Math.abs(o.targetValue - current);
+  const time = (s: number) => (s < 60 ? `${s} sec` : formatTime(s));
+  if (o.event === "mile") return `${time(gap)} faster mile (${formatTime(o.targetValue)})`;
+  if (o.event === "plank") return `${time(gap)} longer plank (${formatTime(o.targetValue)})`;
+  return `+${gap} ${EVENTS[o.event].short.toLowerCase()} (${o.targetValue})`;
+}
 
 function list(ids: EventId[]): string {
   const names = ids.map((id) => EVENTS[id].short);
@@ -54,19 +63,43 @@ export function StateBanner({
         : plan.outcome === "conditional"
           ? `${-diff} pts short of ${req}%, which is a conditional pass.`
           : `${-diff} pts short of ${req}%. Retest in one month.`;
+    const options = passOptions(plan);
     return (
-      <div className="flex flex-wrap items-center gap-3 rounded-md border border-line-strong bg-[#16181c] p-3.5">
-        <Lock className="size-5 flex-none text-locked" strokeWidth={2.4} aria-hidden="true" />
-        <p className={`${body} flex-[1_1_200px]`}>
-          <strong className="text-ink">All four are your numbers.</strong> {line}
-        </p>
-        <button
-          type="button"
-          onClick={onUnlockAll}
-          className="btn h-11 rounded-sm border border-locked bg-transparent px-4 font-display text-[15px] font-bold tracking-[0.1em] uppercase"
-        >
-          Unlock all
-        </button>
+      <div className="flex flex-col gap-3 rounded-md border border-line-strong bg-[#16181c] p-3.5">
+        <div className="flex flex-wrap items-center gap-3">
+          <Lock className="size-5 flex-none text-locked" strokeWidth={2.4} aria-hidden="true" />
+          <p className={`${body} flex-[1_1_200px]`}>
+            <strong className="text-ink">All four are your numbers.</strong> {line}
+          </p>
+          <button
+            type="button"
+            onClick={onUnlockAll}
+            className="btn h-11 rounded-sm border border-locked bg-transparent px-4 font-display text-[15px] font-bold tracking-[0.1em] uppercase"
+          >
+            Unlock all
+          </button>
+        </div>
+        {options.length > 0 && (
+          <div className="flex flex-col gap-2">
+            <p className={body}>
+              <strong className="text-ink">Any one of these gets you a full pass:</strong>
+            </p>
+            <ul className="m-0 grid list-none grid-cols-1 gap-2 p-0">
+              {options.map((o) => (
+                <li key={o.event}>
+                  <button
+                    type="button"
+                    onClick={() => onSet(o.event, o.targetValue)}
+                    className="btn flex min-h-11 w-full items-center justify-between gap-3 rounded-sm border border-line-strong bg-surface-2 px-3.5 py-2 text-left text-sm"
+                  >
+                    <span>{optionText(o, plan.events[o.event].value)}</span>
+                    <span className="flex-none font-display text-[15px] font-bold tracking-[0.1em] text-stripe-text uppercase">Set</span>
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
       </div>
     );
   }

@@ -4,13 +4,13 @@ import { Lock, Unlock, Zap } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { EventCard } from "./components/EventCard";
 import { Header } from "./components/Header";
-import { HowItWorks, MiniScore, Onboarding, SettingsPanel } from "./components/Panels";
+import { HowItWorks, LockTip, MiniScore, Onboarding, SettingsPanel } from "./components/Panels";
 import { PointsSplit } from "./components/PointsSplit";
 import { ReferenceTable } from "./components/ReferenceTable";
 import { ScoreGauge } from "./components/ScoreGauge";
 import { Sheet } from "./components/Sheet";
 import { StateBanner } from "./components/StateBanner";
-import { EVENT_IDS, type EventId, type Profile } from "./lib/model";
+import { EVENT_IDS, type EventId, type LockedValues, type Profile } from "./lib/model";
 import { solve, type Plan, type PlanStatus } from "./lib/scoring";
 import { useRebalanceFeedback } from "./lib/useRebalanceFeedback";
 import { usePlanner } from "./store/plannerStore";
@@ -44,6 +44,36 @@ function useCelebrate(plan: Plan) {
   }, [plan, reduce]);
 }
 
+const LOCK_TIP_KEY = "red-stripe-ready:lock-tip-seen";
+let lockTipShownThisSession = false;
+
+/** The first time anything gets locked, explain locking once (and never again on this device). */
+function useLockTip(locked: LockedValues) {
+  const prev = useRef(locked);
+  const [tip, setTip] = useState<EventId | null>(null);
+  useEffect(() => {
+    const before = prev.current;
+    prev.current = locked;
+    const newly = EVENT_IDS.find((id) => before[id] === null && locked[id] !== null);
+    if (!newly) return;
+    let seen = lockTipShownThisSession;
+    try {
+      seen = seen || localStorage.getItem(LOCK_TIP_KEY) === "1";
+      localStorage.setItem(LOCK_TIP_KEY, "1");
+    } catch {
+      // storage unavailable (private mode): the session flag still stops repeats
+    }
+    lockTipShownThisSession = true;
+    if (!seen) setTip(newly);
+  }, [locked]);
+  useEffect(() => {
+    if (!tip) return;
+    const t = window.setTimeout(() => setTip(null), 10_000);
+    return () => window.clearTimeout(t);
+  }, [tip]);
+  return [tip, () => setTip(null)] as const;
+}
+
 const corner = "absolute size-4 border-[#4a515c]";
 const outlineBtn = "btn h-11 rounded-sm border border-line-strong bg-transparent px-3.5 text-sm font-semibold";
 
@@ -60,6 +90,9 @@ function Planner({ profile }: { profile: Profile }) {
   const bug = BUG[plan.status];
 
   useCelebrate(plan);
+  const [lockTip, closeLockTip] = useLockTip(locked);
+  // The "Auto events land you exactly on X%" explainer is only useful before you've locked anything.
+  const showBanner = !(plan.status === "balanced" && plan.autoCount < EVENT_IDS.length);
 
   const openReference = (focus: EventId | null) => {
     setChartFocus(focus);
@@ -106,9 +139,11 @@ function Planner({ profile }: { profile: Profile }) {
             />
           </section>
 
-          <div className="min-w-0 min-[960px]:col-start-1 min-[960px]:row-start-2">
-            <StateBanner plan={plan} onSet={setValue} onUnlock={unlock} onUnlockAll={unlockAll} />
-          </div>
+          {showBanner && (
+            <div className="min-w-0 min-[960px]:col-start-1 min-[960px]:row-start-2">
+              <StateBanner plan={plan} onSet={setValue} onUnlock={unlock} onUnlockAll={unlockAll} />
+            </div>
+          )}
 
           <section
             aria-labelledby="events-title"
@@ -129,22 +164,25 @@ function Planner({ profile }: { profile: Profile }) {
                 </button>
               )}
             </div>
-            <div className="flex flex-wrap items-center gap-x-3.5 gap-y-2 text-[13px] leading-[18px] text-ink-2">
-              <span className="inline-flex items-center gap-1.5">
-                <span className="inline-flex h-[22px] items-center gap-1 rounded-full border-[1.5px] border-auto px-2 font-display text-xs font-extrabold tracking-[0.14em] text-auto-text">
-                  <Zap className="size-[11px] fill-current" aria-hidden="true" />
-                  AUTO
+            <div className="flex flex-col gap-1.5 text-[13px] leading-[18px] text-ink-2">
+              <div className="flex flex-wrap items-center gap-x-3.5 gap-y-2">
+                <span className="inline-flex items-center gap-1.5">
+                  <span className="inline-flex h-[22px] items-center gap-1 rounded-full border-[1.5px] border-auto px-2 font-display text-xs font-extrabold tracking-[0.14em] text-auto-text">
+                    <Zap className="size-[11px] fill-current" aria-hidden="true" />
+                    AUTO
+                  </span>
+                  what you need
                 </span>
-                shows what you need
-              </span>
-              <span className="inline-flex items-center gap-1.5">
-                <span className="inline-flex h-[22px] items-center gap-1 rounded-full bg-locked px-2 font-display text-xs font-extrabold tracking-[0.14em] text-bg">
-                  <Lock className="size-[11px]" strokeWidth={3} aria-hidden="true" />
-                  LOCKED
+                <span className="inline-flex items-center gap-1.5">
+                  <span className="inline-flex h-[22px] items-center gap-1 rounded-full bg-locked px-2 font-display text-xs font-extrabold tracking-[0.14em] text-bg">
+                    <Lock className="size-[11px]" strokeWidth={3} aria-hidden="true" />
+                    LOCKED
+                  </span>
+                  your number
                 </span>
-                holds your number
-              </span>
-              <span>Change a number to lock it. Tap the tag to switch.</span>
+                <span className="hidden min-[960px]:inline">Change a number to lock it. Tap the tag to switch.</span>
+              </div>
+              <p className="m-0 text-xs text-ink-3">Event points are the same as the % in the school&rsquo;s email: 100 is the top of each chart.</p>
             </div>
             {/* Two card columns only when each card gets ~390px; below that the value and points collide. */}
             <div className="grid grid-cols-1 gap-3 min-[960px]:gap-4 min-[1280px]:grid-cols-2">
@@ -164,7 +202,7 @@ function Planner({ profile }: { profile: Profile }) {
             </div>
           </section>
 
-          <div className="min-w-0 min-[960px]:col-start-1 min-[960px]:row-start-3">
+          <div className={`min-w-0 min-[960px]:col-start-1 ${showBanner ? "min-[960px]:row-start-3" : "min-[960px]:row-start-2"}`}>
             <PointsSplit plan={plan} moved={feedback.moved} />
           </div>
         </main>
@@ -183,6 +221,8 @@ function Planner({ profile }: { profile: Profile }) {
           </div>
         </footer>
       </div>
+
+      {lockTip && <LockTip event={lockTip} value={plan.events[lockTip].value} onClose={closeLockTip} />}
 
       <Sheet open={sheet === "reference"} onClose={() => setSheet(null)} title="Your scoring chart">
         <ReferenceTable plan={plan} profile={profile} highlight={chartFocus} />

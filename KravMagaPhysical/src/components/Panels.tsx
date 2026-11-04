@@ -1,8 +1,8 @@
-import { ArrowRight, ChevronDown, RotateCcw, Unlock } from "lucide-react";
+import { ArrowRight, ChevronDown, Lock, RotateCcw, Unlock } from "lucide-react";
 import { useState } from "react";
 import { CHARTS } from "../lib/charts";
-import { formatAverage } from "../lib/format";
-import { GRACE_POINTS, OUTCOME_COPY, RANKS, type Profile } from "../lib/model";
+import { formatAverage, formatValue } from "../lib/format";
+import { EVENTS, GRACE_POINTS, OUTCOME_COPY, RANKS, type EventId, type Profile } from "../lib/model";
 import type { Plan } from "../lib/scoring";
 import { usePlanner } from "../store/plannerStore";
 import { Belt } from "./Belt";
@@ -138,7 +138,7 @@ export function HowItWorks() {
             <b className="text-ink">plank</b>.
           </p>
           <p className="m-0">
-            Each event scores 0&ndash;100 from the school&rsquo;s charts. The run and push-ups have separate men&rsquo;s and women&rsquo;s charts by age, squats go by age, and
+            Each event scores 0&ndash;100 points from the school&rsquo;s charts (the email calls these percentages). The run and push-ups have separate men&rsquo;s and women&rsquo;s charts by age, squats go by age, and
             the plank is the same for everyone. Your score is the <b className="text-ink">average of the four</b>, so a strong event can make up for a weak one.
           </p>
         </div>
@@ -208,5 +208,34 @@ export function MiniScore({ plan }: { plan: Plan }) {
         </span>
       </div>
     </section>
+  );
+}
+
+/** One-time tip shown the first time an event gets locked. */
+export function LockTip({ event, value, onClose }: { event: EventId; value: number; onClose: () => void }) {
+  const meta = EVENTS[event];
+  return (
+    <div className="pointer-events-none fixed inset-x-0 bottom-0 z-40 flex justify-center px-4 pb-[max(1rem,env(safe-area-inset-bottom))]">
+      <div
+        role="status"
+        className="tip-in pointer-events-auto flex w-full max-w-md items-start gap-3 rounded-md border border-line-strong bg-surface-2 p-3.5 shadow-[0_12px_40px_rgb(0_0_0/0.6)]"
+      >
+        <Lock className="mt-0.5 size-5 flex-none text-locked" strokeWidth={2.4} aria-hidden="true" />
+        <p className="m-0 flex-1 text-sm leading-5 text-body">
+          <strong className="text-ink">
+            {meta.short} locked at {formatValue(event, value)}
+            {meta.kind === "reps" ? " reps" : ""}.
+          </strong>{" "}
+          It stays put while the other events rebalance. Tap <b className="text-ink">LOCKED</b> on its card to let it float again.
+        </p>
+        <button
+          type="button"
+          onClick={onClose}
+          className="btn h-11 flex-none rounded-sm border border-line-strong bg-transparent px-3 font-display text-[15px] font-bold tracking-[0.1em] uppercase"
+        >
+          Got it
+        </button>
+      </div>
+    </div>
   );
 }

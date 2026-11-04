@@ -301,6 +301,11 @@ body {
   }
 }
 
+/* One-time lock tip */
+.tip-in {
+  animation: sheet-up 280ms var(--ease-out-soft);
+}
+
 /* Gauge arcs and knob */
 .gauge-arc {
   transition:
@@ -385,6 +390,7 @@ dialog.sheet[open] {
   }
   .pop,
   .burst,
+  .tip-in,
   dialog.sheet[open] {
     animation: fade 240ms linear both;
   }

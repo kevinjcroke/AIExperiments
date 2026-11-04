@@ -84,7 +84,7 @@ export function EventCard({ plan, status, required, moved = 0, washKey, onSet, o
             <h3 id={titleId} className="m-0 font-display text-[21px] leading-none font-bold tracking-[0.05em] uppercase">
               {meta.name}
             </h3>
-            <span className="text-xs leading-4 text-ink-3">{meta.sub}</span>
+            <span className="hidden text-xs leading-4 text-ink-3 min-[960px]:block">{meta.sub}</span>
             <button
               type="button"
               onClick={onShowChart}
@@ -254,7 +254,7 @@ function EditableValue({ event, value, auto, onCommit }: { event: EventId; value
   const commit = () => {
     const parsed = parseValue(event, draft);
     if (parsed === null) {
-      setError(isTime ? "Use m:ss, like 8:40" : "Whole reps, like 52");
+      setError(isTime ? "Use m:ss, like 8:40 or 8.40" : "Whole reps, like 52");
       return;
     }
     setEditing(false);
@@ -304,7 +304,7 @@ function EditableValue({ event, value, auto, onCommit }: { event: EventId; value
           </button>
         </div>
         <span id={hintId} role={error ? "alert" : undefined} className={`text-xs leading-4 ${error ? "text-[#ff8a8a]" : "text-ink-3"}`}>
-          {error || (isTime ? "Type m:ss, like 8:40. Enter saves and locks it." : "Type whole reps. Enter saves and locks it.")}
+          {error || (isTime ? "Type m:ss, like 8:40 or 8.40. Enter saves and locks it." : "Type whole reps. Enter saves and locks it.")}
         </span>
       </div>
     );
