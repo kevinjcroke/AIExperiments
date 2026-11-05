@@ -1,4 +1,4 @@
-import { ArrowDown, Check, ChevronLeft, ChevronRight, Lock, Minus, Pencil, Plus, Table2, X, Zap } from "lucide-react";
+import { ArrowDown, Check, Lock, Minus, Pencil, Plus, Table2, X, Zap } from "lucide-react";
 import { useEffect, useId, useRef, useState } from "react";
 import { formatValue, parseValue, spokenValue } from "../lib/format";
 import { EVENTS, type EventId } from "../lib/model";
@@ -38,21 +38,26 @@ export function EventCard({ plan, status, required, moved = 0, washKey, onSet, o
   const auto = !locked;
   const titleId = useId();
 
+  // Every control follows the number: right and + mean more (reps or seconds). On the mile that's
+  // slower, so its fill runs from the right edge: the colored part is always "how good", and it
+  // reaches the red target tick when you're on target.
   const lower = table.better === "lower";
-  const range = sliderRange(table);
-  const sliderMin = lower ? -range.max : range.min;
-  const sliderMax = lower ? -range.min : range.max;
-  const toSlider = (v: number) => Math.max(sliderMin, Math.min(sliderMax, lower ? -v : v));
+  const { min: sliderMin, max: sliderMax } = sliderRange(table);
+  const toSlider = (v: number) => Math.max(sliderMin, Math.min(sliderMax, v));
   const pct = (v: number) => ((toSlider(v) - sliderMin) / (sliderMax - sliderMin)) * 100;
-  const fillPct = pct(value);
+  const thumbPct = pct(value);
+  const fillPct = lower ? 100 - thumbPct : thumbPct;
   const reqPct = pct(valueFor(table, required));
+  /** nudge() directions for - and +: on the mile a smaller number is a point better, elsewhere a point worse. */
+  const [down, up]: [1 | -1, 1 | -1] = lower ? [1, -1] : [-1, 1];
 
   const tag = locked ? "Locked" : status === "impossible" ? "Maxed" : "Auto";
   const eyebrow = locked ? "Your number" : status === "impossible" ? "Best case" : status === "covered" ? "Chart minimum" : "You need";
   const note = noteFor(plan, status);
+  /** [-, +] button labels. */
   const stepWords: [string, string] =
     event === "mile"
-      ? ["Mile slower by one point", "Mile faster by one point"]
+      ? ["Mile faster by one point", "Mile slower by one point"]
       : event === "plank"
         ? ["Plank shorter by one point", "Plank longer by one point"]
         : [`One ${meta.one} fewer`, `One ${meta.one} more`];
@@ -139,7 +144,7 @@ export function EventCard({ plan, status, required, moved = 0, washKey, onSet, o
       </div>
 
       <div className="relative flex items-center gap-2.5">
-        <Stepper dir={-1} chevron={lower} label={stepWords[0]} onStep={() => onSet(nudge(table, value, -1))} />
+        <Stepper dir={-1} label={stepWords[0]} onStep={() => onSet(nudge(table, value, down))} />
         <div className="relative h-11 min-w-0 flex-auto">
           <input
             type="range"
@@ -150,22 +155,19 @@ export function EventCard({ plan, status, required, moved = 0, washKey, onSet, o
             value={toSlider(value)}
             aria-label={meta.name}
             aria-valuetext={`${meta.short}, ${spokenValue(event, value)}, ${points} points, ${locked ? "locked" : "auto"}`}
-            onChange={(e) => {
-              const v = Number(e.target.value);
-              onSet(lower ? -v : v);
-            }}
+            onChange={(e) => onSet(Number(e.target.value))}
           />
           <div className="rail pointer-events-none absolute inset-y-0 right-3.5 left-3.5" aria-hidden="true">
             <div className="absolute top-[18px] -right-3.5 -left-3.5 h-2 rounded-full bg-[#262a31]" />
             <div
-              className={`absolute top-[18px] -left-3.5 h-2 rounded-full ${auto ? "spring-move" : ""}`}
+              className={`absolute top-[18px] h-2 rounded-full ${lower ? "-right-3.5" : "-left-3.5"} ${auto ? "spring-move" : ""}`}
               style={{ width: `calc(${fillPct}% + 14px)`, background: auto ? HATCH : "var(--color-locked)" }}
             />
             <div className="absolute top-[11px] -ml-[1.5px] h-[22px] w-[3px] rounded-[2px] bg-stripe-hot" style={{ left: `${reqPct}%` }} />
             <div
               className={`thumb ${auto ? "spring-move" : ""}`}
               style={{
-                left: `${fillPct}%`,
+                left: `${thumbPct}%`,
                 background: "#f4f1ec",
                 border: `4px solid ${auto ? "#43d9f5" : "#0a0b0d"}`,
                 boxShadow: `0 2px 10px rgb(0 0 0 / 0.55), 0 0 0 6px ${auto ? "rgb(67 217 245 / 0.18)" : "rgb(233 229 222 / 0.25)"}`,
@@ -173,7 +175,7 @@ export function EventCard({ plan, status, required, moved = 0, washKey, onSet, o
             />
           </div>
         </div>
-        <Stepper dir={1} chevron={lower} label={stepWords[1]} onStep={() => onSet(nudge(table, value, 1))} />
+        <Stepper dir={1} label={stepWords[1]} onStep={() => onSet(nudge(table, value, up))} />
       </div>
       <div
         aria-hidden="true"
@@ -187,12 +189,8 @@ export function EventCard({ plan, status, required, moved = 0, washKey, onSet, o
   );
 }
 
-/**
- * +/- button; hold to repeat. Each press is one point (see `nudge`).
- * `chevron` swaps +/- for arrows on events where a better score is a smaller number (the mile),
- * since "+" there would make the time go down.
- */
-function Stepper({ dir, chevron = false, label, onStep }: { dir: 1 | -1; chevron?: boolean; label: string; onStep: () => void }) {
+/** +/- button; hold to repeat. `dir` is the number's direction; each press is one point (see `nudge`). */
+function Stepper({ dir, label, onStep }: { dir: 1 | -1; label: string; onStep: () => void }) {
   const stepRef = useRef(onStep);
   stepRef.current = onStep;
   const timer = useRef<number | null>(null);
@@ -215,7 +213,7 @@ function Stepper({ dir, chevron = false, label, onStep }: { dir: 1 | -1; chevron
     repeat(420);
   };
 
-  const Icon = chevron ? (dir === 1 ? ChevronRight : ChevronLeft) : dir === 1 ? Plus : Minus;
+  const Icon = dir === 1 ? Plus : Minus;
   return (
     <button
       type="button"
