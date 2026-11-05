@@ -52,11 +52,12 @@ export interface EventMeta {
   sub: string;
   /** Singular noun for copy like "Add 3 push-ups"; times use m:ss instead. */
   one: string;
-  ends: [worse: string, better: string];
+  /** Slider end labels; right is always the bigger number. */
+  ends: [left: string, right: string];
 }
 
 export const EVENTS: Record<EventId, EventMeta> = {
-  mile: { id: "mile", n: "01", name: "One-mile run", short: "Mile", kind: "time", sub: "m:ss · faster is better", one: "mile", ends: ["Slower", "Faster"] },
+  mile: { id: "mile", n: "01", name: "One-mile run", short: "Mile", kind: "time", sub: "m:ss · faster is better", one: "mile", ends: ["Faster", "Slower"] },
   pushups: { id: "pushups", n: "02", name: "Push-ups", short: "Push-ups", kind: "reps", sub: "Reps in 2 min · more is better", one: "push-up", ends: ["Fewer", "More"] },
   squats: { id: "squats", n: "03", name: "Squats", short: "Squats", kind: "reps", sub: "Reps in 2 min · more is better", one: "squat", ends: ["Fewer", "More"] },
   plank: { id: "plank", n: "04", name: "Plank", short: "Plank", kind: "time", sub: "Hold · m:ss · longer is better", one: "plank", ends: ["Shorter", "Longer"] },

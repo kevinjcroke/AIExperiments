@@ -41,7 +41,7 @@ There are three possible outcomes:
 Passing at 75% means earning 300 of 400 possible points. The user can split those points across the four events however they like. The app's main job is to show that split and let them play with it.
 
 - **Profile:** age, gender, and the rank they are testing for. Keep it compact and easy to change, because changing it re-scores everything.
-- **Four event cards.** Each one shows the raw value (for example "52 reps" or "8:20") and its score (for example "75 pts"), plus a control to change the value: a slider, +/- steppers, and tap-to-type. Time entry uses m:ss. On every slider, moving right means better performance, so the mile slider gets faster as you move right. Label it clearly.
+- **Four event cards.** Each one shows the raw value (for example "52 reps" or "8:20") and its score (for example "75 pts"), plus a control to change the value: a slider, +/- steppers, and tap-to-type. Time entry uses m:ss. On every slider and stepper, right and + mean a bigger number, so the mile gets slower as you move right. Label it clearly.
 - **Auto vs Locked.** Each event is either **Auto** or **Locked**.
   - An **Auto** event shows what you *need*. The app sets it so the average lands exactly on the requirement.
   - A **Locked** event holds *your* number.
