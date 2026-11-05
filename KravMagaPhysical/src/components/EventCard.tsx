@@ -1,4 +1,4 @@
-import { ArrowDown, Check, Lock, Minus, Pencil, Plus, Table2, X, Zap } from "lucide-react";
+import { ArrowDown, Check, ChevronLeft, ChevronRight, Lock, Minus, Pencil, Plus, Table2, X, Zap } from "lucide-react";
 import { useEffect, useId, useRef, useState } from "react";
 import { formatValue, parseValue, spokenValue } from "../lib/format";
 import { EVENTS, type EventId } from "../lib/model";
@@ -139,7 +139,7 @@ export function EventCard({ plan, status, required, moved = 0, washKey, onSet, o
       </div>
 
       <div className="relative flex items-center gap-2.5">
-        <Stepper dir={-1} label={stepWords[0]} onStep={() => onSet(nudge(table, value, -1))} />
+        <Stepper dir={-1} chevron={lower} label={stepWords[0]} onStep={() => onSet(nudge(table, value, -1))} />
         <div className="relative h-11 min-w-0 flex-auto">
           <input
             type="range"
@@ -173,7 +173,7 @@ export function EventCard({ plan, status, required, moved = 0, washKey, onSet, o
             />
           </div>
         </div>
-        <Stepper dir={1} label={stepWords[1]} onStep={() => onSet(nudge(table, value, 1))} />
+        <Stepper dir={1} chevron={lower} label={stepWords[1]} onStep={() => onSet(nudge(table, value, 1))} />
       </div>
       <div
         aria-hidden="true"
@@ -187,8 +187,12 @@ export function EventCard({ plan, status, required, moved = 0, washKey, onSet, o
   );
 }
 
-/** +/- button; hold to repeat. Each press is one point (see `nudge`). */
-function Stepper({ dir, label, onStep }: { dir: 1 | -1; label: string; onStep: () => void }) {
+/**
+ * +/- button; hold to repeat. Each press is one point (see `nudge`).
+ * `chevron` swaps +/- for arrows on events where a better score is a smaller number (the mile),
+ * since "+" there would make the time go down.
+ */
+function Stepper({ dir, chevron = false, label, onStep }: { dir: 1 | -1; chevron?: boolean; label: string; onStep: () => void }) {
   const stepRef = useRef(onStep);
   stepRef.current = onStep;
   const timer = useRef<number | null>(null);
@@ -211,7 +215,7 @@ function Stepper({ dir, label, onStep }: { dir: 1 | -1; label: string; onStep: (
     repeat(420);
   };
 
-  const Icon = dir === 1 ? Plus : Minus;
+  const Icon = chevron ? (dir === 1 ? ChevronRight : ChevronLeft) : dir === 1 ? Plus : Minus;
   return (
     <button
       type="button"
