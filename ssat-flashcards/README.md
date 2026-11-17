@@ -64,6 +64,7 @@ Not affiliated with the SSAT, E3n, NAEP, or the Massachusetts Department of Elem
 | `scripts/build_deck.py` | Downloads NAEP items, answer keys, national percentages and figures from the NQT API, sanitizes the HTML (MathML kept), merges MCAS and explanations, validates, and writes `src/data/deck.json` |
 | `public/naep/` | Figures used by NAEP math questions |
 | `scripts/build_pack.py` | Builds a private question pack from a transcribed practice test (see below) |
+| `scripts/og-image/template.html` | The link-preview image's design (two real deck questions); `npm run og-image` renders it to `public/og-image.png` (see the root `CLAUDE.md`) |
 | `src/lib/packs.ts`, `src/lib/sanitize.ts` | Pack validation, merging and storage; allow-list HTML sanitizer for imported packs |
 | `src/lib/progress.ts` | Card results, mastery rule, streak, defensive localStorage parsing |
 | `src/lib/session.ts` | Session queue: filters, priority (missed → new → learning), whole reading passages, mixed interleaving, math retries, SSAT raw score |

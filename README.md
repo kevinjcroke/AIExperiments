@@ -15,3 +15,4 @@ A collection of independent side-project experiments. Each lives in its own fold
 1. Build it into its own folder with a relative base (e.g. Vite `--base=./`).
 2. Add a build step and a `cp` into `_site/<folder>` in `.github/workflows/pages.yml`.
 3. Add a card for it in `site/index.html`.
+4. Give it a link-preview image and Open Graph tags, and update the landing page's image. The steps are in [`CLAUDE.md`](CLAUDE.md#every-app-needs-a-link-preview-image); the renderer is `tools/og-image/render.cjs`.

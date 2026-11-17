@@ -21,7 +21,7 @@ npm run charts     # regenerate src/data/charts.json from requirements/*.xlsx (P
 | --- | --- |
 | `requirements/*.xlsx` | The school's scoring spreadsheets (source of truth) |
 | `scripts/convert_charts.py` | Converts the spreadsheets to JSON, validates them, and prints a summary |
-| `scripts/og-image/` | The link-preview image: `template.html` is the design, `render.cjs` renders it to `public/og-image.png` with Playwright |
+| `scripts/og-image/template.html` | The link-preview image's design; `npm run og-image` renders it to `public/og-image.png` (see the root `CLAUDE.md`) |
 | `src/data/charts.json` | Generated charts: `values[p]` = threshold for `p` points, per event / gender / age bracket |
 | `src/lib/model.ts` | Fixed rules: events, ranks and required %, outcomes (pass / conditional / retest) |
 | `src/lib/charts.ts` | Picks the right chart for an age and gender |

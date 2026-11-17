@@ -1,0 +1,56 @@
+<!doctype html>
+<!--
+  Link-preview card, 1200x630. Render with `npm run og-image` (writes public/og-image.png).
+  The wheel fills the centre 630x630, which is all that shows when a preview crops to a square;
+  the title and the numbers sit on either side for the full-width card.
+  wheel.jpg is a capture of the real 3D wheel (capture-wheel.cjs).
+-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      @font-face { font-family: "Outfit"; font-weight: 700; src: url("../../src/components/wheel/fonts/Outfit-Bold.ttf"); }
+      * { box-sizing: border-box; }
+      html, body { margin: 0; }
+      body {
+        width: 1200px; height: 630px; overflow: hidden; position: relative;
+        font-family: Outfit, sans-serif; color: #f8fafc; -webkit-font-smoothing: antialiased;
+        /* Matches the scene's navy glow so the wheel capture blends in. */
+        background: radial-gradient(circle at 50% 50%, #10263f 0%, #0b1a2e 32%, #020617 72%);
+      }
+      .wheel {
+        position: absolute; left: 50%; top: 50%; width: 640px; height: 640px; margin: -320px 0 0 -320px;
+        -webkit-mask-image: radial-gradient(circle closest-side, #000 89%, transparent 99%);
+        mask-image: radial-gradient(circle closest-side, #000 89%, transparent 99%);
+      }
+      .side { position: absolute; top: 0; bottom: 0; width: 270px; display: flex; flex-direction: column; justify-content: center; }
+      .left { left: 44px; }
+      .right { right: 44px; align-items: flex-end; text-align: right; }
+      .eyebrow { margin: 0 0 10px; color: #fcd34d; font-size: 26px; letter-spacing: 0.25em; text-transform: uppercase; }
+      h1 { margin: 0; font-size: 78px; line-height: 0.92; letter-spacing: -0.01em; }
+      .tag { margin: 22px 0 0; color: #cbd5e1; font-size: 26px; line-height: 1.2; }
+      .stat { display: flex; flex-direction: column; align-items: flex-end; margin-bottom: 22px; }
+      .stat b { font-size: 92px; line-height: 0.9; color: #fcd34d; }
+      .stat span { font-size: 24px; color: #cbd5e1; letter-spacing: 0.04em; }
+      .spin {
+        margin-top: 8px; padding: 14px 34px 16px; border-radius: 999px; color: #fff;
+        font-size: 34px; letter-spacing: 0.14em;
+        background: linear-gradient(180deg, #fb7185, #f43f5e 55%, #be123c);
+        box-shadow: 0 6px 0 0 #881337, 0 14px 28px -6px rgb(244 63 94 / 0.55);
+      }
+    </style>
+  </head>
+  <body>
+    <img class="wheel" src="wheel.jpg" alt="" />
+    <div class="side left">
+      <p class="eyebrow">St. Louis</p>
+      <h1>World<br />Food<br />Wheel</h1>
+      <p class="tag">Spin to pick<br />tonight's cuisine.</p>
+    </div>
+    <div class="side right">
+      <div class="stat"><b>32</b><span>cuisines</span></div>
+      <div class="stat"><b>81</b><span>local restaurants</span></div>
+      <div class="spin">SPIN</div>
+    </div>
+  </body>
+</html>

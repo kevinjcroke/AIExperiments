@@ -1,0 +1,60 @@
+<!doctype html>
+<!--
+  Link-preview card for the landing page (site/), 1200x630:
+    node tools/og-image/render.cjs tools/og-image/site-template.html site/og-image.png
+  Lives here rather than in site/ because everything in site/ is deployed.
+  Title and the three app icons sit in the centre 630x630 (what a square-cropped preview shows);
+  the sides reuse the apps' own artwork, so re-render this after an app's preview image changes.
+-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      @font-face { font-family: "Outfit"; font-weight: 700; src: url("../../stl-food-wheel/src/components/wheel/fonts/Outfit-Bold.ttf"); }
+      * { box-sizing: border-box; }
+      html, body { margin: 0; }
+      body {
+        width: 1200px; height: 630px; overflow: hidden; position: relative;
+        font-family: Outfit, sans-serif; color: #f1f5f9; -webkit-font-smoothing: antialiased;
+        background: radial-gradient(ellipse 90% 85% at 50% 0%, #0b2545 0%, #020617 68%);
+      }
+      .wheel {
+        position: absolute; width: 560px; height: 560px; left: -330px; top: 35px; transform: rotate(-18deg);
+        -webkit-mask-image: radial-gradient(circle closest-side, #000 89%, transparent 99%);
+        mask-image: radial-gradient(circle closest-side, #000 89%, transparent 99%);
+      }
+      .shot {
+        position: absolute; width: 420px; border-radius: 14px; border: 1px solid rgb(255 255 255 / 0.14);
+        box-shadow: 0 24px 48px -16px rgb(0 0 0 / 0.7);
+      }
+      .shot.a { right: -178px; top: 66px; transform: rotate(6deg); }
+      .shot.b { right: -168px; top: 336px; transform: rotate(-4deg); }
+
+      .center { position: absolute; top: 0; bottom: 0; left: 285px; width: 630px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+      .eyebrow { margin: 0; color: #fcd34d; font-size: 22px; letter-spacing: 0.3em; text-transform: uppercase; }
+      h1 { margin: 10px 0 0; font-size: 96px; line-height: 0.92; letter-spacing: -0.015em; }
+      .lede { margin: 18px 0 0; color: #cbd5e1; font-size: 26px; }
+      .apps { display: flex; gap: 18px; margin-top: 38px; }
+      .app { width: 180px; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+      .app .icon { width: 92px; height: 92px; border-radius: 24px; background: #0f172a; border: 1px solid rgb(255 255 255 / 0.12); display: grid; place-items: center; }
+      .app img { width: 64px; height: 64px; }
+      .app span { font-size: 21px; line-height: 1.1; color: #f1f5f9; }
+    </style>
+  </head>
+  <body>
+    <img class="wheel" src="../../stl-food-wheel/scripts/og-image/wheel.jpg" alt="" />
+    <img class="shot a" src="../../KravMagaPhysical/public/og-image.png" alt="" />
+    <img class="shot b" src="../../ssat-flashcards/public/og-image.png" alt="" />
+
+    <div class="center">
+      <p class="eyebrow">Side projects</p>
+      <h1>AI<br />Experiments</h1>
+      <p class="lede">Small apps built to try out ideas.</p>
+      <div class="apps">
+        <div class="app"><div class="icon"><img src="../../site/favicon.svg" alt="" /></div><span>World Food Wheel</span></div>
+        <div class="app"><div class="icon"><img src="../../KravMagaPhysical/public/favicon.svg" alt="" /></div><span>Red Stripe Ready</span></div>
+        <div class="app"><div class="icon"><img src="../../ssat-flashcards/public/favicon.svg" alt="" /></div><span>Upper Hand</span></div>
+      </div>
+    </div>
+  </body>
+</html>

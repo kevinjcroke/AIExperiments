@@ -27,6 +27,7 @@ npm run build
 | `src/components/HudOverlay.tsx`, `hud/` | Responsive HUD: sidebar (desktop) / bottom sheet (mobile) |
 | `src/utils/sound.ts` | Procedural tick + win chord |
 | `CONTRACTS.md` | Shared contracts between the parts |
+| `scripts/og-image/` | Link-preview image: `template.html` is the design and `npm run og-image` renders it to `public/og-image.jpg`; `capture-wheel.cjs` re-captures `wheel.jpg` from a build when the wheel's look changes (see the root `CLAUDE.md`) |
 
 ## Data freshness
 
